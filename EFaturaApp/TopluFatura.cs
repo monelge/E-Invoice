@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace EFaturaApp
 {
-    public partial class MainForm : BaseForm
+    public partial class TopluFatura : BaseForm
     {
-        public MainForm()
+        public TopluFatura()
         {
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void TopluFatura_Load(object sender, EventArgs e)
         {
 
         }

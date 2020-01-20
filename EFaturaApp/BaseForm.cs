@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace EFaturaApp
 {
-    public partial class BaseForm : Form
+    public partial class BaseForm : RadForm
     {
         public BaseForm()
         {
             InitializeComponent();
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
