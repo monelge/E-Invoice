@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
@@ -38,40 +38,40 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radDateTimePicker2 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.radDropDownList2 = new Telerik.WinControls.UI.RadDropDownList();
+            this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.radDropDownList3 = new Telerik.WinControls.UI.RadDropDownList();
+            this.radDropDownList2 = new Telerik.WinControls.UI.RadDropDownList();
+            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radDateTimePicker2 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
-            this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
+            this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +120,7 @@
             // 
             // 
             // 
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.Size = new System.Drawing.Size(1048, 469);
             this.radGridView1.TabIndex = 0;
@@ -136,19 +136,15 @@
             this.radPanel1.Size = new System.Drawing.Size(1048, 140);
             this.radPanel1.TabIndex = 1;
             // 
-            // radGroupBox1
+            // radGroupBox3
             // 
-            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.radDateTimePicker2);
-            this.radGroupBox1.Controls.Add(this.radDateTimePicker1);
-            this.radGroupBox1.Controls.Add(this.radLabel2);
-            this.radGroupBox1.Controls.Add(this.radLabel1);
-            this.radGroupBox1.HeaderText = "Tarih İşlemleri";
-            this.radGroupBox1.Location = new System.Drawing.Point(-3, 3);
-            this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(300, 137);
-            this.radGroupBox1.TabIndex = 0;
-            this.radGroupBox1.Text = "Tarih İşlemleri";
+            this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox3.HeaderText = "radGroupBox3";
+            this.radGroupBox3.Location = new System.Drawing.Point(609, 3);
+            this.radGroupBox3.Name = "radGroupBox3";
+            this.radGroupBox3.Size = new System.Drawing.Size(300, 134);
+            this.radGroupBox3.TabIndex = 1;
+            this.radGroupBox3.Text = "radGroupBox3";
             // 
             // radGroupBox2
             // 
@@ -162,35 +158,59 @@
             this.radGroupBox2.HeaderText = "radGroupBox2";
             this.radGroupBox2.Location = new System.Drawing.Point(303, 3);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(300, 137);
+            this.radGroupBox2.Size = new System.Drawing.Size(300, 134);
             this.radGroupBox2.TabIndex = 1;
             this.radGroupBox2.Text = "radGroupBox2";
             // 
-            // radGroupBox3
+            // radDropDownList3
             // 
-            this.radGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox3.HeaderText = "radGroupBox3";
-            this.radGroupBox3.Location = new System.Drawing.Point(609, 3);
-            this.radGroupBox3.Name = "radGroupBox3";
-            this.radGroupBox3.Size = new System.Drawing.Size(300, 137);
-            this.radGroupBox3.TabIndex = 1;
-            this.radGroupBox3.Text = "radGroupBox3";
+            this.radDropDownList3.DropDownAnimationEnabled = false;
+            this.radDropDownList3.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.radDropDownList3.Location = new System.Drawing.Point(119, 96);
+            this.radDropDownList3.Name = "radDropDownList3";
+            this.radDropDownList3.Size = new System.Drawing.Size(156, 24);
+            this.radDropDownList3.TabIndex = 1;
+            this.radDropDownList3.Text = "radDropDownList1";
             // 
-            // radLabel1
+            // radDropDownList2
             // 
-            this.radLabel1.Location = new System.Drawing.Point(10, 30);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(83, 18);
-            this.radLabel1.TabIndex = 0;
-            this.radLabel1.Text = "Başlangıç Tarihi";
+            this.radDropDownList2.DropDownAnimationEnabled = false;
+            this.radDropDownList2.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.radDropDownList2.Location = new System.Drawing.Point(119, 61);
+            this.radDropDownList2.Name = "radDropDownList2";
+            this.radDropDownList2.Size = new System.Drawing.Size(156, 24);
+            this.radDropDownList2.TabIndex = 1;
+            this.radDropDownList2.Text = "radDropDownList1";
             // 
-            // radLabel2
+            // radDropDownList1
             // 
-            this.radLabel2.Location = new System.Drawing.Point(10, 70);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(57, 18);
-            this.radLabel2.TabIndex = 0;
-            this.radLabel2.Text = "Bitiş Tarihi";
+            this.radDropDownList1.DropDownAnimationEnabled = false;
+            this.radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem2.Text = "PEŞİN";
+            radListDataItem3.Text = "HAVALE";
+            this.radDropDownList1.Items.Add(radListDataItem1);
+            this.radDropDownList1.Items.Add(radListDataItem2);
+            this.radDropDownList1.Items.Add(radListDataItem3);
+            this.radDropDownList1.Location = new System.Drawing.Point(119, 26);
+            this.radDropDownList1.Name = "radDropDownList1";
+            this.radDropDownList1.Size = new System.Drawing.Size(156, 24);
+            this.radDropDownList1.TabIndex = 1;
+            // 
+            // radLabel5
+            // 
+            this.radLabel5.Location = new System.Drawing.Point(21, 100);
+            this.radLabel5.Name = "radLabel5";
+            this.radLabel5.Size = new System.Drawing.Size(55, 18);
+            this.radLabel5.TabIndex = 0;
+            this.radLabel5.Text = "Alıcı Şube";
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Location = new System.Drawing.Point(21, 65);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(84, 18);
+            this.radLabel4.TabIndex = 0;
+            this.radLabel4.Text = "Gönderen Şube";
             // 
             // radLabel3
             // 
@@ -200,21 +220,30 @@
             this.radLabel3.TabIndex = 0;
             this.radLabel3.Text = "Ödeme Tipi";
             // 
-            // radLabel4
+            // radGroupBox1
             // 
-            this.radLabel4.Location = new System.Drawing.Point(21, 70);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(84, 18);
-            this.radLabel4.TabIndex = 0;
-            this.radLabel4.Text = "Gönderen Şube";
+            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.radDateTimePicker2);
+            this.radGroupBox1.Controls.Add(this.radDateTimePicker1);
+            this.radGroupBox1.Controls.Add(this.radLabel2);
+            this.radGroupBox1.Controls.Add(this.radLabel1);
+            this.radGroupBox1.HeaderText = "Tarih İşlemleri";
+            this.radGroupBox1.Location = new System.Drawing.Point(9, 3);
+            this.radGroupBox1.Name = "radGroupBox1";
+            this.radGroupBox1.Size = new System.Drawing.Size(288, 134);
+            this.radGroupBox1.TabIndex = 0;
+            this.radGroupBox1.Text = "Tarih İşlemleri";
             // 
-            // radLabel5
+            // radDateTimePicker2
             // 
-            this.radLabel5.Location = new System.Drawing.Point(21, 112);
-            this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(55, 18);
-            this.radLabel5.TabIndex = 0;
-            this.radLabel5.Text = "Alıcı Şube";
+            this.radDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.radDateTimePicker2.Location = new System.Drawing.Point(120, 61);
+            this.radDateTimePicker2.Name = "radDateTimePicker2";
+            this.radDateTimePicker2.Size = new System.Drawing.Size(139, 24);
+            this.radDateTimePicker2.TabIndex = 1;
+            this.radDateTimePicker2.TabStop = false;
+            this.radDateTimePicker2.Text = "20.01.2020";
+            this.radDateTimePicker2.Value = new System.DateTime(2020, 1, 20, 23, 23, 3, 25);
             // 
             // radDateTimePicker1
             // 
@@ -227,47 +256,21 @@
             this.radDateTimePicker1.Text = "20.01.2020";
             this.radDateTimePicker1.Value = new System.DateTime(2020, 1, 20, 23, 23, 3, 25);
             // 
-            // radDateTimePicker2
+            // radLabel2
             // 
-            this.radDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.radDateTimePicker2.Location = new System.Drawing.Point(120, 65);
-            this.radDateTimePicker2.Name = "radDateTimePicker2";
-            this.radDateTimePicker2.Size = new System.Drawing.Size(139, 24);
-            this.radDateTimePicker2.TabIndex = 1;
-            this.radDateTimePicker2.TabStop = false;
-            this.radDateTimePicker2.Text = "20.01.2020";
-            this.radDateTimePicker2.Value = new System.DateTime(2020, 1, 20, 23, 23, 3, 25);
+            this.radLabel2.Location = new System.Drawing.Point(10, 65);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(57, 18);
+            this.radLabel2.TabIndex = 0;
+            this.radLabel2.Text = "Bitiş Tarihi";
             // 
-            // radDropDownList1
+            // radLabel1
             // 
-            this.radDropDownList1.DropDownAnimationEnabled = false;
-            radListDataItem2.Text = "PEŞİN";
-            radListDataItem3.Text = "HAVALE";
-            this.radDropDownList1.Items.Add(radListDataItem1);
-            this.radDropDownList1.Items.Add(radListDataItem2);
-            this.radDropDownList1.Items.Add(radListDataItem3);
-            this.radDropDownList1.Location = new System.Drawing.Point(119, 26);
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(156, 24);
-            this.radDropDownList1.TabIndex = 1;
-            // 
-            // radDropDownList2
-            // 
-            this.radDropDownList2.DropDownAnimationEnabled = false;
-            this.radDropDownList2.Location = new System.Drawing.Point(119, 66);
-            this.radDropDownList2.Name = "radDropDownList2";
-            this.radDropDownList2.Size = new System.Drawing.Size(156, 24);
-            this.radDropDownList2.TabIndex = 1;
-            this.radDropDownList2.Text = "radDropDownList1";
-            // 
-            // radDropDownList3
-            // 
-            this.radDropDownList3.DropDownAnimationEnabled = false;
-            this.radDropDownList3.Location = new System.Drawing.Point(119, 108);
-            this.radDropDownList3.Name = "radDropDownList3";
-            this.radDropDownList3.Size = new System.Drawing.Size(156, 24);
-            this.radDropDownList3.TabIndex = 1;
-            this.radDropDownList3.Text = "radDropDownList1";
+            this.radLabel1.Location = new System.Drawing.Point(10, 30);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(83, 18);
+            this.radLabel1.TabIndex = 0;
+            this.radLabel1.Text = "Başlangıç Tarihi";
             // 
             // TopluFatura
             // 
@@ -289,23 +292,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
-            this.radGroupBox1.ResumeLayout(false);
-            this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
+            this.radGroupBox1.ResumeLayout(false);
+            this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
