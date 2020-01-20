@@ -26,7 +26,9 @@ namespace EFaturaApp
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-
+            TopluFatura frmTopluFatura = new TopluFatura();
+            frmTopluFatura.MdiParent = this;
+            frmTopluFatura.Show();
         }
     }
 }
