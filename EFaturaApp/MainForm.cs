@@ -15,9 +15,16 @@ namespace EFaturaApp
         public MainForm()
         {
             InitializeComponent();
+            radDock1.AutoDetectMdiChildren = true;
+            documentContainer1.SendToBack();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radButton1_Click(object sender, EventArgs e)
         {
 
         }
