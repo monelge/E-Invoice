@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,6 +74,42 @@
     </Compile>
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\DevaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\DevaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\DevaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\fatura.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\faturahar.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\irsaliye.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\krhatsub.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\krmuste.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\tesellum.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntFM\tesellumhar.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +144,14 @@
     <EmbeddedResource Include="TopluFatura.resx">
       <DependentUpon>TopluFatura.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="EntFM\DevaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DevaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntFM\DevaModel.edmx.diagram">
+      <DependentUpon>DevaModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,6 +164,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntFM\DevaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DevaModel.Context.cs</LastGenOutput>
+      <DependentUpon>DevaModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="EntFM\DevaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DevaModel.edmx</DependentUpon>
+      <LastGenOutput>DevaModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

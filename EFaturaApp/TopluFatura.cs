@@ -17,6 +17,10 @@ namespace EFaturaApp
             InitializeComponent();
         }
 
+        void sayfaYukle()
+        {
+
+        }
         private void TopluFatura_Load(object sender, EventArgs e)
         {
 
