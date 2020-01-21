@@ -19,11 +19,12 @@ namespace EFaturaApp
     {
         EKSPRES2017Entities dbEntities = new EKSPRES2017Entities();
         private Configuration configuration;
-        Logger logger = LogManager.GetCurrentClassLogger();
+        private Logger logger;
 
         public TopluFatura()
         {
             InitializeComponent();
+            logger = LogManager.LoadConfiguration("NLog.config").GetCurrentClassLogger();
         }
 
         void sayfaYukle()
@@ -141,12 +142,13 @@ namespace EFaturaApp
             {
                 var s = SqlQuery();
                 var veriLst = dbEntities.Database.SqlQuery<TesellumClass>(SqlQuery()).ToList();
+
                 radGridView1.DataSource = veriLst;
                 radGridView1.Refresh();
             }
             catch (Exception exception)
             {
-               logger.Error(exception);
+               logger.Error(exception.Message);
             }
 
         }
