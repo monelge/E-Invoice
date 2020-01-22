@@ -26,6 +26,9 @@ namespace EFaturaApp
         private Logger logger;
         private int listedurum;
         private int iIsaretDurum;
+        RadPanel radPanel = new RadPanel();
+        RadProgressBar radProgressBar = new RadProgressBar();
+        RadLabel radLabel = new RadLabel();
 
         public TopluFatura()
         {
@@ -357,7 +360,6 @@ namespace EFaturaApp
         }
         int faturaekle(DataTable fatDt)
         {
-
             System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
             string kull = (string)settingsReader.GetValue("kull", typeof(String));
             string iban = (string)settingsReader.GetValue("iban", typeof(String));
@@ -521,7 +523,6 @@ namespace EFaturaApp
                 DataBaseSorgu.VeriIsle.local.Close();
 
             }
-
         }
         void bakiyehesapla(string fatref)
         {
@@ -647,26 +648,65 @@ namespace EFaturaApp
 
             }
         }
+        void LoadingPanel()
+        {
+            int iw = 300;
+            int ih = 100;
+            radPanel.Controls.Add(radProgressBar);
+            radPanel.Controls.Add(radLabel);
+            this.Controls.Add(radPanel);
+            radProgressBar.Width = iw;
+            radProgressBar.Padding = new Padding { Top = 10, Bottom = 10 };
+            radLabel.Padding = new Padding { Left = 10 };
+
+            radPanel.Height = ih;
+            radPanel.Width = iw;
+            radPanel.BackColor = Color.AliceBlue;
+            tableLayoutPanel1.SendToBack();
+            radPanel.BringToFront();
+            radPanel.Left = (this.ClientSize.Width - radPanel.Width) / 2;
+            radPanel.Top = (this.ClientSize.Height - radPanel.Height) / 2;
+            Application.DoEvents();
+
+        }
+        void LoadingPanelIslem(int iTotal, int iSayici)
+        {
+            radLabel.Text = "Toplam İşlenen Kayıt " + iSayici + " / " + iTotal;
+            radProgressBar.Minimum = 0;
+            radProgressBar.Maximum = iTotal;
+            radProgressBar.Value1 = iSayici;
+        }
         private void commandBarButton3_Click(object sender, EventArgs e)
         {
-            if (iIsaretDurum==0)
+            int iTotal = radGridView1.Rows.Count;
+            LoadingPanel();
+            if (iIsaretDurum == 0)
             {
-                for (int i = 0; i < radGridView1.Rows.Count; i++)
+                for (int i = 0; i < iTotal; i++)
                 {
-                    System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
-                    double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
-
-                    bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
-                    int veri = Convert.ToInt16(tt);
-
-                    string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
-                    if (ve != "" && Convert.ToDouble(ve) != tutar)
+                    try
                     {
-                        DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='1' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
+                        System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
+                        double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
+
+                        bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
+                        int veri = Convert.ToInt16(tt);
+
+                        string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
+                        if (ve != "" && Convert.ToDouble(ve) != tutar)
+                        {
+                            DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='1' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
+                        }
+                        else
+                        {
+                            radGridView1.Rows[i].Cells["isaret"].Value = false;
+                        }
+
+                        this.BeginInvoke((Action)(() => LoadingPanelIslem(iTotal, i)));
                     }
-                    else
+                    catch (Exception exception)
                     {
-                        radGridView1.Rows[i].Cells["isaret"].Value = false;
+                        logger.Error(exception.Message);
                     }
                 }
                 Listeleme(listedurum);
@@ -678,31 +718,42 @@ namespace EFaturaApp
 
             if (iIsaretDurum == 1)
             {
-                for (int i = 0; i < radGridView1.Rows.Count; i++)
+                for (int i = 0; i < iTotal; i++)
                 {
-                    System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
-                    double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
-
-                    bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
-                    int veri = Convert.ToInt16(tt);
-
-                    string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
-                    if (ve != "" && Convert.ToDouble(ve) != tutar)
+                    try
                     {
-                        DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='0' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
+                        System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
+                        double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
+
+                        bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
+                        int veri = Convert.ToInt16(tt);
+
+                        string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
+                        if (ve != "" && Convert.ToDouble(ve) != tutar)
+                        {
+                            DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='0' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
+                        }
+                        else
+                        {
+                            radGridView1.Rows[i].Cells["isaret"].Value = false;
+                        }
+                        this.BeginInvoke(new Action(() => LoadingPanelIslem(iTotal, i)));
                     }
-                    else
+                    catch (Exception exception)
                     {
-                        radGridView1.Rows[i].Cells["isaret"].Value = true;
+                        logger.Error(exception.Message);
                     }
                 }
                 Listeleme(listedurum);
                 radGridView1.Refresh();
                 Application.DoEvents();
                 iIsaretDurum = 1;
-                commandBarButton3.Text = "Tümünü İşaretle";
+                commandBarButton3.Text = "Tümünü Işaretle";
             }
-           
+        }
+        private void commandBarButton4_Click(object sender, EventArgs e)
+        {
+            LoadingPanel();
         }
     }
 }
