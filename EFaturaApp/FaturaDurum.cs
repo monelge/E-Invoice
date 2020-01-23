@@ -33,7 +33,8 @@ namespace EFaturaApp
 
         private void Listeleme()
         {
-            var ftrList = dbEntities.fatura.Where(x => x.EFaturaDurum != 1300 && x.takipseri=="AEK2020").Select(x => new
+            int iSbKd = Convert.ToInt32(FuncClass.SubeKoduNo);
+            var ftrList = dbEntities.fatura.Where(x => x.soyadi1 != "ACCEPT" && x.takipseri == "AEK2020" && x.iptal != "1" && x.alicisube==iSbKd).Select(x => new
             {
                 x.@ref,
                 x.takipseri,
@@ -56,6 +57,21 @@ namespace EFaturaApp
             });
             radGridView1.DataSource = ftrList.ToList();
             radGridView1.Refresh();
+            radGridView1.Columns[0].Width = 5;
+            radGridView1.Columns[1].BestFit();
+            radGridView1.Columns[2].BestFit();
+            radGridView1.Columns[3].BestFit();
+            radGridView1.Columns[4].Width = 5;
+            radGridView1.Columns[5].BestFit();
+            radGridView1.Columns[6].BestFit();
+            radGridView1.Columns[7].BestFit();
+            radGridView1.Columns[10].BestFit();
+            radGridView1.Columns[11].Width = 5;
+            radGridView1.Columns[13].Width = 5;
+            radGridView1.Columns[14].Width = 5;
+
+
+
         }
         private void commandBarButton1_Click(object sender, EventArgs e)
         {
@@ -74,13 +90,14 @@ namespace EFaturaApp
 
         private bool EFaturaDurumEkle(string sFatNo, int sreff)
         {
+          
             try
             {
                 var dd = currentEdm.CheckInvoiceStatus(sFatNo, null);
                 var lFat = dbEntities.fatura.FirstOrDefault(x => x.@ref == sreff);
                 lFat.adi1 = dd.ENVELOPE_IDENTIFIER;
                 lFat.EFaturaNo = dd.ID;
-                lFat.soyadi1 = dd.RESPONSE_CODE;
+                lFat.soyadi1 = dd.RESPONSE_CODE == "" ? dd.STATUS : dd.RESPONSE_CODE;
                 lFat.aciklama2 = dd.STATUS_DESCRIPTION;
                 lFat.EFaturaDurum = (short)dd.GIB_STATUS_CODE;
                 dbEntities.SaveChanges();

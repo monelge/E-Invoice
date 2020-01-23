@@ -16,7 +16,7 @@ namespace EFaturaApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FaturaDurum());
+            Application.Run(new MainForm());
         }
     }
 }

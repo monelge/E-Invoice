@@ -30,5 +30,12 @@ namespace EFaturaApp
             frmTopluFatura.MdiParent = this;
             frmTopluFatura.Show();
         }
+
+        private void radButton5_Click(object sender, EventArgs e)
+        {
+            FaturaDurum faturaDurum = new FaturaDurum();
+            faturaDurum.MdiParent = this;
+            faturaDurum.Show();
+        }
     }
 }
