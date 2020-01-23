@@ -151,6 +151,12 @@
     <Compile Include="FaturaDurum.Designer.cs">
       <DependentUpon>FaturaDurum.cs</DependentUpon>
     </Compile>
+    <Compile Include="FaturaGonder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaturaGonder.Designer.cs">
+      <DependentUpon>FaturaGonder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Func\FuncClass.cs" />
     <Compile Include="Func\LoggerClass.cs" />
     <Compile Include="Func\TesellumClass.cs" />
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FaturaDurum.resx">
       <DependentUpon>FaturaDurum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaturaGonder.resx">
+      <DependentUpon>FaturaGonder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

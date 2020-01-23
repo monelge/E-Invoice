@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.radDock1 = new Telerik.WinControls.UI.Docking.RadDock();
             this.toolWindow1 = new Telerik.WinControls.UI.Docking.ToolWindow();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
@@ -38,10 +39,11 @@
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radButton5 = new Telerik.WinControls.UI.RadButton();
             this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
-            this.radButton5 = new Telerik.WinControls.UI.RadButton();
+            this.radButton6 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
             this.toolWindow1.SuspendLayout();
@@ -53,10 +55,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             this.radPageViewPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
             this.toolTabStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,6 +157,7 @@
             // 
             this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton1.Image = ((System.Drawing.Image)(resources.GetObject("radButton1.Image")));
             this.radButton1.Location = new System.Drawing.Point(3, 3);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(280, 62);
@@ -171,12 +175,24 @@
             // 
             // radPageViewPage3
             // 
+            this.radPageViewPage3.Controls.Add(this.radButton6);
             this.radPageViewPage3.Controls.Add(this.radButton5);
             this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(298F, 32F);
             this.radPageViewPage3.Location = new System.Drawing.Point(5, 31);
             this.radPageViewPage3.Name = "radPageViewPage3";
             this.radPageViewPage3.Size = new System.Drawing.Size(286, 424);
             this.radPageViewPage3.Text = "EFatura-EArşiv Durumlar";
+            // 
+            // radButton5
+            // 
+            this.radButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton5.Location = new System.Drawing.Point(3, 71);
+            this.radButton5.Name = "radButton5";
+            this.radButton5.Size = new System.Drawing.Size(280, 62);
+            this.radButton5.TabIndex = 6;
+            this.radButton5.Text = "E-Fatura Durum İşlemleri";
+            this.radButton5.Click += new System.EventHandler(this.radButton5_Click);
             // 
             // radPageViewPage4
             // 
@@ -216,16 +232,15 @@
             this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-98, 0);
             this.documentContainer1.TabIndex = 2;
             // 
-            // radButton5
+            // radButton6
             // 
-            this.radButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.radButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radButton5.Location = new System.Drawing.Point(3, 3);
-            this.radButton5.Name = "radButton5";
-            this.radButton5.Size = new System.Drawing.Size(280, 62);
-            this.radButton5.TabIndex = 6;
-            this.radButton5.Text = "E-Fatura Durum İşlemleri";
-            this.radButton5.Click += new System.EventHandler(this.radButton5_Click);
+            this.radButton6.Location = new System.Drawing.Point(3, 3);
+            this.radButton6.Name = "radButton6";
+            this.radButton6.Size = new System.Drawing.Size(280, 62);
+            this.radButton6.TabIndex = 6;
+            this.radButton6.Text = "E-Fatura Gönder";
             // 
             // MainForm
             // 
@@ -255,10 +270,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             this.radPageViewPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
             this.toolTabStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -280,5 +296,6 @@
         private Telerik.WinControls.UI.RadButton radButton2;
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadButton radButton5;
+        private Telerik.WinControls.UI.RadButton radButton6;
     }
 }
