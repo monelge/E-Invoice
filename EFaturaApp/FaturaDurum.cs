@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EFaturaApp.EntFM;
+using EFaturaApp.Func;
+using EfatWebservis;
+using NLog;
 
 namespace EFaturaApp
 {
@@ -15,6 +18,9 @@ namespace EFaturaApp
     {
 
         EKSPRES2017Entities dbEntities = new EKSPRES2017Entities();
+        private EdmServisClass currentEdm;
+        private Logger logger;
+
         public FaturaDurum()
         {
             InitializeComponent();
@@ -27,7 +33,7 @@ namespace EFaturaApp
 
         private void Listeleme()
         {
-            var ftrList = dbEntities.fatura.Where(x => x.EFaturaDurum == 1).Select(x => new
+            var ftrList = dbEntities.fatura.Where(x => x.EFaturaDurum != 1300 && x.takipseri=="AEK2020").Select(x => new
             {
                 x.@ref,
                 x.takipseri,
@@ -45,7 +51,7 @@ namespace EFaturaApp
                 x.EFaturaDurum,
                 x.EFatura,
                 x.EFaturaNo,
-                x.EFaturaTipi
+                x.aciklama2
 
             });
             radGridView1.DataSource = ftrList.ToList();
@@ -53,12 +59,47 @@ namespace EFaturaApp
         }
         private void commandBarButton1_Click(object sender, EventArgs e)
         {
-           Listeleme();
+            Listeleme();
+            WebserviseLoginOl();
+        }
+        private bool WebserviseLoginOl()
+        {
+            string edmServiceUrl = "https://portal2.edmbilisim.com.tr/EFaturaEDM/EFaturaEDM.svc?wsdl";
+            currentEdm = new EdmServisClass(edmServiceUrl);
+            currentEdm.EDMLogin = "monelge";
+            currentEdm.EDMPassw = "123654";
+            var sessionID = currentEdm.EDMGetSession();
+            return true;
         }
 
+        private bool EFaturaDurumEkle(string sFatNo, int sreff)
+        {
+            try
+            {
+                var dd = currentEdm.CheckInvoiceStatus(sFatNo, null);
+                var lFat = dbEntities.fatura.FirstOrDefault(x => x.@ref == sreff);
+                lFat.adi1 = dd.ENVELOPE_IDENTIFIER;
+                lFat.EFaturaNo = dd.ID;
+                lFat.soyadi1 = dd.RESPONSE_CODE;
+                lFat.aciklama2 = dd.STATUS_DESCRIPTION;
+                lFat.EFaturaDurum = (short)dd.GIB_STATUS_CODE;
+                dbEntities.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                LoggerClass.ERROR = e.Message;
+                return false;
+            }
+        }
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
-          
+            DataTable veri = Func.FuncClass.GridViewToTable(radGridView1);
+            for (int i = 0; i < veri.Rows.Count; i++)
+            {
+                string FaturaNO = veri.Rows[i][1] + veri.Rows[i][2].ToString().PadLeft(9, '0');
+                EFaturaDurumEkle(FaturaNO, Convert.ToInt32(veri.Rows[i][0].ToString()));
+            }
         }
     }
 }

@@ -9,11 +9,12 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>EFaturaApp</RootNamespace>
     <AssemblyName>EFaturaApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -151,6 +152,7 @@
       <DependentUpon>FaturaDurum.cs</DependentUpon>
     </Compile>
     <Compile Include="Func\FuncClass.cs" />
+    <Compile Include="Func\LoggerClass.cs" />
     <Compile Include="Func\TesellumClass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -184,6 +186,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TopluFatura.resx">
       <DependentUpon>TopluFatura.cs</DependentUpon>
