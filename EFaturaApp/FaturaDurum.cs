@@ -11,6 +11,8 @@ using EFaturaApp.EntFM;
 using EFaturaApp.Func;
 using EfatWebservis;
 using NLog;
+using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace EFaturaApp
 {
@@ -116,6 +118,22 @@ namespace EFaturaApp
             {
                 string FaturaNO = veri.Rows[i][1] + veri.Rows[i][2].ToString().PadLeft(9, '0');
                 EFaturaDurumEkle(FaturaNO, Convert.ToInt32(veri.Rows[i][0].ToString()));
+            }
+        }
+
+        private void radGridView1_RowFormatting(object sender, Telerik.WinControls.UI.RowFormattingEventArgs e)
+        {
+            if ((string)e.RowElement.RowInfo.Cells["aciklama2"].Value == "WAIT_APPLICATION_RESPONSE")
+            {
+                e.RowElement.DrawFill = true;
+                e.RowElement.GradientStyle = GradientStyles.Solid;
+                e.RowElement.BackColor = Color.Yellow;
+            }
+            else
+            {
+                e.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local);
+                e.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local);
+                e.RowElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local);
             }
         }
     }

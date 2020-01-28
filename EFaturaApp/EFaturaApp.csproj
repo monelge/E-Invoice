@@ -157,6 +157,7 @@
     <Compile Include="FaturaGonder.Designer.cs">
       <DependentUpon>FaturaGonder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Func\FaturaClass.cs" />
     <Compile Include="Func\FuncClass.cs" />
     <Compile Include="Func\LoggerClass.cs" />
     <Compile Include="Func\TesellumClass.cs" />
