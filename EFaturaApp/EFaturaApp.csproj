@@ -109,42 +109,6 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EntFM\DevaModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DevaModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\DevaModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\DevaModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DevaModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\fatura.cs">
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\faturahar.cs">
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\irsaliye.cs">
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\krhatsub.cs">
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\krmuste.cs">
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\tesellum.cs">
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntFM\tesellumhar.cs">
-      <DependentUpon>DevaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="FaturaDurum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,13 +165,6 @@
     <EmbeddedResource Include="TopluFatura.resx">
       <DependentUpon>TopluFatura.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="EntFM\DevaModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DevaModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="EntFM\DevaModel.edmx.diagram">
-      <DependentUpon>DevaModel.edmx</DependentUpon>
-    </None>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -233,16 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eFatura.ico" />
-    <Content Include="EntFM\DevaModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DevaModel.Context.cs</LastGenOutput>
-      <DependentUpon>DevaModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="EntFM\DevaModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DevaModel.edmx</DependentUpon>
-      <LastGenOutput>DevaModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -254,6 +201,10 @@
     <ProjectReference Include="..\..\EfatWebservisCanli\EfatWebservis\EfatWebservis.csproj">
       <Project>{5aa6a207-f9fe-47f8-8d31-b60be1eac36c}</Project>
       <Name>EfatWebservis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntFMSystem\EntFMSystem.csproj">
+      <Project>{3a467a9d-3a64-41af-9021-03c3b003baf7}</Project>
+      <Name>EntFMSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

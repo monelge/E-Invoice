@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EFaturaApp.EntFM
+namespace EntFMSystem
 {
     using System;
     using System.Collections.Generic;

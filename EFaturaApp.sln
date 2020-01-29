@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFaturaApp", "EFaturaApp\EF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfatWebservis", "..\EfatWebservisCanli\EfatWebservis\EfatWebservis.csproj", "{5AA6A207-F9FE-47F8-8D31-B60BE1EAC36C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntFMSystem", "EntFMSystem\EntFMSystem.csproj", "{3A467A9D-3A64-41AF-9021-03C3B003BAF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5AA6A207-F9FE-47F8-8D31-B60BE1EAC36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AA6A207-F9FE-47F8-8D31-B60BE1EAC36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AA6A207-F9FE-47F8-8D31-B60BE1EAC36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A467A9D-3A64-41AF-9021-03C3B003BAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A467A9D-3A64-41AF-9021-03C3B003BAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A467A9D-3A64-41AF-9021-03C3B003BAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A467A9D-3A64-41AF-9021-03C3B003BAF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
