@@ -26,7 +26,7 @@ namespace EFaturaApp
         bool listele()
         {
             int sube = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.takipseri == "AEK2020" && x.alicisube == sube).Select(x => new FaturaClass
+            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.takipseri == "AEK2020" && x.alicisube == sube && x.iptal!="1").Select(x => new FaturaClass
             {
                 isaret = (bool)(x.isaret == null || x.isaret == "0"? false : true),
                 takipseri = x.takipseri,
