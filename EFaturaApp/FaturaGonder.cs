@@ -23,12 +23,36 @@ namespace EFaturaApp
             InitializeComponent();
         }
 
+        bool Gonder(int FtTur)
+        {
+            try
+            {
+                DataTable dataTable = ViewToTable(dataGridView1);
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    int _ref = Convert.ToInt32(dataTable.Rows[i]["ref"].ToString());
+                    var Fatura = ekspres2017Entities.fatura.FirstOrDefault(f => f.@ref == _ref);
+                    var FatLst =
+                        ekspres2017Entities.faturahar.Where(h =>
+                            h.takipseri == Fatura.takipseri && h.fatno == Fatura.TakipNo).ToList();
+                    bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
+                }
+
+                listele();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         bool listele()
         {
             int sube = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.takipseri == "AEK2020" && x.alicisube == sube && x.iptal!="1").Select(x => new FaturaClass
+            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && (x.takipseri == "AEK2020" || x.takipseri == "AES2020") && x.alicisube == sube && x.iptal != "1").Select(x => new FaturaClass
             {
-                isaret = (bool)(x.isaret == null || x.isaret == "0"? false : true),
+                isaret = (bool)(x.isaret == null || x.isaret == "0" ? false : true),
                 takipseri = x.takipseri,
                 TakipNo = x.TakipNo,
                 tarih = x.tarih,
@@ -127,20 +151,20 @@ namespace EFaturaApp
 
             return dt;
         }
+
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = ViewToTable(dataGridView1);
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                int _ref = Convert.ToInt32(dataTable.Rows[i]["ref"].ToString());
-                var Fatura = ekspres2017Entities.fatura.FirstOrDefault(f => f.@ref == _ref);
-                var FatLst =
-                    ekspres2017Entities.faturahar.Where(h =>
-                        h.takipseri == Fatura.takipseri && h.fatno == Fatura.TakipNo).ToList();
-                bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst);
-            }
+            Gonder(1);
+        }
 
-            listele();
+        private void temelFaturaGönderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gonder(0);
+        }
+
+        private void ticariFataruGönderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gonder(1);
         }
     }
 }

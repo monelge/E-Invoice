@@ -206,7 +206,7 @@ namespace EFaturaApp
                                 "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
                                 " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
 
-
+                            sorgu += " and (t.gonderensube='" + radDropDownList2.SelectedValue.ToString() + "') ";
                             sorgu += " and (t.odemetipi='1') " +
                                      " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
                                      "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
@@ -227,6 +227,7 @@ namespace EFaturaApp
                                 "t.basildimi=1 and ((t.fatno is null) or  (t.fatno='')) and (t.turu<>'M') and (t.tti='E') and ((t.iptal<>1)or (t.iptal is null) ) and (t.odemetipi<>'5') and ( (Kr.TopluFatura='0') or  (Kr.TopluFatura='') or (kr.toplufatura is null)) " +
                                 "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
                                 " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
+                            sorgu += " and (t.alicisube='" + radDropDownList3.SelectedValue.ToString() + "') ";
 
                             sorgu += " and (t.odemetipi='2') " +
                                      " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
@@ -360,6 +361,8 @@ namespace EFaturaApp
         }
         int faturaekle(DataTable fatDt)
         {
+            string krKodu = fatDt.Rows[0]["tkodu"].ToString();
+            var KrMuste = dbEntities.krmuste.FirstOrDefault(x => x.kodu == krKodu);
             System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
             string kull = (string)settingsReader.GetValue("kull", typeof(String));
             string iban = (string)settingsReader.GetValue("iban", typeof(String));
@@ -389,7 +392,7 @@ namespace EFaturaApp
             cmd.Parameters.AddWithValue("@P10", fatDt.Rows[0]["toplam"].ToString()).SqlDbType = SqlDbType.Float;
             cmd.Parameters.AddWithValue("@P11", fatDt.Rows[0]["toplamkdv"].ToString()).SqlDbType = SqlDbType.Float;
             cmd.Parameters.AddWithValue("@P12", "0").SqlDbType = SqlDbType.VarChar;
-            cmd.Parameters.AddWithValue("@P13", "EFATURA").SqlDbType = SqlDbType.VarChar;
+            cmd.Parameters.AddWithValue("@P13", KrMuste.tahkodu).SqlDbType = SqlDbType.VarChar;
 
             if (odemetipi == 1)
             {
@@ -754,6 +757,16 @@ namespace EFaturaApp
         private void commandBarButton4_Click(object sender, EventArgs e)
         {
             LoadingPanel();
+        }
+
+        private void radGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                TeslimFisi frmtesres = new TeslimFisi(radGridView1.CurrentRow.Cells["takipseri"].Value.ToString(),
+                    radGridView1.CurrentRow.Cells["takipno"].Value.ToString());
+                frmtesres.ShowDialog();
+            }
         }
     }
 }

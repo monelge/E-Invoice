@@ -76,8 +76,8 @@
             // 
             // 
             // 
-            this.radDock1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.radDock1.Size = new System.Drawing.Size(1117, 642);
+            this.radDock1.RootElement.MinSize = new System.Drawing.Size(0, 0);
+            this.radDock1.Size = new System.Drawing.Size(1490, 804);
             this.radDock1.TabIndex = 0;
             this.radDock1.TabStop = false;
             // 
@@ -89,7 +89,7 @@
             this.toolWindow1.Location = new System.Drawing.Point(1, 2);
             this.toolWindow1.Name = "toolWindow1";
             this.toolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked;
-            this.toolWindow1.Size = new System.Drawing.Size(296, 628);
+            this.toolWindow1.Size = new System.Drawing.Size(264, 790);
             this.toolWindow1.Text = "toolWindow1";
             this.toolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None;
             // 
@@ -104,8 +104,8 @@
             this.radPageView1.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage3;
-            this.radPageView1.Size = new System.Drawing.Size(296, 628);
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
+            this.radPageView1.Size = new System.Drawing.Size(264, 790);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Outlook;
             ((Telerik.WinControls.UI.RadPageViewOutlookElement)(this.radPageView1.GetChildAt(0))).ItemDragMode = Telerik.WinControls.UI.PageViewItemDragMode.None;
@@ -117,10 +117,10 @@
             this.radPageViewPage1.Controls.Add(this.radButton3);
             this.radPageViewPage1.Controls.Add(this.radButton2);
             this.radPageViewPage1.Controls.Add(this.radButton1);
-            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(298F, 32F);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(266F, 32F);
             this.radPageViewPage1.Location = new System.Drawing.Point(5, 31);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(286, 424);
+            this.radPageViewPage1.Size = new System.Drawing.Size(254, 586);
             this.radPageViewPage1.Text = "E-Fatura İşlemleri";
             // 
             // radButton4
@@ -129,7 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton4.Location = new System.Drawing.Point(3, 207);
             this.radButton4.Name = "radButton4";
-            this.radButton4.Size = new System.Drawing.Size(280, 62);
+            this.radButton4.Size = new System.Drawing.Size(248, 62);
             this.radButton4.TabIndex = 2;
             this.radButton4.Text = "Taslak Oluştur";
             // 
@@ -139,7 +139,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton3.Location = new System.Drawing.Point(3, 139);
             this.radButton3.Name = "radButton3";
-            this.radButton3.Size = new System.Drawing.Size(280, 62);
+            this.radButton3.Size = new System.Drawing.Size(248, 62);
             this.radButton3.TabIndex = 3;
             this.radButton3.Text = "Serbest Fatura";
             // 
@@ -149,7 +149,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton2.Location = new System.Drawing.Point(3, 71);
             this.radButton2.Name = "radButton2";
-            this.radButton2.Size = new System.Drawing.Size(280, 62);
+            this.radButton2.Size = new System.Drawing.Size(248, 62);
             this.radButton2.TabIndex = 4;
             this.radButton2.Text = "Müşteriye Göre";
             // 
@@ -160,24 +160,24 @@
             this.radButton1.Image = ((System.Drawing.Image)(resources.GetObject("radButton1.Image")));
             this.radButton1.Location = new System.Drawing.Point(3, 3);
             this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(280, 62);
+            this.radButton1.Size = new System.Drawing.Size(248, 62);
             this.radButton1.TabIndex = 5;
             this.radButton1.Text = "Toplu Fatura Kesimi";
             this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // radPageViewPage2
             // 
-            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(298F, 32F);
-            this.radPageViewPage2.Location = new System.Drawing.Point(5, 31);
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(266F, 32F);
+            this.radPageViewPage2.Location = new System.Drawing.Point(3, 24);
             this.radPageViewPage2.Name = "radPageViewPage2";
-            this.radPageViewPage2.Size = new System.Drawing.Size(286, 424);
+            this.radPageViewPage2.Size = new System.Drawing.Size(220, 486);
             this.radPageViewPage2.Text = "E-Arşiv Fatura İşlemleri";
             // 
             // radPageViewPage3
             // 
             this.radPageViewPage3.Controls.Add(this.radButton6);
             this.radPageViewPage3.Controls.Add(this.radButton5);
-            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(298F, 32F);
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(266F, 32F);
             this.radPageViewPage3.Location = new System.Drawing.Point(5, 31);
             this.radPageViewPage3.Name = "radPageViewPage3";
             this.radPageViewPage3.Size = new System.Drawing.Size(286, 424);
@@ -207,7 +207,7 @@
             // 
             // radPageViewPage4
             // 
-            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(298F, 32F);
+            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(266F, 32F);
             this.radPageViewPage4.Location = new System.Drawing.Point(5, 31);
             this.radPageViewPage4.Name = "radPageViewPage4";
             this.radPageViewPage4.Size = new System.Drawing.Size(286, 424);
@@ -223,11 +223,11 @@
             // 
             // 
             // 
-            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(25, 25);
+            this.toolTabStrip1.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.toolTabStrip1.SelectedIndex = 0;
-            this.toolTabStrip1.Size = new System.Drawing.Size(298, 632);
-            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(298, 200);
-            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(98, 0);
+            this.toolTabStrip1.Size = new System.Drawing.Size(266, 794);
+            this.toolTabStrip1.SizeInfo.AbsoluteSize = new System.Drawing.Size(266, 246);
+            this.toolTabStrip1.SizeInfo.SplitterCorrection = new System.Drawing.Size(143, 0);
             this.toolTabStrip1.TabIndex = 1;
             this.toolTabStrip1.TabStop = false;
             // 
@@ -237,17 +237,17 @@
             // 
             // 
             // 
-            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(25, 25);
-            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(805, 200);
+            this.documentContainer1.RootElement.MinSize = new System.Drawing.Size(0, 0);
+            this.documentContainer1.SizeInfo.AbsoluteSize = new System.Drawing.Size(1210, 246);
             this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
-            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-98, 0);
+            this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-143, 0);
             this.documentContainer1.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 642);
+            this.ClientSize = new System.Drawing.Size(1490, 804);
             this.Controls.Add(this.radDock1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
