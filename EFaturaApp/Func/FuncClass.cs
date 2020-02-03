@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraExport.Xls;
 using Telerik.WinControls.UI;
 
 namespace EFaturaApp.Func
@@ -13,6 +14,38 @@ namespace EFaturaApp.Func
     public static class FuncClass
     {
         static AppSettingsReader settingsReader = new AppSettingsReader();
+
+        private static string FSeri;
+        public static string FSeriNO
+        {
+            get
+            {
+                string skodukull = (string)settingsReader.GetValue("fSeri", typeof(String));
+                return skodukull;
+            }
+
+        }
+
+        private static string FSerbestSeri;
+        public static string FSerbestSeriNO
+        {
+            get
+            {
+                string skodukull = (string)settingsReader.GetValue("fSerbet", typeof(String));
+                return skodukull;
+            }
+
+        }
+        private static string FArsiv;
+        public static string FArsivNO
+        {
+            get
+            {
+                string skodukull = (string)settingsReader.GetValue("fArsiv", typeof(String));
+                return skodukull;
+            }
+
+        }
         private static string SubeKodu;
 
         public static string SubeKoduNo

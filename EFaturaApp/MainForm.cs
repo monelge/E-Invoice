@@ -33,7 +33,7 @@ namespace EFaturaApp
 
         private void radButton5_Click(object sender, EventArgs e)
         {
-            FaturaDurum faturaDurum = new FaturaDurum();
+            FaturaDurum faturaDurum = new FaturaDurum(0);
             faturaDurum.MdiParent = this;
             faturaDurum.Show();
         }
@@ -43,6 +43,27 @@ namespace EFaturaApp
             FaturaGonder faturaGonder = new FaturaGonder();
             faturaGonder.MdiParent = this;
             faturaGonder.Show();
+        }
+
+        private void radButton10_Click(object sender, EventArgs e)
+        {
+            TopluArsiv frmTopluFatura = new TopluArsiv();
+            frmTopluFatura.MdiParent = this;
+            frmTopluFatura.Show();
+        }
+
+        private void radButton11_Click(object sender, EventArgs e)
+        {
+            EArsivGonder frmTopluFatura = new EArsivGonder();
+            frmTopluFatura.MdiParent = this;
+            frmTopluFatura.Show();
+        }
+
+        private void radButton13_Click(object sender, EventArgs e)
+        {
+            FaturaDurum faturaDurum = new FaturaDurum(1);
+            faturaDurum.MdiParent = this;
+            faturaDurum.Show();
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,17 +9,39 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EFaturaApp.Func;
 using EntFMSystem;
-using Telerik.WinControls;
-using Telerik.WinControls.UI;
 
 namespace EFaturaApp
 {
-    public partial class FaturaGonder : BaseForm
+    public partial class EArsivGonder : BaseForm
     {
         EKSPRES2017Entities ekspres2017Entities = new EKSPRES2017Entities();
-        public FaturaGonder()
+        public EArsivGonder()
         {
             InitializeComponent();
+        }
+        public DataTable ViewToTable(DataGridView gridView)
+        {
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn col in gridView.Columns)
+            {
+                dt.Columns.Add(col.HeaderText);
+            }
+
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if ((bool)row.Cells["isaret"].Value == true)
+                {
+                    DataRow dRow = dt.NewRow();
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        dRow[cell.ColumnIndex] = cell.Value;
+                    }
+
+                    dt.Rows.Add(dRow);
+                }
+            }
+
+            return dt;
         }
 
         bool Gonder(int FtTur)
@@ -50,7 +71,7 @@ namespace EFaturaApp
         bool listele()
         {
             int sube = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && (x.takipseri == FuncClass.FSeriNO|| x.takipseri == FuncClass.FSerbestSeriNO)  && x.iptal != "1").Select(x => new FaturaClass //&& x.alicisube == sube
+            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.takipseri == FuncClass.FArsivNO && x.alicisube == sube && x.iptal != "1").Select(x => new FaturaClass
             {
                 isaret = (bool)(x.isaret == null || x.isaret == "0" ? false : true),
                 takipseri = x.takipseri,
@@ -69,19 +90,7 @@ namespace EFaturaApp
             return true;
 
         }
-        private void FaturaGonder_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void commandBarButton1_Click(object sender, EventArgs e)
-        {
-            listele();
-            EfatWebservis.FaturaIslem.folderkontrol();
-        }
-
-
-        private void commandBarButton3_Click(object sender, EventArgs e)
+        private void EArsivGonder_Load(object sender, EventArgs e)
         {
 
         }
@@ -112,59 +121,16 @@ namespace EFaturaApp
             {
 
             }
-
         }
 
-        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        private void commandBarButton1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                bool tt = (bool)dataGridView1.Rows[i].Cells[10].Value;
-                if (tt == true)
-                {
-                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    dataGridView1.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Red;
-                }
-            }
-        }
-        public DataTable ViewToTable(DataGridView gridView)
-        {
-            DataTable dt = new DataTable();
-            foreach (DataGridViewColumn col in gridView.Columns)
-            {
-                dt.Columns.Add(col.HeaderText);
-            }
-
-            foreach (DataGridViewRow row in gridView.Rows)
-            {
-                if ((bool)row.Cells["isaret"].Value == true)
-                {
-                    DataRow dRow = dt.NewRow();
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        dRow[cell.ColumnIndex] = cell.Value;
-                    }
-
-                    dt.Rows.Add(dRow);
-                }
-            }
-
-            return dt;
+            listele();
         }
 
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
-            Gonder(1);
-        }
-
-        private void temelFaturaGönderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Gonder(0);
-        }
-
-        private void ticariFataruGönderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Gonder(1);
+            Gonder(3);
         }
     }
 }

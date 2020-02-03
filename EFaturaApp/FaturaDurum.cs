@@ -28,18 +28,17 @@ namespace EFaturaApp
         private Label _label = new Label();
 
         private BackgroundWorker worker = new BackgroundWorker();
-
-        public FaturaDurum()
+        private int _durum;
+        public FaturaDurum(int durum)
         {
             InitializeComponent();
-
             worker.DoWork += WorkerOnDoWork;
-
+            this._durum = durum;
         }
 
         void loadinPanelOrtala()
         {
-           
+
             panel1.Location = new Point(
                 this.ClientSize.Width / 2 - panel1.Size.Width / 2,
                 this.ClientSize.Height / 2 - panel1.Size.Height / 2);
@@ -57,24 +56,26 @@ namespace EFaturaApp
 
             DataTable veri = Func.FuncClass.GridViewToTable(radGridView1);
 
-            panel1.Invoke(new Action(() => { panel1.Visible = true;}));
+            panel1.Invoke(new Action(() => { panel1.Visible = true; }));
             for (int i = 0; i < veri.Rows.Count; i++)
             {
                 string FaturaNO = veri.Rows[i][1] + veri.Rows[i][2].ToString().PadLeft(9, '0');
                 //  progressBar1.Invoke(new Action(() => progressBar1.Value = i));
                 this.Invoke(new Action(() =>
-               {
-                   progressBar1.Maximum = radGridView1.Rows.Count;
-                   progressBar1.Minimum = 0;
-                   radLabel1.Text = "Kontrol edilen Fatura No : "+FaturaNO;
-                   progressBar1.Value = i;
-                   progressBar1.Text = "Toplam :"+i+" / "+ radGridView1.Rows.Count;
-               }));
+                {
+                    progressBar1.Maximum = radGridView1.Rows.Count;
+                    progressBar1.Minimum = 0;
+                    radLabel1.Text = "Kontrol edilen Fatura No : " + FaturaNO;
+                    progressBar1.Value = i;
+                    progressBar1.Text = "Toplam :" + i + " / " + radGridView1.Rows.Count;
+                }));
 
                 EFaturaDurumEkle(FaturaNO, Convert.ToInt32(veri.Rows[i][0].ToString()));
             }
+
             panel1.Invoke(new Action(() => { panel1.Visible = false; }));
         }
+
         private void WorkerOnDoWork(object sender, DoWorkEventArgs e)
         {
             FaturaKontrol();
@@ -88,29 +89,68 @@ namespace EFaturaApp
         private void Listeleme()
         {
             int iSbKd = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var ftrList = dbEntities.fatura.Where(x => x.soyadi1 != "ACCEPT" && x.takipseri == "AEK2020" && x.iptal != "1" && x.alicisube == iSbKd).Select(x => new
+            if (_durum == 0)
             {
-                x.@ref,
-                x.takipseri,
-                x.TakipNo,
-                x.tarih,
-                x.carikod,
-                x.adi,
-                x.alicisube,
-                x.gonderensube,
-                x.yekun,
-                x.toplamkdv,
-                x.toplam,
-                x.adi1,
-                x.soyadi1,
-                x.EFaturaDurum,
-                x.EFatura,
-                x.EFaturaNo,
-                x.aciklama2
+                var ftrList = dbEntities.fatura.Where(x =>
+                    (x.soyadi1 != "ACCEPT" && x.soyadi1 != "SEND - SUCCEED") &&
+                    (x.takipseri == FuncClass.FSeriNO || x.takipseri == FuncClass.FSerbestSeriNO) && x.iptal != "1" //&& x.alicisube == iSbKd
+                    ).Select(
+                    x => new
+                    {
+                        x.@ref,
+                        x.takipseri,
+                        x.TakipNo,
+                        x.tarih,
+                        x.carikod,
+                        x.adi,
+                        x.alicisube,
+                        x.gonderensube,
+                        x.yekun,
+                        x.toplamkdv,
+                        x.toplam,
+                        x.adi1,
+                        x.soyadi1,
+                        x.EFaturaDurum,
+                        x.EFatura,
+                        x.EFaturaNo,
+                        x.aciklama2
 
-            });
-            radGridView1.DataSource = ftrList.ToList();
+                    });
+                radGridView1.DataSource = ftrList.ToList();
+            }
+            if (_durum == 1)
+            {
+                var ftrList = dbEntities.fatura.Where(x =>
+                    (x.soyadi1 != "ACCEPT" && x.soyadi1 != "SEND - SUCCEED") &&
+                    (x.takipseri == FuncClass.FArsivNO) && x.iptal != "1" &&
+                    x.alicisube == iSbKd).Select(
+                    x => new
+                    {
+                        x.@ref,
+                        x.takipseri,
+                        x.TakipNo,
+                        x.tarih,
+                        x.carikod,
+                        x.adi,
+                        x.alicisube,
+                        x.gonderensube,
+                        x.yekun,
+                        x.toplamkdv,
+                        x.toplam,
+                        x.adi1,
+                        x.soyadi1,
+                        x.EFaturaDurum,
+                        x.EFatura,
+                        x.EFaturaNo,
+                        x.aciklama2
+
+                    });
+                radGridView1.DataSource = ftrList.ToList();
+            }
+
             radGridView1.Refresh();
+            
+
             radGridView1.Columns[0].Width = 5;
             radGridView1.Columns[1].BestFit();
             radGridView1.Columns[2].BestFit();
@@ -127,11 +167,13 @@ namespace EFaturaApp
 
 
         }
+
         private void commandBarButton1_Click(object sender, EventArgs e)
         {
             Listeleme();
             WebserviseLoginOl();
         }
+
         private bool WebserviseLoginOl()
         {
             string edmServiceUrl = "https://portal2.edmbilisim.com.tr/EFaturaEDM/EFaturaEDM.svc?wsdl";
@@ -162,6 +204,7 @@ namespace EFaturaApp
                 return false;
             }
         }
+
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
             loadinPanelOrtala();
@@ -174,18 +217,31 @@ namespace EFaturaApp
 
         private void radGridView1_RowFormatting(object sender, Telerik.WinControls.UI.RowFormattingEventArgs e)
         {
-            if ((string)e.RowElement.RowInfo.Cells["aciklama2"].Value == "WAIT_APPLICATION_RESPONSE")
+
+            switch ((string)e.RowElement.RowInfo.Cells["soyadi1"].Value)
             {
-                e.RowElement.DrawFill = true;
-                e.RowElement.GradientStyle = GradientStyles.Solid;
-                e.RowElement.BackColor = Color.Yellow;
+                case "SEND - WAIT_APPLICATION_RESPONSE":
+                    e.RowElement.DrawFill = true;
+                    e.RowElement.GradientStyle = GradientStyles.Solid;
+                    e.RowElement.BackColor = Color.Yellow;
+                    break;
+                case "REJECT":
+                    e.RowElement.DrawFill = true;
+                    e.RowElement.GradientStyle = GradientStyles.Solid;
+                    e.RowElement.BackColor = Color.Red;
+                    break;
+                case "LOAD - SUCCEED":
+                    e.RowElement.DrawFill = true;
+                    e.RowElement.GradientStyle = GradientStyles.Solid;
+                    e.RowElement.BackColor = Color.DodgerBlue;
+                    break;
+                default:
+                    e.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local);
+                    e.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local);
+                    e.RowElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local);
+                    break;
             }
-            else
-            {
-                e.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local);
-                e.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local);
-                e.RowElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local);
-            }
+            
         }
     }
 }

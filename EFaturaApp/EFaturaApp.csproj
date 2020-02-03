@@ -115,6 +115,12 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EArsivGonder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EArsivGonder.Designer.cs">
+      <DependentUpon>EArsivGonder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FaturaDurum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,12 @@
     <Compile Include="TeslimFisi.Designer.cs">
       <DependentUpon>TeslimFisi.cs</DependentUpon>
     </Compile>
+    <Compile Include="TopluArsiv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopluArsiv.Designer.cs">
+      <DependentUpon>TopluArsiv.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopluFatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EArsivGonder.resx">
+      <DependentUpon>EArsivGonder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FaturaDurum.resx">
       <DependentUpon>FaturaDurum.cs</DependentUpon>
@@ -176,6 +191,9 @@
     </Compile>
     <EmbeddedResource Include="TeslimFisi.resx">
       <DependentUpon>TeslimFisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopluArsiv.resx">
+      <DependentUpon>TopluArsiv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopluFatura.resx">
       <DependentUpon>TopluFatura.cs</DependentUpon>

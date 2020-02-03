@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/02/2020 16:39:02" ReportInfo.Modified="02/02/2020 16:57:54" ReportInfo.CreatorVersion="2019.1.10.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="302.4">
+      <TextObject Name="Text1" Left="18.9" Top="28.35" Width="283.5" Height="103.95" Border.Lines="Top, Bottom" Border.TopLine.Width="3" Border.BottomLine.Width="3" Text="ADANA EKSPRES KARGO TAŞIMACILIK TİCARET LİMİTED ŞİRKETİ&#13;&#10;FEVZİPAŞA MAH.48019 SOK.NO:10/A No:&#13;&#10;SEYHAN/ ADANA&#13;&#10;Tel: 3224215533 Fax: 3224215475&#13;&#10;Web Sitesi: http://www.adanaekspres.com&#13;&#10;E-Posta: 4215533@aekargo.com&#13;&#10;Vergi Dairesi: SEYHAN&#13;&#10;VKN: 9480075514&#13;&#10;MERSISNO: 0948007551400014&#13;&#10;TICARETSICILNO: 33027" Padding="10, 10, 10, 10" Font="Arial, 6pt"/>
+      <TextObject Name="Text2" Left="18.9" Top="151.2" Width="283.5" Height="103.95" Border.Lines="Top, Bottom" Border.TopLine.Width="3" Border.BottomLine.Width="3" Text="ADANA EKSPRES KARGO TAŞIMACILIK TİCARET LİMİTED ŞİRKETİ&#13;&#10;FEVZİPAŞA MAH.48019 SOK.NO:10/A No:&#13;&#10;SEYHAN/ ADANA&#13;&#10;Tel: 3224215533 Fax: 3224215475&#13;&#10;Web Sitesi: http://www.adanaekspres.com&#13;&#10;E-Posta: 4215533@aekargo.com&#13;&#10;Vergi Dairesi: SEYHAN&#13;&#10;VKN: 9480075514&#13;&#10;MERSISNO: 0948007551400014&#13;&#10;TICARETSICILNO: 33027" Padding="10, 10, 10, 10" Font="Arial, 6pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="305.26" Width="718.2" Height="75.6"/>
+    <PageFooterBand Name="PageFooter1" Top="383.71" Width="718.2" Height="66.15"/>
+  </ReportPage>
+</Report>

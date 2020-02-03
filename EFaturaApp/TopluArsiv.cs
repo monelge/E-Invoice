@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -13,13 +12,12 @@ using System.Windows.Forms;
 using EFaturaApp.Func;
 using EntFMSystem;
 using NLog;
-using NLog.Fluent;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 
 namespace EFaturaApp
 {
-    public partial class TopluFatura : BaseForm
+    public partial class TopluArsiv : BaseForm
     {
         EKSPRES2017Entities dbEntities = new EKSPRES2017Entities();
         private Configuration configuration;
@@ -27,11 +25,15 @@ namespace EFaturaApp
         private int listedurum;
         private int iIsaretDurum;
 
-
-        public TopluFatura()
+        public TopluArsiv()
         {
             InitializeComponent();
             logger = LogManager.LoadConfiguration("NLog.config").GetCurrentClassLogger();
+        }
+
+        private void TopluArsiv_Load(object sender, EventArgs e)
+        {
+            sayfaYukle();
         }
 
         void sayfaYukle()
@@ -118,7 +120,7 @@ namespace EFaturaApp
                             sorgu += " and (t.odemetipi='1') " +
                                      " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
                                      "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
-                                     "order by T.tadi,T.takipno";
+                                     " AND tasirsno IS NOT NULL order by T.tadi,T.takipno";
                         }
                         else
                         {
@@ -140,7 +142,7 @@ namespace EFaturaApp
                             sorgu += " and (t.odemetipi='2') " +
                                      " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
                                      "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
-                                     "order by T.tadi,T.takipno";
+                                     " AND tasirsno IS NOT NULL order by T.tadi,T.takipno";
                         }
                         else
                         {
@@ -184,10 +186,7 @@ namespace EFaturaApp
                     radGridView1.Rows[satirno].Cells["takipseri"].Value.ToString() + "' and fatno='" +
                     radGridView1.Rows[satirno].Cells["takipno"].Value.ToString() + "'";
                 radGridView2.DataSource = DataBaseSorgu.VeriIsle.data_table(sorguhar.ToString());
-                //  toolStripStatusLabel3.Text = radGridView1.CurrentRow.Cells["takipno"].Value.ToString();
-                // toolStripStatusLabel4.Text = radGridView1.CurrentRow.Cells["adi"].Value.ToString();
-                // toolStripStatusLabel5.Text = radGridView1.CurrentRow.Cells["adi1"].Value.ToString();
-                // toolStripStatusLabel6.Text = radGridView1.CurrentRow.Cells["il"].Value.ToString();
+
             }
             catch (Exception)
             {
@@ -272,7 +271,7 @@ namespace EFaturaApp
             string krKodu = fatDt.Rows[0]["tkodu"].ToString();
             var KrMuste = dbEntities.krmuste.FirstOrDefault(x => x.kodu == krKodu);
             System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
-            string kull = (string)settingsReader.GetValue("kull", typeof(String));
+            string kull = (string)settingsReader.GetValue("arsivkull", typeof(String));
             string iban = (string)settingsReader.GetValue("iban", typeof(String));
 
             int returnid;
@@ -453,16 +452,11 @@ namespace EFaturaApp
                                                 "WHERE takipno='" + tesno.ToString() + "' AND takipseri='" + tseri.ToString() + "'");
         }
 
-        private void TopluFatura_Load(object sender, EventArgs e)
-        {
-            sayfaYukle();
-        }
-
         private void commandBarButton1_Click(object sender, EventArgs e)
         {
             try
             {
-                listedurum = 0;
+                listedurum = 1;
                 Listeleme(listedurum);
                 this.radGridView1.Columns[1].BestFit();
                 this.radGridView1.Columns[2].BestFit();
@@ -477,10 +471,11 @@ namespace EFaturaApp
             {
                 logger.Error(exception.Message);
             }
-
         }
+
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
+
             if (RadMessageBox.Show("Seçili Faturaları Kesmek istediğinize emin misiniz ?\n\n", "Bilgilendirme", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 Cursor.Current = Cursors.WaitCursor;
@@ -497,10 +492,12 @@ namespace EFaturaApp
                 Cursor.Current = Cursors.Default;
             }
         }
+
         private void radGridView1_CellClick(object sender, GridViewCellEventArgs e)
         {
             Satirgetir(e.RowIndex);
         }
+
         private void radGridView1_CellValueChanged(object sender, GridViewCellEventArgs e)
         {
             try
@@ -532,6 +529,7 @@ namespace EFaturaApp
                 logger.Error(exception.Message);
             }
         }
+
         private void radGridView1_RowFormatting(object sender, RowFormattingEventArgs e)
         {
             bool tt = (bool)e.RowElement.RowInfo.Cells[0].Value;
@@ -549,6 +547,7 @@ namespace EFaturaApp
                 e.RowElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local);
             }
         }
+
         private void radGridView1_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -621,7 +620,7 @@ namespace EFaturaApp
                         {
                             radGridView1.Rows[i].Cells["isaret"].Value = false;
                         }
-                      
+
                     }
                     catch (Exception exception)
                     {
@@ -634,10 +633,6 @@ namespace EFaturaApp
                 iIsaretDurum = 1;
                 commandBarButton3.Text = "Tümünü Işaretle";
             }
-        }
-        private void commandBarButton4_Click(object sender, EventArgs e)
-        {
-       
         }
 
         private void radGridView1_KeyDown(object sender, KeyEventArgs e)
