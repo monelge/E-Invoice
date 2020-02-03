@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace EFaturaApp
 {
@@ -14,9 +16,17 @@ namespace EFaturaApp
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            if (File.Exists(@"SystemCnTr.dll"))
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MainForm());
+            }
+            else
+            {
+                RadMessageBox.Show("Gerekli Dosyalar Bulunamıyor. Lütfen Sistem Yöneticinizle Görüşünüz.", "Hata Oluştu");
+                Application.Exit();
+            }
         }
     }
 }

@@ -243,5 +243,10 @@ namespace EFaturaApp
             }
             
         }
+
+        private void commandBarButton3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

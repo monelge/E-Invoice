@@ -35,6 +35,7 @@
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,7 +58,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1355, 70);
+            this.radCommandBar1.Size = new System.Drawing.Size(1355, 73);
             this.radCommandBar1.TabIndex = 1;
             // 
             // commandBarRowElement1
@@ -72,7 +73,8 @@
             this.commandBarStripElement1.DisplayName = "commandBarStripElement1";
             this.commandBarStripElement1.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.commandBarButton1,
-            this.commandBarButton2});
+            this.commandBarButton2,
+            this.commandBarButton3});
             this.commandBarStripElement1.Name = "commandBarStripElement1";
             // 
             // commandBarButton1
@@ -95,18 +97,28 @@
             this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton2.Click += new System.EventHandler(this.commandBarButton2_Click);
             // 
+            // commandBarButton3
+            // 
+            this.commandBarButton3.DisplayName = "commandBarButton3";
+            this.commandBarButton3.DrawText = true;
+            this.commandBarButton3.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton3.Image")));
+            this.commandBarButton3.Name = "commandBarButton3";
+            this.commandBarButton3.Text = "Kapat";
+            this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton3.Click += new System.EventHandler(this.commandBarButton3_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.radGridView1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 70);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 73);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1355, 695);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1355, 692);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // radGridView1
@@ -122,7 +134,7 @@
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(1349, 689);
+            this.radGridView1.Size = new System.Drawing.Size(1349, 686);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.radGridView1_RowFormatting);
             // 
@@ -130,7 +142,7 @@
             // 
             this.panel1.Controls.Add(this.radLabel1);
             this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Location = new System.Drawing.Point(386, 193);
+            this.panel1.Location = new System.Drawing.Point(526, 308);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(292, 93);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private Telerik.WinControls.UI.CommandBarButton commandBarButton3;
     }
 }

@@ -155,16 +155,27 @@ namespace EFaturaApp
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
             Gonder(1);
+            RadMessageBox.Show("Faturalar başarılı şekilde gönderildi", "Tebrikler", MessageBoxButtons.OK,
+                RadMessageIcon.Info);
         }
 
         private void temelFaturaGönderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Gonder(0);
+            RadMessageBox.Show("Faturalar başarılı şekilde gönderildi", "Tebrikler", MessageBoxButtons.OK,
+                RadMessageIcon.Info);
         }
 
         private void ticariFataruGönderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Gonder(1);
+            RadMessageBox.Show("Faturalar başarılı şekilde gönderildi", "Tebrikler", MessageBoxButtons.OK,
+                RadMessageIcon.Info);
+        }
+
+        private void commandBarButton4_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

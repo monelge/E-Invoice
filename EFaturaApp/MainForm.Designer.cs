@@ -119,7 +119,7 @@
             this.radPageView1.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage1;
+            this.radPageView1.SelectedPage = this.radPageViewPage3;
             this.radPageView1.Size = new System.Drawing.Size(264, 790);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Outlook;
@@ -142,6 +142,7 @@
             // 
             this.radButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton4.Enabled = false;
             this.radButton4.Location = new System.Drawing.Point(3, 207);
             this.radButton4.Name = "radButton4";
             this.radButton4.Size = new System.Drawing.Size(248, 62);
@@ -152,6 +153,7 @@
             // 
             this.radButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton3.Enabled = false;
             this.radButton3.Location = new System.Drawing.Point(3, 139);
             this.radButton3.Name = "radButton3";
             this.radButton3.Size = new System.Drawing.Size(248, 62);
@@ -162,6 +164,7 @@
             // 
             this.radButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton2.Enabled = false;
             this.radButton2.Location = new System.Drawing.Point(3, 71);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(248, 62);
@@ -198,6 +201,7 @@
             // 
             this.radButton7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton7.Enabled = false;
             this.radButton7.Location = new System.Drawing.Point(1, 207);
             this.radButton7.Name = "radButton7";
             this.radButton7.Size = new System.Drawing.Size(248, 62);
@@ -208,6 +212,7 @@
             // 
             this.radButton8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton8.Enabled = false;
             this.radButton8.Location = new System.Drawing.Point(1, 139);
             this.radButton8.Name = "radButton8";
             this.radButton8.Size = new System.Drawing.Size(248, 62);
@@ -218,6 +223,7 @@
             // 
             this.radButton9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton9.Enabled = false;
             this.radButton9.Location = new System.Drawing.Point(1, 71);
             this.radButton9.Name = "radButton9";
             this.radButton9.Size = new System.Drawing.Size(248, 62);
@@ -229,11 +235,13 @@
             this.radButton10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton10.Image = ((System.Drawing.Image)(resources.GetObject("radButton10.Image")));
+            this.radButton10.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton10.Location = new System.Drawing.Point(1, 3);
             this.radButton10.Name = "radButton10";
             this.radButton10.Size = new System.Drawing.Size(248, 62);
             this.radButton10.TabIndex = 9;
             this.radButton10.Text = "Toplu Fatura Kesimi";
+            this.radButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButton10.Click += new System.EventHandler(this.radButton10_Click);
             // 
             // radPageViewPage3
@@ -253,54 +261,69 @@
             // 
             this.radButton13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton13.Image = ((System.Drawing.Image)(resources.GetObject("radButton13.Image")));
+            this.radButton13.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton13.Location = new System.Drawing.Point(3, 275);
             this.radButton13.Name = "radButton13";
             this.radButton13.Size = new System.Drawing.Size(248, 62);
             this.radButton13.TabIndex = 7;
             this.radButton13.Text = "E-Arşiv Durum İşlemleri";
+            this.radButton13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButton13.Click += new System.EventHandler(this.radButton13_Click);
             // 
             // radButton12
             // 
             this.radButton12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton12.Image = ((System.Drawing.Image)(resources.GetObject("radButton12.Image")));
+            this.radButton12.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton12.Location = new System.Drawing.Point(3, 139);
             this.radButton12.Name = "radButton12";
             this.radButton12.Size = new System.Drawing.Size(248, 62);
             this.radButton12.TabIndex = 8;
             this.radButton12.Text = "E-Arşiv İptal Et";
+            this.radButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // radButton11
             // 
             this.radButton11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton11.Image = ((System.Drawing.Image)(resources.GetObject("radButton11.Image")));
+            this.radButton11.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton11.Location = new System.Drawing.Point(3, 71);
             this.radButton11.Name = "radButton11";
             this.radButton11.Size = new System.Drawing.Size(248, 62);
             this.radButton11.TabIndex = 7;
             this.radButton11.Text = "E-Arşiv Gönder";
+            this.radButton11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButton11.Click += new System.EventHandler(this.radButton11_Click);
             // 
             // radButton6
             // 
             this.radButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton6.Image = ((System.Drawing.Image)(resources.GetObject("radButton6.Image")));
+            this.radButton6.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton6.Location = new System.Drawing.Point(3, 3);
             this.radButton6.Name = "radButton6";
             this.radButton6.Size = new System.Drawing.Size(248, 62);
             this.radButton6.TabIndex = 6;
             this.radButton6.Text = "E-Fatura Gönder";
+            this.radButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButton6.Click += new System.EventHandler(this.radButton6_Click);
             // 
             // radButton5
             // 
             this.radButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton5.Image = ((System.Drawing.Image)(resources.GetObject("radButton5.Image")));
+            this.radButton5.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton5.Location = new System.Drawing.Point(3, 207);
             this.radButton5.Name = "radButton5";
             this.radButton5.Size = new System.Drawing.Size(248, 62);
             this.radButton5.TabIndex = 6;
             this.radButton5.Text = "E-Fatura Durum İşlemleri";
+            this.radButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButton5.Click += new System.EventHandler(this.radButton5_Click);
             // 
             // radPageViewPage4

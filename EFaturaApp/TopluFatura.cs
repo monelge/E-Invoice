@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EFaturaApp.Func;
 using EntFMSystem;
+using Microsoft.VisualBasic;
 using NLog;
 using NLog.Fluent;
 using Telerik.WinControls;
@@ -62,7 +63,7 @@ namespace EFaturaApp
 
 
         }
-        void Listeleme(int durum)
+        void Listeleme(int durum, int tesellum)
         {
             try
             {
@@ -115,6 +116,10 @@ namespace EFaturaApp
                                 " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
 
                             sorgu += " and (t.gonderensube='" + radDropDownList2.SelectedValue.ToString() + "') ";
+                            if (tesellum!=0)
+                            {
+                                sorgu += " and (t.takipno='" + tesellum.ToString() + "') ";
+                            }
                             sorgu += " and (t.odemetipi='1') " +
                                      " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
                                      "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
@@ -136,7 +141,10 @@ namespace EFaturaApp
                                 "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
                                 " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
                             sorgu += " and (t.alicisube='" + radDropDownList3.SelectedValue.ToString() + "') ";
-
+                            if (tesellum != 0)
+                            {
+                                sorgu += " and (t.takipno='" + tesellum.ToString() + "') ";
+                            }
                             sorgu += " and (t.odemetipi='2') " +
                                      " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
                                      "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
@@ -258,13 +266,13 @@ namespace EFaturaApp
                 System.Threading.Thread.Sleep(3000);
 
                 RadMessageBox.Show("İşaretlenmiş Tüm Faturalar Kesildi.", "Bilgilendirme", MessageBoxButtons.OK, RadMessageIcon.Info);
-                Listeleme(listedurum);
+                Listeleme(listedurum, 0);
             }
             catch (Exception ex)
             {
                 logger.Error(ex.Message);
                 RadMessageBox.Show("Sistemsel bir hata oluştu. Lütfen Tekrar deneyiniz. \r\n" + ex.Message, "Hata Oluştu", MessageBoxButtons.OK, RadMessageIcon.Error);
-                Listeleme(listedurum);
+                Listeleme(listedurum, 0);
             }
         }
         int faturaekle(DataTable fatDt)
@@ -463,7 +471,7 @@ namespace EFaturaApp
             try
             {
                 listedurum = 0;
-                Listeleme(listedurum);
+                Listeleme(listedurum, 0);
                 this.radGridView1.Columns[1].BestFit();
                 this.radGridView1.Columns[2].BestFit();
                 this.radGridView1.Columns[3].BestFit();
@@ -490,7 +498,7 @@ namespace EFaturaApp
                 radDateTimePicker1.Focus();
                 radDateTimePicker1.Select();
                 fatolustur();
-                Listeleme(listedurum);
+                Listeleme(listedurum, 0);
                 this.radGridView1.Enabled = true;
                 this.radGridView2.Enabled = true;
                 this.Enabled = true;
@@ -593,7 +601,7 @@ namespace EFaturaApp
                         logger.Error(exception.Message);
                     }
                 }
-                Listeleme(listedurum);
+                Listeleme(listedurum, 0);
                 radGridView1.Refresh();
                 Application.DoEvents();
                 iIsaretDurum = 1;
@@ -628,7 +636,7 @@ namespace EFaturaApp
                         logger.Error(exception.Message);
                     }
                 }
-                Listeleme(listedurum);
+                Listeleme(listedurum, 0);
                 radGridView1.Refresh();
                 Application.DoEvents();
                 iIsaretDurum = 1;
@@ -637,7 +645,9 @@ namespace EFaturaApp
         }
         private void commandBarButton4_Click(object sender, EventArgs e)
         {
-       
+          var getir =  Interaction.InputBox("Tesellüm No : ", "Tesellüme Göre Ara");
+          listedurum = 0;
+          Listeleme(0,Convert.ToInt32(getir));
         }
 
         private void radGridView1_KeyDown(object sender, KeyEventArgs e)
@@ -714,6 +724,11 @@ namespace EFaturaApp
             {
                 DataBaseSorgu.VeriIsle.local.Close();
             }
+        }
+
+        private void commandBarButton5_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

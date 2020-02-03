@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EFaturaApp.Func;
 using EntFMSystem;
+using FastReport;
+using hm.common;
+using Telerik.WinControls;
 
 namespace EFaturaApp
 {
@@ -56,7 +59,8 @@ namespace EFaturaApp
                     var FatLst =
                         ekspres2017Entities.faturahar.Where(h =>
                             h.takipseri == Fatura.takipseri && h.fatno == Fatura.TakipNo).ToList();
-                    bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
+                    //bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
+                    EarasivYazdir(Fatura, FatLst);
                 }
 
                 listele();
@@ -128,9 +132,67 @@ namespace EFaturaApp
             listele();
         }
 
+        bool EarasivYazdir(fatura Fatura, IList<faturahar> FatHark)
+        {
+            try
+            {
+
+                Report report = new Report();
+
+                report.RegisterData(FuncClass.ToDataTable(FatHark), "bilgi");
+                report.Load(@"Earsiv.frx");
+                (report.FindObject("Data1") as DataBand).DataSource = report.GetDataSource("bilgi");
+
+                //baslik
+                TextObject fatNO = report.FindObject("text6") as TextObject;
+                fatNO.Text = Fatura.takipseri + Fatura.TakipNo.ToString().PadLeft(9, '0');
+
+                TextObject fatTrh = report.FindObject("text7") as TextObject;
+                fatTrh.Text = Fatura.tarih.Value.ToShortDateString();
+
+
+                TextObject fatYekun = report.FindObject("text31") as TextObject;
+                fatYekun.Text = Fatura.yekun.ToString();
+                TextObject fatIsk = report.FindObject("text33") as TextObject;
+                fatIsk.Text = "0";
+                TextObject fatKDV = report.FindObject("text35") as TextObject;
+                fatKDV.Text = Fatura.toplamkdv.ToString();
+                TextObject fatGenTop = report.FindObject("text37") as TextObject;
+                fatGenTop.Text = Fatura.toplam.ToString();
+                TextObject fatOdnTutar = report.FindObject("text39") as TextObject;
+                fatOdnTutar.Text = Fatura.toplam.ToString();
+
+                TextObject AciklamaTxt = report.FindObject("text40") as TextObject;
+                AciklamaTxt.Text = FuncClass.ibanNo.ToString() + " \r\nFaturayı Kesen Şube : " + Fatura.alicisube.ToString()+"\r\nYazı İle "+ 
+                                   Tools.GetCurrencyText(Convert.ToDouble(Fatura.toplam), "TRY") + 
+                                   "\r\nİş bu fatura muhteviyatına 7 gün içerisinde itiraz edilmediği taktirde aynen kabul edilmiş sayılır.";
+
+
+
+                report.PrintSettings.ShowDialog = false;
+                // report.Show();
+                report.Prepare();
+                report.PrintPrepared();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+
+        }
+
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
             Gonder(3);
+
+        }
+
+        private void commandBarButton4_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

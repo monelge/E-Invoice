@@ -29,25 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopluArsiv));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn26 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn27 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
             this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
@@ -72,6 +73,7 @@
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.commandBarButton5 = new Telerik.WinControls.UI.CommandBarButton();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
@@ -113,7 +115,7 @@
             this.commandBarButton2.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton2.Image")));
             this.commandBarButton2.Name = "commandBarButton2";
             this.commandBarButton2.Text = "Fatura Oluşur";
-            this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton2.UseCompatibleTextRendering = false;
             this.commandBarButton2.Click += new System.EventHandler(this.commandBarButton2_Click);
@@ -127,7 +129,7 @@
             this.commandBarButton1.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton1.Image")));
             this.commandBarButton1.Name = "commandBarButton1";
             this.commandBarButton1.Text = "Listele";
-            this.commandBarButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.commandBarButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton1.TextWrap = false;
             this.commandBarButton1.UseCompatibleTextRendering = false;
@@ -141,7 +143,9 @@
             this.commandBarStripElement1.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.commandBarButton1,
             this.commandBarButton2,
-            this.commandBarButton3});
+            this.commandBarButton3,
+            this.commandBarButton4,
+            this.commandBarButton5});
             this.commandBarStripElement1.Name = "commandBarStripElement1";
             this.commandBarStripElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarStripElement1.UseCompatibleTextRendering = false;
@@ -154,10 +158,20 @@
             this.commandBarButton3.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton3.Image")));
             this.commandBarButton3.Name = "commandBarButton3";
             this.commandBarButton3.Text = "Tümünü Seç";
-            this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton3.UseCompatibleTextRendering = false;
             this.commandBarButton3.Click += new System.EventHandler(this.commandBarButton3_Click);
+            // 
+            // commandBarButton4
+            // 
+            this.commandBarButton4.DisplayName = "commandBarButton4";
+            this.commandBarButton4.DrawText = true;
+            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
+            this.commandBarButton4.Name = "commandBarButton4";
+            this.commandBarButton4.Text = "Tesellüm Getir";
+            this.commandBarButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton4.Click += new System.EventHandler(this.commandBarButton4_Click);
             // 
             // commandBarRowElement1
             // 
@@ -177,13 +191,13 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1449, 32);
+            this.radCommandBar1.Size = new System.Drawing.Size(1449, 70);
             this.radCommandBar1.TabIndex = 2;
             // 
             // radGridView2
             // 
             this.radGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView2.Location = new System.Drawing.Point(3, 768);
+            this.radGridView2.Location = new System.Drawing.Point(3, 737);
             // 
             // 
             // 
@@ -191,59 +205,59 @@
             this.radGridView2.MasterTemplate.AllowColumnReorder = false;
             this.radGridView2.MasterTemplate.AllowDragToGroup = false;
             this.radGridView2.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "miktar";
-            gridViewTextBoxColumn1.HeaderText = "Miktar";
-            gridViewTextBoxColumn1.Name = "Miktar";
-            gridViewTextBoxColumn1.Width = 59;
-            gridViewTextBoxColumn2.FieldName = "birimi";
-            gridViewTextBoxColumn2.HeaderText = "Birimi";
-            gridViewTextBoxColumn2.Name = "Birimi";
-            gridViewTextBoxColumn2.Width = 59;
-            gridViewTextBoxColumn3.FieldName = "agirlik";
-            gridViewTextBoxColumn3.HeaderText = "Agirlik";
-            gridViewTextBoxColumn3.Name = "Agirlik";
-            gridViewTextBoxColumn3.Width = 59;
-            gridViewCheckBoxColumn1.FieldName = "carpan";
-            gridViewCheckBoxColumn1.HeaderText = "X";
-            gridViewCheckBoxColumn1.Name = "carpan";
-            gridViewCheckBoxColumn1.Width = 56;
-            gridViewTextBoxColumn4.FieldName = "cinsi";
-            gridViewTextBoxColumn4.HeaderText = "Cinsi";
-            gridViewTextBoxColumn4.Name = "cinsi";
-            gridViewTextBoxColumn4.Width = 172;
-            gridViewTextBoxColumn5.FieldName = "fiyati";
-            gridViewTextBoxColumn5.HeaderText = "Fiyat";
-            gridViewTextBoxColumn5.Name = "fiyati";
-            gridViewTextBoxColumn5.Width = 120;
-            gridViewTextBoxColumn6.FieldName = "tutari";
-            gridViewTextBoxColumn6.HeaderText = "Tutarı";
-            gridViewTextBoxColumn6.Name = "tutari";
-            gridViewTextBoxColumn6.Width = 120;
-            gridViewTextBoxColumn7.FieldName = "musirsno";
-            gridViewTextBoxColumn7.HeaderText = "Musirsno";
-            gridViewTextBoxColumn7.Name = "musirsno";
-            gridViewTextBoxColumn7.Width = 120;
-            gridViewTextBoxColumn8.FieldName = "ref";
-            gridViewTextBoxColumn8.HeaderText = "ref";
-            gridViewTextBoxColumn8.Name = "reff";
-            gridViewTextBoxColumn8.Width = 62;
-            gridViewTextBoxColumn9.HeaderText = "";
-            gridViewTextBoxColumn9.Name = "column1";
-            gridViewTextBoxColumn9.Width = 604;
+            gridViewTextBoxColumn19.FieldName = "miktar";
+            gridViewTextBoxColumn19.HeaderText = "Miktar";
+            gridViewTextBoxColumn19.Name = "Miktar";
+            gridViewTextBoxColumn19.Width = 59;
+            gridViewTextBoxColumn20.FieldName = "birimi";
+            gridViewTextBoxColumn20.HeaderText = "Birimi";
+            gridViewTextBoxColumn20.Name = "Birimi";
+            gridViewTextBoxColumn20.Width = 59;
+            gridViewTextBoxColumn21.FieldName = "agirlik";
+            gridViewTextBoxColumn21.HeaderText = "Agirlik";
+            gridViewTextBoxColumn21.Name = "Agirlik";
+            gridViewTextBoxColumn21.Width = 59;
+            gridViewCheckBoxColumn3.FieldName = "carpan";
+            gridViewCheckBoxColumn3.HeaderText = "X";
+            gridViewCheckBoxColumn3.Name = "carpan";
+            gridViewCheckBoxColumn3.Width = 56;
+            gridViewTextBoxColumn22.FieldName = "cinsi";
+            gridViewTextBoxColumn22.HeaderText = "Cinsi";
+            gridViewTextBoxColumn22.Name = "cinsi";
+            gridViewTextBoxColumn22.Width = 172;
+            gridViewTextBoxColumn23.FieldName = "fiyati";
+            gridViewTextBoxColumn23.HeaderText = "Fiyat";
+            gridViewTextBoxColumn23.Name = "fiyati";
+            gridViewTextBoxColumn23.Width = 120;
+            gridViewTextBoxColumn24.FieldName = "tutari";
+            gridViewTextBoxColumn24.HeaderText = "Tutarı";
+            gridViewTextBoxColumn24.Name = "tutari";
+            gridViewTextBoxColumn24.Width = 120;
+            gridViewTextBoxColumn25.FieldName = "musirsno";
+            gridViewTextBoxColumn25.HeaderText = "Musirsno";
+            gridViewTextBoxColumn25.Name = "musirsno";
+            gridViewTextBoxColumn25.Width = 120;
+            gridViewTextBoxColumn26.FieldName = "ref";
+            gridViewTextBoxColumn26.HeaderText = "ref";
+            gridViewTextBoxColumn26.Name = "reff";
+            gridViewTextBoxColumn26.Width = 62;
+            gridViewTextBoxColumn27.HeaderText = "";
+            gridViewTextBoxColumn27.Name = "column1";
+            gridViewTextBoxColumn27.Width = 604;
             this.radGridView2.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewCheckBoxColumn1,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9});
-            this.radGridView2.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20,
+            gridViewTextBoxColumn21,
+            gridViewCheckBoxColumn3,
+            gridViewTextBoxColumn22,
+            gridViewTextBoxColumn23,
+            gridViewTextBoxColumn24,
+            gridViewTextBoxColumn25,
+            gridViewTextBoxColumn26,
+            gridViewTextBoxColumn27});
+            this.radGridView2.MasterTemplate.ViewDefinition = tableViewDefinition5;
             this.radGridView2.Name = "radGridView2";
-            this.radGridView2.Size = new System.Drawing.Size(1443, 186);
+            this.radGridView2.Size = new System.Drawing.Size(1443, 179);
             this.radGridView2.TabIndex = 2;
             this.radGridView2.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridView2_CellEndEdit);
             // 
@@ -436,7 +450,7 @@
             // radGridView1
             // 
             this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Location = new System.Drawing.Point(3, 194);
+            this.radGridView1.Location = new System.Drawing.Point(3, 186);
             // 
             // 
             // 
@@ -444,9 +458,9 @@
             this.radGridView1.MasterTemplate.AllowColumnReorder = false;
             this.radGridView1.MasterTemplate.AllowDeleteRow = false;
             this.radGridView1.MasterTemplate.AllowDragToGroup = false;
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition6;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(1443, 568);
+            this.radGridView1.Size = new System.Drawing.Size(1443, 545);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.radGridView1_RowFormatting);
             this.radGridView1.SelectionChanged += new System.EventHandler(this.radGridView1_SelectionChanged);
@@ -463,7 +477,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(3, 3);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1443, 185);
+            this.radPanel1.Size = new System.Drawing.Size(1443, 177);
             this.radPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -474,14 +488,24 @@
             this.tableLayoutPanel1.Controls.Add(this.radPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.radGridView2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 32);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 70);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1449, 957);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1449, 919);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // commandBarButton5
+            // 
+            this.commandBarButton5.DisplayName = "commandBarButton5";
+            this.commandBarButton5.DrawText = true;
+            this.commandBarButton5.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton5.Image")));
+            this.commandBarButton5.Name = "commandBarButton5";
+            this.commandBarButton5.Text = "Kapat";
+            this.commandBarButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton5.Click += new System.EventHandler(this.commandBarButton5_Click);
             // 
             // TopluArsiv
             // 
@@ -566,5 +590,7 @@
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
+        private Telerik.WinControls.UI.CommandBarButton commandBarButton5;
     }
 }

@@ -73,6 +73,7 @@
             this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton5 = new Telerik.WinControls.UI.CommandBarButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -114,19 +115,19 @@
             this.tableLayoutPanel1.Controls.Add(this.radPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.radGridView2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 32);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 70);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1261, 919);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1261, 881);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // radGridView1
             // 
             this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Location = new System.Drawing.Point(3, 186);
+            this.radGridView1.Location = new System.Drawing.Point(3, 179);
             // 
             // 
             // 
@@ -136,7 +137,7 @@
             this.radGridView1.MasterTemplate.AllowDragToGroup = false;
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(1255, 545);
+            this.radGridView1.Size = new System.Drawing.Size(1255, 522);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.radGridView1_RowFormatting);
             this.radGridView1.SelectionChanged += new System.EventHandler(this.radGridView1_SelectionChanged);
@@ -153,7 +154,7 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanel1.Location = new System.Drawing.Point(3, 3);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(1255, 177);
+            this.radPanel1.Size = new System.Drawing.Size(1255, 170);
             this.radPanel1.TabIndex = 1;
             // 
             // radGroupBox4
@@ -345,7 +346,7 @@
             // radGridView2
             // 
             this.radGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView2.Location = new System.Drawing.Point(3, 737);
+            this.radGridView2.Location = new System.Drawing.Point(3, 707);
             // 
             // 
             // 
@@ -405,7 +406,7 @@
             gridViewTextBoxColumn9});
             this.radGridView2.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.radGridView2.Name = "radGridView2";
-            this.radGridView2.Size = new System.Drawing.Size(1255, 179);
+            this.radGridView2.Size = new System.Drawing.Size(1255, 171);
             this.radGridView2.TabIndex = 2;
             this.radGridView2.CellEndEdit += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridView2_CellEndEdit);
             // 
@@ -416,7 +417,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1261, 32);
+            this.radCommandBar1.Size = new System.Drawing.Size(1261, 70);
             this.radCommandBar1.TabIndex = 0;
             // 
             // commandBarRowElement1
@@ -438,7 +439,8 @@
             this.commandBarButton1,
             this.commandBarButton2,
             this.commandBarButton3,
-            this.commandBarButton4});
+            this.commandBarButton4,
+            this.commandBarButton5});
             this.commandBarStripElement1.Name = "commandBarStripElement1";
             this.commandBarStripElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarStripElement1.UseCompatibleTextRendering = false;
@@ -452,7 +454,7 @@
             this.commandBarButton1.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton1.Image")));
             this.commandBarButton1.Name = "commandBarButton1";
             this.commandBarButton1.Text = "Listele";
-            this.commandBarButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.commandBarButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton1.TextWrap = false;
             this.commandBarButton1.UseCompatibleTextRendering = false;
@@ -467,7 +469,7 @@
             this.commandBarButton2.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton2.Image")));
             this.commandBarButton2.Name = "commandBarButton2";
             this.commandBarButton2.Text = "Fatura Oluşur";
-            this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton2.UseCompatibleTextRendering = false;
             this.commandBarButton2.Click += new System.EventHandler(this.commandBarButton2_Click);
@@ -480,7 +482,7 @@
             this.commandBarButton3.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton3.Image")));
             this.commandBarButton3.Name = "commandBarButton3";
             this.commandBarButton3.Text = "Tümünü Seç";
-            this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton3.UseCompatibleTextRendering = false;
             this.commandBarButton3.Click += new System.EventHandler(this.commandBarButton3_Click);
@@ -488,10 +490,22 @@
             // commandBarButton4
             // 
             this.commandBarButton4.DisplayName = "commandBarButton4";
+            this.commandBarButton4.DrawText = true;
             this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
             this.commandBarButton4.Name = "commandBarButton4";
-            this.commandBarButton4.Text = "commandBarButton4";
+            this.commandBarButton4.Text = "Tesellüm Getir";
+            this.commandBarButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton4.Click += new System.EventHandler(this.commandBarButton4_Click);
+            // 
+            // commandBarButton5
+            // 
+            this.commandBarButton5.DisplayName = "commandBarButton5";
+            this.commandBarButton5.DrawText = true;
+            this.commandBarButton5.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton5.Image")));
+            this.commandBarButton5.Name = "commandBarButton5";
+            this.commandBarButton5.Text = "Kapat";
+            this.commandBarButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton5.Click += new System.EventHandler(this.commandBarButton5_Click);
             // 
             // TopluFatura
             // 
@@ -578,5 +592,6 @@
         private Telerik.WinControls.UI.CommandBarButton commandBarButton3;
         private Telerik.WinControls.UI.RadCommandBar radCommandBar1;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
+        private Telerik.WinControls.UI.CommandBarButton commandBarButton5;
     }
 }

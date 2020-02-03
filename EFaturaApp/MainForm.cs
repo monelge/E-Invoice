@@ -15,6 +15,7 @@ namespace EFaturaApp
         public MainForm()
         {
             InitializeComponent();
+            SystemCnTr.Trial.baglanti();
             radDock1.AutoDetectMdiChildren = true;
             documentContainer1.SendToBack();
         }

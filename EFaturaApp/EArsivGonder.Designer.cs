@@ -41,6 +41,7 @@
             this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -61,7 +62,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1266, 754);
+            this.dataGridView1.Size = new System.Drawing.Size(1266, 751);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
@@ -100,7 +101,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1272, 67);
+            this.radCommandBar1.Size = new System.Drawing.Size(1272, 70);
             this.radCommandBar1.TabIndex = 3;
             // 
             // commandBarRowElement1
@@ -121,7 +122,8 @@
             this.commandBarStripElement1.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.commandBarButton1,
             this.commandBarButton2,
-            this.commandBarButton3});
+            this.commandBarButton3,
+            this.commandBarButton4});
             this.commandBarStripElement1.Name = "commandBarStripElement1";
             this.commandBarStripElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarStripElement1.UseCompatibleTextRendering = false;
@@ -164,17 +166,27 @@
             this.commandBarButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton3.UseCompatibleTextRendering = false;
             // 
+            // commandBarButton4
+            // 
+            this.commandBarButton4.DisplayName = "commandBarButton4";
+            this.commandBarButton4.DrawText = true;
+            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
+            this.commandBarButton4.Name = "commandBarButton4";
+            this.commandBarButton4.Text = "Kapat";
+            this.commandBarButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton4.Click += new System.EventHandler(this.commandBarButton4_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 67);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 70);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1272, 760);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1272, 757);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // EArsivGonder
@@ -215,5 +227,6 @@
         private Telerik.WinControls.UI.CommandBarButton commandBarButton2;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
     }
 }
