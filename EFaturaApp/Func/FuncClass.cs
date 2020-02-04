@@ -15,6 +15,7 @@ namespace EFaturaApp.Func
     {
         static AppSettingsReader settingsReader = new AppSettingsReader();
 
+      
         public static string ibanNo
         {
             get

@@ -50,7 +50,7 @@ namespace EFaturaApp
         bool listele()
         {
             int sube = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && (x.takipseri == FuncClass.FSeriNO|| x.takipseri == FuncClass.FSerbestSeriNO)  && x.iptal != "1").Select(x => new FaturaClass //&& x.alicisube == sube
+            var getir = ekspres2017Entities.fatura.Where(x => x.adi1 == null && (x.takipseri == FuncClass.FSeriNO|| x.takipseri == FuncClass.FSerbestSeriNO)  && x.iptal != "1").Select(x => new FaturaClass //&& x.alicisube == sube
             {
                 isaret = (bool)(x.isaret == null || x.isaret == "0" ? false : true),
                 takipseri = x.takipseri,

@@ -59,7 +59,7 @@ namespace EFaturaApp
                     var FatLst =
                         ekspres2017Entities.faturahar.Where(h =>
                             h.takipseri == Fatura.takipseri && h.fatno == Fatura.TakipNo).ToList();
-                    //bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
+                    bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
                     EarasivYazdir(Fatura, FatLst);
                 }
 
@@ -75,7 +75,7 @@ namespace EFaturaApp
         bool listele()
         {
             int sube = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.takipseri == FuncClass.FArsivNO && x.alicisube == sube && x.iptal != "1").Select(x => new FaturaClass
+            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.takipseri == FuncClass.FArsivNO && x.gonderensube == sube && x.iptal != "1").Select(x => new FaturaClass
             {
                 isaret = (bool)(x.isaret == null || x.isaret == "0" ? false : true),
                 takipseri = x.takipseri,
@@ -132,16 +132,24 @@ namespace EFaturaApp
             listele();
         }
 
-        bool EarasivYazdir(fatura Fatura, IList<faturahar> FatHark)
+        bool EarasivYazdir(fatura Fatura, List<faturahar> FatHark)
         {
             try
             {
-
+                DataTable ftrLStTable = FuncClass.ToDataTable(FatHark);
+                ftrLStTable.TableName = "bilgi";
                 Report report = new Report();
-
-                report.RegisterData(FuncClass.ToDataTable(FatHark), "bilgi");
                 report.Load(@"Earsiv.frx");
-                (report.FindObject("Data1") as DataBand).DataSource = report.GetDataSource("bilgi");
+                // (report.FindObject("Data1") as DataBand).DataSource = report.GetDataSource("bilgi");
+
+                report.RegisterData(ftrLStTable, ftrLStTable.TableName);
+
+                report.GetDataSource(ftrLStTable.TableName).Enabled = true;
+                DataBand dataBand = (DataBand)report.FindObject("Data1");
+                dataBand.DataSource = report.GetDataSource(ftrLStTable.TableName);
+                //  DataBand databand = (DataBand)report.FindObject("Data1");
+                //   databand.DataSource = report.GetDataSource("bilgi");
+
 
                 //baslik
                 TextObject fatNO = report.FindObject("text6") as TextObject;
@@ -163,10 +171,24 @@ namespace EFaturaApp
                 fatOdnTutar.Text = Fatura.toplam.ToString();
 
                 TextObject AciklamaTxt = report.FindObject("text40") as TextObject;
-                AciklamaTxt.Text = FuncClass.ibanNo.ToString() + " \r\nFaturayı Kesen Şube : " + Fatura.alicisube.ToString()+"\r\nYazı İle "+ 
-                                   Tools.GetCurrencyText(Convert.ToDouble(Fatura.toplam), "TRY") + 
+                AciklamaTxt.Text = FuncClass.ibanNo.ToString() + " \r\nFaturayı Kesen Şube : " + Fatura.alicisube.ToString() + "\r\nYazı İle " +
+                                   Tools.GetCurrencyText(Convert.ToDouble(Fatura.toplam), "TRY") +
                                    "\r\nİş bu fatura muhteviyatına 7 gün içerisinde itiraz edilmediği taktirde aynen kabul edilmiş sayılır.";
 
+                var KrMuste = ekspres2017Entities.krmuste.FirstOrDefault(x => x.kodu == Fatura.carikod);
+                TextObject MusteriTxt = report.FindObject("text2") as TextObject;
+                MusteriTxt.Text = KrMuste.adi + "\r\n\r" + KrMuste.adres1 + " " + KrMuste.adres2 +
+                                  "\r\n\r" + KrMuste.ilce + "/" + KrMuste.il +
+                                  "\r\n\r" + KrMuste.tel1 + " - " + KrMuste.tel4 +
+                                  "\r\n\r" + KrMuste.email +
+                                  "\r\n\r" + KrMuste.vdairesi + " / " + KrMuste.vno;
+                TextObject ettnTxt = report.FindObject("text13") as TextObject;
+                string Fseri = Fatura.takipseri.ToString();
+                int FatNO = Fatura.TakipNo;
+                var Ftr = ekspres2017Entities.fatura.FirstOrDefault(f => f.takipseri == Fseri && f.TakipNo == FatNO);
+                ettnTxt.Text = "ETTN : " + OrtakClass.ettn ?? "0";
+                Ftr.basildimi = "1";
+                ekspres2017Entities.SaveChanges();
 
 
                 report.PrintSettings.ShowDialog = false;

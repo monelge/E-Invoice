@@ -123,7 +123,7 @@ namespace EFaturaApp
                 var ftrList = dbEntities.fatura.Where(x =>
                     (x.soyadi1 != "ACCEPT" && x.soyadi1 != "SEND - SUCCEED") &&
                     (x.takipseri == FuncClass.FArsivNO) && x.iptal != "1" &&
-                    x.alicisube == iSbKd).Select(
+                    x.gonderensube == iSbKd).Select(
                     x => new
                     {
                         x.@ref,
