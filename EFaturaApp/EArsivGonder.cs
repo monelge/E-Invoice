@@ -68,6 +68,7 @@ namespace EFaturaApp
             }
             catch (Exception e)
             {
+                FuncClass.hataKaydet(e, this);
                 return false;
             }
         }
