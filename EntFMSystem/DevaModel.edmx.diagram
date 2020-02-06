@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1d2bb42c9a5147e58c8b23d5123f7576" Name="Diagram1" ZoomLevel="97">
+      <Diagram DiagramId="1d2bb42c9a5147e58c8b23d5123f7576" Name="Diagram1" ZoomLevel="70">
         <EntityTypeShape EntityType="EKSPRES2017Model.fatura" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EKSPRES2017Model.faturahar" Width="1.5" PointX="11.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EKSPRES2017Model.tesellum" Width="1.5" PointX="11.75" PointY="8.75" />
-        <EntityTypeShape EntityType="EKSPRES2017Model.tesellumhar" Width="1.5" PointX="13.75" PointY="0.75" />
-        <EntityTypeShape EntityType="EKSPRES2017Model.irsaliye" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="EKSPRES2017Model.krmuste" Width="1.5" PointX="14.375" PointY="8.75" />
-        <EntityTypeShape EntityType="EKSPRES2017Model.krhatsub" Width="1.5" PointX="5.375" PointY="0.75" />
-        </Diagram>
+        <EntityTypeShape EntityType="EKSPRES2017Model.faturahar" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EKSPRES2017Model.irsaliye" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EKSPRES2017Model.krhatsub" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EKSPRES2017Model.krmuste" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EKSPRES2017Model.tesellum" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EKSPRES2017Model.tesellumhar" Width="1.5" PointX="12.75" PointY="0.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

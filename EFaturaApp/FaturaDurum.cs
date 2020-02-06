@@ -53,7 +53,6 @@ namespace EFaturaApp
 
         void FaturaKontrol()
         {
-
             DataTable veri = Func.FuncClass.GridViewToTable(radGridView1);
 
             panel1.Invoke(new Action(() => { panel1.Visible = true; }));
@@ -163,9 +162,6 @@ namespace EFaturaApp
             radGridView1.Columns[11].Width = 5;
             radGridView1.Columns[13].Width = 5;
             radGridView1.Columns[14].Width = 5;
-
-
-
         }
 
         private void commandBarButton1_Click(object sender, EventArgs e)
@@ -244,9 +240,24 @@ namespace EFaturaApp
             
         }
 
-        private void commandBarButton3_Click(object sender, EventArgs e)
+       private void commandBarButton3_Click_1(object sender, EventArgs e)
         {
             Close();
         }
+
+       private void commandBarButton4_Click(object sender, EventArgs e)
+       {
+
+           for (int i = 0; i < radGridView1.Rows.Count; i++)
+           {
+               int iRef = Convert.ToInt32(radGridView1.Rows[i].Cells["ref"].Value.ToString());
+               var Ftr = dbEntities.fatura.FirstOrDefault(f => f.@ref == iRef);
+               Ftr.EFaturaNo = null;
+               Ftr.adi1 = null;
+               Ftr.soyadi1 = null;
+               dbEntities.SaveChanges();
+           }
+           Listeleme();
+       }
     }
 }

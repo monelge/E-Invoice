@@ -27,10 +27,10 @@ namespace EntFMSystem
     
         public virtual DbSet<fatura> fatura { get; set; }
         public virtual DbSet<faturahar> faturahar { get; set; }
+        public virtual DbSet<irsaliye> irsaliye { get; set; }
+        public virtual DbSet<krhatsub> krhatsub { get; set; }
+        public virtual DbSet<krmuste> krmuste { get; set; }
         public virtual DbSet<tesellum> tesellum { get; set; }
         public virtual DbSet<tesellumhar> tesellumhar { get; set; }
-        public virtual DbSet<irsaliye> irsaliye { get; set; }
-        public virtual DbSet<krmuste> krmuste { get; set; }
-        public virtual DbSet<krhatsub> krhatsub { get; set; }
     }
 }

@@ -66,7 +66,8 @@ namespace EFaturaApp
                         radProgressBar1.Value1 = i+1;
                         radProgressBar1.Text = "Toplam :" + i + " / " + (dataTable.Rows.Count);
                     }));
-                    bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
+                    string sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
+                    RadMessageBox.Show(sonuc, "Hata Oluştu", MessageBoxButtons.OK, RadMessageIcon.Error);
                 }
 
                 this.Invoke(new Action(() =>

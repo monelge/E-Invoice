@@ -18,9 +18,27 @@ namespace EFaturaApp
     public partial class EArsivGonder : BaseForm
     {
         EKSPRES2017Entities ekspres2017Entities = new EKSPRES2017Entities();
+        BackgroundWorker worker = new BackgroundWorker();
+        private bool Yazdirma;
+
         public EArsivGonder()
         {
             InitializeComponent();
+            worker.DoWork += WorkerOnDoWork;
+            loadinPanelOrtala();
+        }
+        void loadinPanelOrtala()
+        {
+
+            radPanel1.Location = new Point(
+                this.ClientSize.Width / 2 - radPanel1.Size.Width / 2,
+                this.ClientSize.Height / 2 - radPanel1.Size.Height / 2);
+            radPanel1.Anchor = AnchorStyles.None;
+        }
+
+        private void WorkerOnDoWork(object sender, DoWorkEventArgs e)
+        {
+            Gonder(3);
         }
         public DataTable ViewToTable(DataGridView gridView)
         {
@@ -51,18 +69,41 @@ namespace EFaturaApp
         {
             try
             {
+                radPanel1.Invoke(new Action(() => { radPanel1.Visible = true; }));
+
                 DataTable dataTable = ViewToTable(dataGridView1);
+
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
+
                     int _ref = Convert.ToInt32(dataTable.Rows[i]["ref"].ToString());
                     var Fatura = ekspres2017Entities.fatura.FirstOrDefault(f => f.@ref == _ref);
                     var FatLst =
                         ekspres2017Entities.faturahar.Where(h =>
                             h.takipseri == Fatura.takipseri && h.fatno == Fatura.TakipNo).ToList();
-                    bool sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
-                    EarasivYazdir(Fatura, FatLst);
-                }
+                    string FaturaNO = Fatura.takipseri + Fatura.TakipNo.ToString().PadLeft(9, '0');
+                    this.Invoke(new Action(() =>
+                    {
+                        radProgressBar1.Maximum = dataTable.Rows.Count;
+                        radProgressBar1.Minimum = 0;
+                        radLabel1.Text = "Gönderilen Fatura No : " + FaturaNO;
+                        radProgressBar1.Value1 = i + 1;
+                        radProgressBar1.Text = "Toplam :" + i + " / " + (dataTable.Rows.Count);
+                    }));
+                    string sonuc = EfatWebservis.FaturaIslem.FaturaXml(Fatura, FatLst, FtTur);
+                    RadMessageBox.Show(sonuc, "Hata Oluştu", MessageBoxButtons.OK, RadMessageIcon.Error);
 
+                    if (Yazdirma == true)
+                    {
+                        EarasivYazdir(Fatura, FatLst);
+                    }
+                }
+                this.Invoke(new Action(() =>
+                {
+                    listele();
+                    radPanel1.Visible = false;
+                    RadMessageBox.Show("Faturalar başarılı şekilde gönderildi", "Tebrikler", MessageBoxButtons.OK, RadMessageIcon.Info);
+                }));
                 listele();
                 return true;
             }
@@ -97,7 +138,7 @@ namespace EFaturaApp
         }
         private void EArsivGonder_Load(object sender, EventArgs e)
         {
-
+            radPanel1.Visible = false;
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -209,13 +250,35 @@ namespace EFaturaApp
 
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
-            Gonder(3);
+            DialogResult dlgResult = RadMessageBox.Show("E-Arşiv Faturaları yazdırmak istiyormusunuz?", "EfaturaApp", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+            if (dlgResult == DialogResult.OK)
+            {
+                Yazdirma = true;
+            }
+            else
+            {
+                Yazdirma = false;
+            }
+            worker.RunWorkerAsync();
 
         }
 
         private void commandBarButton4_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                bool tt = (bool)dataGridView1.Rows[i].Cells[10].Value;
+                if (tt == true)
+                {
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    dataGridView1.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Red;
+                }
+            }
         }
     }
 }

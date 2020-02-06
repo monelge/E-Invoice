@@ -150,19 +150,19 @@
             this.radGroupBox1.Controls.Add(this.radPanel1);
             this.radGroupBox1.Controls.Add(this.dataGridView1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGroupBox1.HeaderText = "radGroupBox1";
+            this.radGroupBox1.HeaderText = "Fatura Listesi";
             this.radGroupBox1.Location = new System.Drawing.Point(3, 3);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Size = new System.Drawing.Size(1201, 591);
             this.radGroupBox1.TabIndex = 0;
-            this.radGroupBox1.Text = "radGroupBox1";
+            this.radGroupBox1.Text = "Fatura Listesi";
             // 
             // radPanel1
             // 
             this.radPanel1.Controls.Add(this.radLabel2);
             this.radPanel1.Controls.Add(this.radLabel1);
             this.radPanel1.Controls.Add(this.radProgressBar1);
-            this.radPanel1.Location = new System.Drawing.Point(424, 240);
+            this.radPanel1.Location = new System.Drawing.Point(442, 244);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(336, 144);
             this.radPanel1.TabIndex = 2;

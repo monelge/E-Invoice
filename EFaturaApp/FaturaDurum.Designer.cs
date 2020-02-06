@@ -35,6 +35,8 @@
             this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarStripElement2 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
@@ -58,7 +60,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1355, 73);
+            this.radCommandBar1.Size = new System.Drawing.Size(1355, 48);
             this.radCommandBar1.TabIndex = 1;
             // 
             // commandBarRowElement1
@@ -66,7 +68,8 @@
             this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
             this.commandBarRowElement1.Name = "commandBarRowElement1";
             this.commandBarRowElement1.Strips.AddRange(new Telerik.WinControls.UI.CommandBarStripElement[] {
-            this.commandBarStripElement1});
+            this.commandBarStripElement1,
+            this.commandBarStripElement2});
             // 
             // commandBarStripElement1
             // 
@@ -74,7 +77,7 @@
             this.commandBarStripElement1.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
             this.commandBarButton1,
             this.commandBarButton2,
-            this.commandBarButton3});
+            this.commandBarButton4});
             this.commandBarStripElement1.Name = "commandBarStripElement1";
             // 
             // commandBarButton1
@@ -97,15 +100,32 @@
             this.commandBarButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton2.Click += new System.EventHandler(this.commandBarButton2_Click);
             // 
+            // commandBarButton4
+            // 
+            this.commandBarButton4.DisplayName = "İşareti Kaldır";
+            this.commandBarButton4.DrawText = true;
+            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
+            this.commandBarButton4.Name = "commandBarButton4";
+            this.commandBarButton4.Text = "İşareti Kaldır";
+            this.commandBarButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.commandBarButton4.Click += new System.EventHandler(this.commandBarButton4_Click);
+            // 
+            // commandBarStripElement2
+            // 
+            this.commandBarStripElement2.DisplayName = "commandBarStripElement2";
+            this.commandBarStripElement2.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
+            this.commandBarButton3});
+            this.commandBarStripElement2.Name = "commandBarStripElement2";
+            // 
             // commandBarButton3
             // 
-            this.commandBarButton3.DisplayName = "commandBarButton3";
+            this.commandBarButton3.DisplayName = "Kapat";
             this.commandBarButton3.DrawText = true;
             this.commandBarButton3.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton3.Image")));
             this.commandBarButton3.Name = "commandBarButton3";
             this.commandBarButton3.Text = "Kapat";
             this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.commandBarButton3.Click += new System.EventHandler(this.commandBarButton3_Click);
+            this.commandBarButton3.Click += new System.EventHandler(this.commandBarButton3_Click_1);
             // 
             // tableLayoutPanel1
             // 
@@ -113,12 +133,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.radGridView1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 73);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 48);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1355, 692);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1355, 717);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // radGridView1
@@ -134,7 +154,8 @@
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridView1.Name = "radGridView1";
-            this.radGridView1.Size = new System.Drawing.Size(1349, 686);
+            this.radGridView1.ShowGroupPanel = false;
+            this.radGridView1.Size = new System.Drawing.Size(1349, 711);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.radGridView1_RowFormatting);
             // 
@@ -207,6 +228,8 @@
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement2;
         private Telerik.WinControls.UI.CommandBarButton commandBarButton3;
     }
 }

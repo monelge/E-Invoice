@@ -728,11 +728,11 @@
         <EntityContainer Name="EKSPRES2017Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="fatura" EntityType="EKSPRES2017Model.fatura" />
           <EntitySet Name="faturahar" EntityType="EKSPRES2017Model.faturahar" />
+          <EntitySet Name="irsaliye" EntityType="EKSPRES2017Model.irsaliye" />
+          <EntitySet Name="krhatsub" EntityType="EKSPRES2017Model.krhatsub" />
+          <EntitySet Name="krmuste" EntityType="EKSPRES2017Model.krmuste" />
           <EntitySet Name="tesellum" EntityType="EKSPRES2017Model.tesellum" />
           <EntitySet Name="tesellumhar" EntityType="EKSPRES2017Model.tesellumhar" />
-          <EntitySet Name="irsaliye" EntityType="EKSPRES2017Model.irsaliye" />
-          <EntitySet Name="krmuste" EntityType="EKSPRES2017Model.krmuste" />
-          <EntitySet Name="krhatsub" EntityType="EKSPRES2017Model.krhatsub" />
         </EntityContainer>
         <EntityType Name="fatura">
           <Key>
@@ -904,6 +904,354 @@
           <Property Name="tesmusirsno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="testasirsno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="HarTipi" Type="Int16" />
+        </EntityType>
+        <EntityType Name="irsaliye">
+          <Key>
+            <PropertyRef Name="tasirno" />
+          </Key>
+          <Property Name="tasirno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="irsno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="seri" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="seferno" Type="Int32" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+          <Property Name="gonsub" Type="Int32" />
+          <Property Name="gonsubadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="alhat" Type="Int32" />
+          <Property Name="alhatadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="alsub" Type="Int32" />
+          <Property Name="alsubadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="plaka" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="adi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="soyadi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sofadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="sofsoyadi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sigorta" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="adresteslim" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="adresalim" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="telihbar" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="toplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="yekun" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="kdv" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="iptal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="iptaltarihi" Type="DateTime" Precision="3" />
+          <Property Name="basildimi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="kim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="muhurno" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Field1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Navlun" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="Navlunkdv" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="Navluntoplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="alavans" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="veravans" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="potoplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="uatoplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="toplamkg" Type="Double" />
+          <Property Name="isaret" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="takipno" Type="Int32" />
+          <Property Name="takipseri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sayfasay" Type="Int32" />
+          <Property Name="msayfasay" Type="Int32" />
+          <Property Name="gtoplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="mgtoplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="muatoplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="mpotoplam" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="irsaliye1" Type="Int32" />
+          <Property Name="aktarim" Type="Int32" />
+          <Property Name="takipnoson" Type="Int32" />
+          <Property Name="navlunacik" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="hat" Type="Int32" />
+          <Property Name="hatismi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sigortatutar" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="merkezsigorta" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="subesigorta" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="odenenacik" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="alinanacik" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="kimbosalt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="durum" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="gonisaret" Type="Int32" />
+          <Property Name="alisaret" Type="Int32" />
+          <Property Name="RomorkPlaka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PuantorKod" Type="Int32" />
+          <Property Name="EkNavlun" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="EkNavlunAciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EkNavlunAlici" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="EkNavlunAciklamaAlici" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SigortaPrimTutar" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="SigortaPrimOran" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="YetkiBelgeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tarih1" Type="DateTime" Precision="3" />
+          <Property Name="saat" Type="DateTime" Precision="3" />
+          <Property Name="saat1" Type="DateTime" Precision="3" />
+          <Property Name="Sigortaci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PoliceNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sisaret" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="TesSigortaTutar" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SeferNo1" Type="Int32" />
+          <Property Name="YukleyenPKod" Type="Int32" />
+          <Property Name="GidisGelis" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DegisimTarih" Type="DateTime" Precision="3" />
+          <Property Name="BasKM" Type="Int32" />
+          <Property Name="BitKM" Type="Int32" />
+          <Property Name="SeferRef" Type="Int32" />
+          <Property Name="ToplamDesi" Type="Double" />
+          <Property Name="PlakaHesapId" Type="Int32" />
+          <Property Name="CiktiSayi" Type="Int32" />
+          <Property Name="AracirsListeRef" Type="Int32" />
+        </EntityType>
+        <EntityType Name="krhatsub">
+          <Key>
+            <PropertyRef Name="ref" />
+          </Key>
+          <Property Name="ref" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hat" Type="Int32" />
+          <Property Name="hatismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="sube" Type="Int32" Nullable="false" />
+          <Property Name="subeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="baglisube" Type="Int32" />
+          <Property Name="bagakt" Type="Int32" />
+          <Property Name="mrkuzaklik" Type="Int16" />
+          <Property Name="poorani" Type="Int32" />
+          <Property Name="uaorani" Type="Int32" />
+          <Property Name="chorani" Type="Int32" />
+          <Property Name="carikod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="muhkodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ozelkod1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="okod1" Type="Int32" />
+          <Property Name="ozelkod2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="okod2" Type="Int32" />
+          <Property Name="ozelkod3" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="okod3" Type="Int32" />
+          <Property Name="bolgekodu" Type="Int16" />
+          <Property Name="aktfatilkno" Type="Int32" />
+          <Property Name="aktfatsonno" Type="Int32" />
+          <Property Name="eskfatilkno" Type="Int32" />
+          <Property Name="eskfatsonno" Type="Int32" />
+          <Property Name="akttesilkno" Type="Int32" />
+          <Property Name="akttessonno" Type="Int32" />
+          <Property Name="esktesilkno" Type="Int32" />
+          <Property Name="esktessonno" Type="Int32" />
+          <Property Name="irsilkno" Type="Int32" />
+          <Property Name="irssonno" Type="Int32" />
+          <Property Name="adres" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="il" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="ilce" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="semt" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="tel1" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="tel2" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="fax" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="postakodu" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="subetipi" Type="Int32" />
+          <Property Name="gelorani" Type="Int32" />
+          <Property Name="gitorani" Type="Int32" />
+          <Property Name="isaret" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="KKB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KdvHesabi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="durum" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="kendifaturasi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KKBOran" Type="Int32" />
+          <Property Name="teslimSuresi" Type="Int32" />
+          <Property Name="pazartesi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="sali" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Carsamba" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Persembe" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Cuma" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Cumartesi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="pazar" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NavlunGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GonderenEkNavlunGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VerilenAvansGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AliciEkNavlunGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HizmetAlimFaturaGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FaturaGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MazotGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HakedisGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="YolGiderKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="YemekGiderKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="iskontoGiderKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FaturaBaglantiKodu" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="AlısFaturaBaglantiKodu" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="gelirMuhasebeKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModemTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="OnayLimit" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="SQLServer" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+          <Property Name="SQLDatabase" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+          <Property Name="SQLUserName" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+          <Property Name="SQLPassword" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+          <Property Name="BSeri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BSubeKodu" Type="Int32" />
+          <Property Name="BSubeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BAliciSubeKodu" Type="Int32" />
+          <Property Name="BAliciSubeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AktarimYap" Type="Boolean" />
+          <Property Name="MKAktar" Type="Boolean" />
+          <Property Name="MKAktarTumu" Type="Boolean" />
+          <Property Name="AnlAktar" Type="Boolean" />
+          <Property Name="TesAktar" Type="Boolean" />
+          <Property Name="TesAktarTumu" Type="Boolean" />
+          <Property Name="IrsAktar" Type="Boolean" />
+          <Property Name="IrsAktarTumu" Type="Boolean" />
+          <Property Name="FatAktar" Type="Boolean" />
+          <Property Name="FatAktarTumu" Type="Boolean" />
+          <Property Name="KasaAktar" Type="Boolean" />
+          <Property Name="KasaAktarTumu" Type="Boolean" />
+          <Property Name="TBAktar" Type="Boolean" />
+          <Property Name="TBAktarTumu" Type="Boolean" />
+          <Property Name="BankaAktar" Type="Boolean" />
+          <Property Name="BankaAktarTumu" Type="Boolean" />
+          <Property Name="CekAktar" Type="Boolean" />
+          <Property Name="CekAktarTumu" Type="Boolean" />
+          <Property Name="AktarimTarih" Type="DateTime" Precision="3" />
+          <Property Name="EMail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AlisFatAktar" Type="Boolean" />
+          <Property Name="AlisFatAktarTumu" Type="Boolean" />
+          <Property Name="LogoKurumsal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoBireysel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoNakliyeci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoSatici" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoPersonel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoOrtaklar" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoKamyoncu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoKomyonetci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoAcente" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoOzel1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoOzel2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoKamukurumu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LogoDefMuhasebe" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FirmaCarikodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="SubeCariKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="FaturaDuzeltSon" Type="Int16" />
+          <Property Name="imageAktar" Type="Int16" />
+          <Property Name="OKT" Type="Int16" />
+          <Property Name="PaletBarkod" Type="Int32" />
+          <Property Name="Ambar" Type="Int16" />
+          <Property Name="Dagitim" Type="Int16" />
+          <Property Name="HizmetKartiFatura" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="LogoSEmanet" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MusOzelKodRef" Type="Int32" />
+          <Property Name="AliciCariKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="krmuste">
+          <Key>
+            <PropertyRef Name="kodu" />
+          </Key>
+          <Property Name="muskod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kodu" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="kim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kdv" Type="Int32" />
+          <Property Name="sube" Type="Int32" />
+          <Property Name="subeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ilce" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="il" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="semt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cadde" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="mahalle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sokak" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="diger" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="adres1" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="adres2" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="adres3" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="adres4" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="tel1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tel2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tel3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tel4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tel5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tel6" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="poskod" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="vdairesi" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="vno" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="iskolu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ozelkod1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ozelkod2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ozelkod3" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="carikod" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="muhkodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="caritipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="eskikod" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="skodu" Type="Int32" />
+          <Property Name="belgetipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="serino" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="kimlikno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="pasportno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ehliyetno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="mtipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="tkodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="tadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tahkodu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="isaret" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="krliste" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="kodu1" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="aktarim" Type="Int32" />
+          <Property Name="kdvda" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="makbuz" Type="Int32" />
+          <Property Name="sigorta" Type="Single" />
+          <Property Name="topluFatura" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DizaynDosya" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="uretici" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DosMusteriKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GetirenKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GetirenAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GetirenTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="GetirenTutar" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="GetirenOran" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tahakkuktutar" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TahakkukGun" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="TahakkukAck" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TahakkukGrp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TahakkukBirimUcret" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tahakkukikramiye" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TahakkukKacGunde" Type="Int16" />
+          <Property Name="CariHareketGiris" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="GoturenKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GoturenAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GoturenTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="GoturenTutar" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GoturenOran" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="KaraListeAciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Ekleyen" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Borc" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Alacak" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Bakiye" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="BorcG" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="AlacakG" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="BakiyeG" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="VadeGun" Type="Int16" />
+          <Property Name="IskoluId" Type="Int32" />
+          <Property Name="SanalSubeKodu" Type="Int32" />
+          <Property Name="FirmaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepoKodu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KendiDeposu" Type="Boolean" />
+          <Property Name="TahsilatGunu" Type="Int32" />
+          <Property Name="HizmetAlimGiris" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="sec" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BarkodBas" Type="Boolean" />
+          <Property Name="DegisimTarih" Type="DateTime" Precision="3" />
+          <Property Name="GuzergahKodu" Type="Int32" />
+          <Property Name="PTahKodu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PTutar" Type="Decimal" Precision="19" Scale="3" />
+          <Property Name="POranPay" Type="Int32" />
+          <Property Name="POranPayda" Type="Int32" />
+          <Property Name="CariSifre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="UstCari" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="UstCariKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="UstCariAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Spot" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MusirsnoGiris" Type="Int16" />
+          <Property Name="MOdemeTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="EkDosya" Type="Int16" />
+          <Property Name="EFatura" Type="Int16" />
+          <Property Name="EFaturaTipi" Type="Int16" />
+          <Property Name="NakliyeSekli" Type="Int32" />
         </EntityType>
         <EntityType Name="tesellum">
           <Key>
@@ -1093,354 +1441,6 @@
           <Property Name="LineNr" Type="Int32" />
           <Property Name="AracirsListeSira" Type="Int32" />
         </EntityType>
-        <EntityType Name="irsaliye">
-          <Key>
-            <PropertyRef Name="tasirno" />
-          </Key>
-          <Property Name="tasirno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="irsno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="seri" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="seferno" Type="Int32" />
-          <Property Name="tarih" Type="DateTime" Precision="3" />
-          <Property Name="gonsub" Type="Int32" />
-          <Property Name="gonsubadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="alhat" Type="Int32" />
-          <Property Name="alhatadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="alsub" Type="Int32" />
-          <Property Name="alsubadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="plaka" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="adi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="soyadi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="sofadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="sofsoyadi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="sigorta" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="adresteslim" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="adresalim" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="telihbar" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="toplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="yekun" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="kdv" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="iptal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="iptaltarihi" Type="DateTime" Precision="3" />
-          <Property Name="basildimi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="kim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="muhurno" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
-          <Property Name="Field1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Field2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Field3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Navlun" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="Navlunkdv" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="Navluntoplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="alavans" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="veravans" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="potoplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="uatoplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="toplamkg" Type="Double" />
-          <Property Name="isaret" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="takipno" Type="Int32" />
-          <Property Name="takipseri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="sayfasay" Type="Int32" />
-          <Property Name="msayfasay" Type="Int32" />
-          <Property Name="gtoplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="mgtoplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="muatoplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="mpotoplam" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="irsaliye1" Type="Int32" />
-          <Property Name="aktarim" Type="Int32" />
-          <Property Name="takipnoson" Type="Int32" />
-          <Property Name="navlunacik" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="hat" Type="Int32" />
-          <Property Name="hatismi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="sigortatutar" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="merkezsigorta" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="subesigorta" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="odenenacik" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="alinanacik" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="kimbosalt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="durum" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="gonisaret" Type="Int32" />
-          <Property Name="alisaret" Type="Int32" />
-          <Property Name="RomorkPlaka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="PuantorKod" Type="Int32" />
-          <Property Name="EkNavlun" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="EkNavlunAciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EkNavlunAlici" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="EkNavlunAciklamaAlici" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SigortaPrimTutar" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="SigortaPrimOran" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="YetkiBelgeNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tarih1" Type="DateTime" Precision="3" />
-          <Property Name="saat" Type="DateTime" Precision="3" />
-          <Property Name="saat1" Type="DateTime" Precision="3" />
-          <Property Name="Sigortaci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="PoliceNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Sisaret" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="TesSigortaTutar" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="SeferNo1" Type="Int32" />
-          <Property Name="YukleyenPKod" Type="Int32" />
-          <Property Name="GidisGelis" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="DegisimTarih" Type="DateTime" Precision="3" />
-          <Property Name="BasKM" Type="Int32" />
-          <Property Name="BitKM" Type="Int32" />
-          <Property Name="SeferRef" Type="Int32" />
-          <Property Name="ToplamDesi" Type="Double" />
-          <Property Name="PlakaHesapId" Type="Int32" />
-          <Property Name="CiktiSayi" Type="Int32" />
-          <Property Name="AracirsListeRef" Type="Int32" />
-        </EntityType>
-        <EntityType Name="krmuste">
-          <Key>
-            <PropertyRef Name="kodu" />
-          </Key>
-          <Property Name="muskod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="kodu" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="true" />
-          <Property Name="kim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="kdv" Type="Int32" />
-          <Property Name="sube" Type="Int32" />
-          <Property Name="subeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ilce" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="il" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="semt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="cadde" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="mahalle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="sokak" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="diger" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="adres1" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="adres2" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="adres3" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="adres4" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="tel1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tel2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tel3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tel4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tel5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tel6" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="poskod" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-          <Property Name="aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="vdairesi" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="vno" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="iskolu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ozelkod1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="ozelkod2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="ozelkod3" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="carikod" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="muhkodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="caritipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="eskikod" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="sifre" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-          <Property Name="skodu" Type="Int32" />
-          <Property Name="belgetipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="serino" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="kimlikno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="pasportno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="ehliyetno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="mtipi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="tkodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-          <Property Name="tadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="tahkodu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="isaret" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="krliste" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="kodu1" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-          <Property Name="aktarim" Type="Int32" />
-          <Property Name="kdvda" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="makbuz" Type="Int32" />
-          <Property Name="sigorta" Type="Single" />
-          <Property Name="topluFatura" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="DizaynDosya" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="uretici" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="DosMusteriKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="GetirenKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="GetirenAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GetirenTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="GetirenTutar" Type="Decimal" Precision="18" Scale="3" />
-          <Property Name="GetirenOran" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Tahakkuktutar" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TahakkukGun" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="TahakkukAck" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="TahakkukGrp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="TahakkukBirimUcret" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Tahakkukikramiye" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TahakkukKacGunde" Type="Int16" />
-          <Property Name="CariHareketGiris" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="GoturenKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="GoturenAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GoturenTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="GoturenTutar" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="GoturenOran" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="KaraListeAciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Ekleyen" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Borc" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Alacak" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Bakiye" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="BorcG" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="AlacakG" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="BakiyeG" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="VadeGun" Type="Int16" />
-          <Property Name="IskoluId" Type="Int32" />
-          <Property Name="SanalSubeKodu" Type="Int32" />
-          <Property Name="FirmaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DepoKodu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="KendiDeposu" Type="Boolean" />
-          <Property Name="TahsilatGunu" Type="Int32" />
-          <Property Name="HizmetAlimGiris" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
-          <Property Name="sec" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="BarkodBas" Type="Boolean" />
-          <Property Name="DegisimTarih" Type="DateTime" Precision="3" />
-          <Property Name="GuzergahKodu" Type="Int32" />
-          <Property Name="PTahKodu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="PTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="PTutar" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="POranPay" Type="Int32" />
-          <Property Name="POranPayda" Type="Int32" />
-          <Property Name="CariSifre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="UstCari" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="UstCariKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-          <Property Name="UstCariAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Spot" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="MusirsnoGiris" Type="Int16" />
-          <Property Name="MOdemeTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="EkDosya" Type="Int16" />
-          <Property Name="EFatura" Type="Int16" />
-          <Property Name="EFaturaTipi" Type="Int16" />
-          <Property Name="NakliyeSekli" Type="Int32" />
-        </EntityType>
-        <EntityType Name="krhatsub">
-          <Key>
-            <PropertyRef Name="ref" />
-          </Key>
-          <Property Name="ref" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="hat" Type="Int32" />
-          <Property Name="hatismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="sube" Type="Int32" Nullable="false" />
-          <Property Name="subeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="baglisube" Type="Int32" />
-          <Property Name="bagakt" Type="Int32" />
-          <Property Name="mrkuzaklik" Type="Int16" />
-          <Property Name="poorani" Type="Int32" />
-          <Property Name="uaorani" Type="Int32" />
-          <Property Name="chorani" Type="Int32" />
-          <Property Name="carikod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="muhkodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ozelkod1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="okod1" Type="Int32" />
-          <Property Name="ozelkod2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="okod2" Type="Int32" />
-          <Property Name="ozelkod3" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="okod3" Type="Int32" />
-          <Property Name="bolgekodu" Type="Int16" />
-          <Property Name="aktfatilkno" Type="Int32" />
-          <Property Name="aktfatsonno" Type="Int32" />
-          <Property Name="eskfatilkno" Type="Int32" />
-          <Property Name="eskfatsonno" Type="Int32" />
-          <Property Name="akttesilkno" Type="Int32" />
-          <Property Name="akttessonno" Type="Int32" />
-          <Property Name="esktesilkno" Type="Int32" />
-          <Property Name="esktessonno" Type="Int32" />
-          <Property Name="irsilkno" Type="Int32" />
-          <Property Name="irssonno" Type="Int32" />
-          <Property Name="adres" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
-          <Property Name="il" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
-          <Property Name="ilce" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
-          <Property Name="semt" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="tel1" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-          <Property Name="tel2" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-          <Property Name="fax" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-          <Property Name="sifre" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="postakodu" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
-          <Property Name="subetipi" Type="Int32" />
-          <Property Name="gelorani" Type="Int32" />
-          <Property Name="gitorani" Type="Int32" />
-          <Property Name="isaret" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="KKB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="KdvHesabi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="durum" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="kendifaturasi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="KKBOran" Type="Int32" />
-          <Property Name="teslimSuresi" Type="Int32" />
-          <Property Name="pazartesi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="sali" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Carsamba" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Persembe" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Cuma" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Cumartesi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="pazar" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="NavlunGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="GonderenEkNavlunGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="VerilenAvansGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="AliciEkNavlunGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="HizmetAlimFaturaGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="FaturaGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="MazotGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="HakedisGiderKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="YolGiderKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="YemekGiderKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="iskontoGiderKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="FaturaBaglantiKodu" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="AlısFaturaBaglantiKodu" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="gelirMuhasebeKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ModemTipi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="OnayLimit" Type="Decimal" Precision="19" Scale="3" />
-          <Property Name="SQLServer" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
-          <Property Name="SQLDatabase" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
-          <Property Name="SQLUserName" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
-          <Property Name="SQLPassword" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
-          <Property Name="BSeri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="BSubeKodu" Type="Int32" />
-          <Property Name="BSubeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="BAliciSubeKodu" Type="Int32" />
-          <Property Name="BAliciSubeismi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="AktarimYap" Type="Boolean" />
-          <Property Name="MKAktar" Type="Boolean" />
-          <Property Name="MKAktarTumu" Type="Boolean" />
-          <Property Name="AnlAktar" Type="Boolean" />
-          <Property Name="TesAktar" Type="Boolean" />
-          <Property Name="TesAktarTumu" Type="Boolean" />
-          <Property Name="IrsAktar" Type="Boolean" />
-          <Property Name="IrsAktarTumu" Type="Boolean" />
-          <Property Name="FatAktar" Type="Boolean" />
-          <Property Name="FatAktarTumu" Type="Boolean" />
-          <Property Name="KasaAktar" Type="Boolean" />
-          <Property Name="KasaAktarTumu" Type="Boolean" />
-          <Property Name="TBAktar" Type="Boolean" />
-          <Property Name="TBAktarTumu" Type="Boolean" />
-          <Property Name="BankaAktar" Type="Boolean" />
-          <Property Name="BankaAktarTumu" Type="Boolean" />
-          <Property Name="CekAktar" Type="Boolean" />
-          <Property Name="CekAktarTumu" Type="Boolean" />
-          <Property Name="AktarimTarih" Type="DateTime" Precision="3" />
-          <Property Name="EMail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="AlisFatAktar" Type="Boolean" />
-          <Property Name="AlisFatAktarTumu" Type="Boolean" />
-          <Property Name="LogoKurumsal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoBireysel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoNakliyeci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoSatici" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoPersonel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoOrtaklar" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoKamyoncu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoKomyonetci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoAcente" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoOzel1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoOzel2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoKamukurumu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LogoDefMuhasebe" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="FirmaCarikodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-          <Property Name="SubeCariKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-          <Property Name="FaturaDuzeltSon" Type="Int16" />
-          <Property Name="imageAktar" Type="Int16" />
-          <Property Name="OKT" Type="Int16" />
-          <Property Name="PaletBarkod" Type="Int32" />
-          <Property Name="Ambar" Type="Int16" />
-          <Property Name="Dagitim" Type="Int16" />
-          <Property Name="HizmetKartiFatura" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
-          <Property Name="LogoSEmanet" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="MusOzelKodRef" Type="Int32" />
-          <Property Name="AliciCariKodu" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1616,6 +1616,357 @@
                 <ScalarProperty Name="takipseri" ColumnName="takipseri" />
                 <ScalarProperty Name="fatno" ColumnName="fatno" />
                 <ScalarProperty Name="ref" ColumnName="ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="irsaliye">
+            <EntityTypeMapping TypeName="EKSPRES2017Model.irsaliye">
+              <MappingFragment StoreEntitySet="irsaliye">
+                <ScalarProperty Name="AracirsListeRef" ColumnName="AracirsListeRef" />
+                <ScalarProperty Name="CiktiSayi" ColumnName="CiktiSayi" />
+                <ScalarProperty Name="PlakaHesapId" ColumnName="PlakaHesapId" />
+                <ScalarProperty Name="ToplamDesi" ColumnName="ToplamDesi" />
+                <ScalarProperty Name="SeferRef" ColumnName="SeferRef" />
+                <ScalarProperty Name="BitKM" ColumnName="BitKM" />
+                <ScalarProperty Name="BasKM" ColumnName="BasKM" />
+                <ScalarProperty Name="DegisimTarih" ColumnName="DegisimTarih" />
+                <ScalarProperty Name="GidisGelis" ColumnName="GidisGelis" />
+                <ScalarProperty Name="YukleyenPKod" ColumnName="YukleyenPKod" />
+                <ScalarProperty Name="SeferNo1" ColumnName="SeferNo1" />
+                <ScalarProperty Name="TesSigortaTutar" ColumnName="TesSigortaTutar" />
+                <ScalarProperty Name="Sisaret" ColumnName="Sisaret" />
+                <ScalarProperty Name="PoliceNo" ColumnName="PoliceNo" />
+                <ScalarProperty Name="Sigortaci" ColumnName="Sigortaci" />
+                <ScalarProperty Name="saat1" ColumnName="saat1" />
+                <ScalarProperty Name="saat" ColumnName="saat" />
+                <ScalarProperty Name="tarih1" ColumnName="tarih1" />
+                <ScalarProperty Name="YetkiBelgeNo" ColumnName="YetkiBelgeNo" />
+                <ScalarProperty Name="SigortaPrimOran" ColumnName="SigortaPrimOran" />
+                <ScalarProperty Name="SigortaPrimTutar" ColumnName="SigortaPrimTutar" />
+                <ScalarProperty Name="EkNavlunAciklamaAlici" ColumnName="EkNavlunAciklamaAlici" />
+                <ScalarProperty Name="EkNavlunAlici" ColumnName="EkNavlunAlici" />
+                <ScalarProperty Name="EkNavlunAciklama" ColumnName="EkNavlunAciklama" />
+                <ScalarProperty Name="EkNavlun" ColumnName="EkNavlun" />
+                <ScalarProperty Name="PuantorKod" ColumnName="PuantorKod" />
+                <ScalarProperty Name="RomorkPlaka" ColumnName="RomorkPlaka" />
+                <ScalarProperty Name="alisaret" ColumnName="alisaret" />
+                <ScalarProperty Name="gonisaret" ColumnName="gonisaret" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="kimbosalt" ColumnName="kimbosalt" />
+                <ScalarProperty Name="alinanacik" ColumnName="alinanacik" />
+                <ScalarProperty Name="odenenacik" ColumnName="odenenacik" />
+                <ScalarProperty Name="subesigorta" ColumnName="subesigorta" />
+                <ScalarProperty Name="merkezsigorta" ColumnName="merkezsigorta" />
+                <ScalarProperty Name="sigortatutar" ColumnName="sigortatutar" />
+                <ScalarProperty Name="hatismi" ColumnName="hatismi" />
+                <ScalarProperty Name="hat" ColumnName="hat" />
+                <ScalarProperty Name="navlunacik" ColumnName="navlunacik" />
+                <ScalarProperty Name="takipnoson" ColumnName="takipnoson" />
+                <ScalarProperty Name="aktarim" ColumnName="aktarim" />
+                <ScalarProperty Name="irsaliye1" ColumnName="irsaliye" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="mpotoplam" ColumnName="mpotoplam" />
+                <ScalarProperty Name="muatoplam" ColumnName="muatoplam" />
+                <ScalarProperty Name="mgtoplam" ColumnName="mgtoplam" />
+                <ScalarProperty Name="gtoplam" ColumnName="gtoplam" />
+                <ScalarProperty Name="msayfasay" ColumnName="msayfasay" />
+                <ScalarProperty Name="sayfasay" ColumnName="sayfasay" />
+                <ScalarProperty Name="takipseri" ColumnName="takipseri" />
+                <ScalarProperty Name="takipno" ColumnName="takipno" />
+                <ScalarProperty Name="isaret" ColumnName="isaret" />
+                <ScalarProperty Name="toplamkg" ColumnName="toplamkg" />
+                <ScalarProperty Name="uatoplam" ColumnName="uatoplam" />
+                <ScalarProperty Name="potoplam" ColumnName="potoplam" />
+                <ScalarProperty Name="veravans" ColumnName="veravans" />
+                <ScalarProperty Name="alavans" ColumnName="alavans" />
+                <ScalarProperty Name="Navluntoplam" ColumnName="Navluntoplam" />
+                <ScalarProperty Name="Navlunkdv" ColumnName="Navlunkdv" />
+                <ScalarProperty Name="Navlun" ColumnName="Navlun" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="muhurno" ColumnName="muhurno" />
+                <ScalarProperty Name="kim" ColumnName="kim" />
+                <ScalarProperty Name="basildimi" ColumnName="basildimi" />
+                <ScalarProperty Name="iptaltarihi" ColumnName="iptaltarihi" />
+                <ScalarProperty Name="iptal" ColumnName="iptal" />
+                <ScalarProperty Name="kdv" ColumnName="kdv" />
+                <ScalarProperty Name="yekun" ColumnName="yekun" />
+                <ScalarProperty Name="toplam" ColumnName="toplam" />
+                <ScalarProperty Name="telihbar" ColumnName="telihbar" />
+                <ScalarProperty Name="adresalim" ColumnName="adresalim" />
+                <ScalarProperty Name="adresteslim" ColumnName="adresteslim" />
+                <ScalarProperty Name="sigorta" ColumnName="sigorta" />
+                <ScalarProperty Name="sofsoyadi" ColumnName="sofsoyadi" />
+                <ScalarProperty Name="sofadi" ColumnName="sofadi" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="plaka" ColumnName="plaka" />
+                <ScalarProperty Name="alsubadi" ColumnName="alsubadi" />
+                <ScalarProperty Name="alsub" ColumnName="alsub" />
+                <ScalarProperty Name="alhatadi" ColumnName="alhatadi" />
+                <ScalarProperty Name="alhat" ColumnName="alhat" />
+                <ScalarProperty Name="gonsubadi" ColumnName="gonsubadi" />
+                <ScalarProperty Name="gonsub" ColumnName="gonsub" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="seferno" ColumnName="seferno" />
+                <ScalarProperty Name="seri" ColumnName="seri" />
+                <ScalarProperty Name="irsno" ColumnName="irsno" />
+                <ScalarProperty Name="tasirno" ColumnName="tasirno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="krhatsub">
+            <EntityTypeMapping TypeName="EKSPRES2017Model.krhatsub">
+              <MappingFragment StoreEntitySet="krhatsub">
+                <ScalarProperty Name="AliciCariKodu" ColumnName="AliciCariKodu" />
+                <ScalarProperty Name="MusOzelKodRef" ColumnName="MusOzelKodRef" />
+                <ScalarProperty Name="LogoSEmanet" ColumnName="LogoSEmanet" />
+                <ScalarProperty Name="HizmetKartiFatura" ColumnName="HizmetKartiFatura" />
+                <ScalarProperty Name="Dagitim" ColumnName="Dagitim" />
+                <ScalarProperty Name="Ambar" ColumnName="Ambar" />
+                <ScalarProperty Name="PaletBarkod" ColumnName="PaletBarkod" />
+                <ScalarProperty Name="OKT" ColumnName="OKT" />
+                <ScalarProperty Name="imageAktar" ColumnName="imageAktar" />
+                <ScalarProperty Name="FaturaDuzeltSon" ColumnName="FaturaDuzeltSon" />
+                <ScalarProperty Name="SubeCariKodu" ColumnName="SubeCariKodu" />
+                <ScalarProperty Name="FirmaCarikodu" ColumnName="FirmaCarikodu" />
+                <ScalarProperty Name="LogoDefMuhasebe" ColumnName="LogoDefMuhasebe" />
+                <ScalarProperty Name="LogoKamukurumu" ColumnName="LogoKamukurumu" />
+                <ScalarProperty Name="LogoOzel2" ColumnName="LogoOzel2" />
+                <ScalarProperty Name="LogoOzel1" ColumnName="LogoOzel1" />
+                <ScalarProperty Name="LogoAcente" ColumnName="LogoAcente" />
+                <ScalarProperty Name="LogoKomyonetci" ColumnName="LogoKomyonetci" />
+                <ScalarProperty Name="LogoKamyoncu" ColumnName="LogoKamyoncu" />
+                <ScalarProperty Name="LogoOrtaklar" ColumnName="LogoOrtaklar" />
+                <ScalarProperty Name="LogoPersonel" ColumnName="LogoPersonel" />
+                <ScalarProperty Name="LogoSatici" ColumnName="LogoSatici" />
+                <ScalarProperty Name="LogoNakliyeci" ColumnName="LogoNakliyeci" />
+                <ScalarProperty Name="LogoBireysel" ColumnName="LogoBireysel" />
+                <ScalarProperty Name="LogoKurumsal" ColumnName="LogoKurumsal" />
+                <ScalarProperty Name="AlisFatAktarTumu" ColumnName="AlisFatAktarTumu" />
+                <ScalarProperty Name="AlisFatAktar" ColumnName="AlisFatAktar" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="AktarimTarih" ColumnName="AktarimTarih" />
+                <ScalarProperty Name="CekAktarTumu" ColumnName="CekAktarTumu" />
+                <ScalarProperty Name="CekAktar" ColumnName="CekAktar" />
+                <ScalarProperty Name="BankaAktarTumu" ColumnName="BankaAktarTumu" />
+                <ScalarProperty Name="BankaAktar" ColumnName="BankaAktar" />
+                <ScalarProperty Name="TBAktarTumu" ColumnName="TBAktarTumu" />
+                <ScalarProperty Name="TBAktar" ColumnName="TBAktar" />
+                <ScalarProperty Name="KasaAktarTumu" ColumnName="KasaAktarTumu" />
+                <ScalarProperty Name="KasaAktar" ColumnName="KasaAktar" />
+                <ScalarProperty Name="FatAktarTumu" ColumnName="FatAktarTumu" />
+                <ScalarProperty Name="FatAktar" ColumnName="FatAktar" />
+                <ScalarProperty Name="IrsAktarTumu" ColumnName="IrsAktarTumu" />
+                <ScalarProperty Name="IrsAktar" ColumnName="IrsAktar" />
+                <ScalarProperty Name="TesAktarTumu" ColumnName="TesAktarTumu" />
+                <ScalarProperty Name="TesAktar" ColumnName="TesAktar" />
+                <ScalarProperty Name="AnlAktar" ColumnName="AnlAktar" />
+                <ScalarProperty Name="MKAktarTumu" ColumnName="MKAktarTumu" />
+                <ScalarProperty Name="MKAktar" ColumnName="MKAktar" />
+                <ScalarProperty Name="AktarimYap" ColumnName="AktarimYap" />
+                <ScalarProperty Name="BAliciSubeismi" ColumnName="BAliciSubeismi" />
+                <ScalarProperty Name="BAliciSubeKodu" ColumnName="BAliciSubeKodu" />
+                <ScalarProperty Name="BSubeismi" ColumnName="BSubeismi" />
+                <ScalarProperty Name="BSubeKodu" ColumnName="BSubeKodu" />
+                <ScalarProperty Name="BSeri" ColumnName="BSeri" />
+                <ScalarProperty Name="SQLPassword" ColumnName="SQLPassword" />
+                <ScalarProperty Name="SQLUserName" ColumnName="SQLUserName" />
+                <ScalarProperty Name="SQLDatabase" ColumnName="SQLDatabase" />
+                <ScalarProperty Name="SQLServer" ColumnName="SQLServer" />
+                <ScalarProperty Name="OnayLimit" ColumnName="OnayLimit" />
+                <ScalarProperty Name="ModemTipi" ColumnName="ModemTipi" />
+                <ScalarProperty Name="gelirMuhasebeKodu" ColumnName="gelirMuhasebeKodu" />
+                <ScalarProperty Name="AlısFaturaBaglantiKodu" ColumnName="AlısFaturaBaglantiKodu" />
+                <ScalarProperty Name="FaturaBaglantiKodu" ColumnName="FaturaBaglantiKodu" />
+                <ScalarProperty Name="iskontoGiderKodu" ColumnName="iskontoGiderKodu" />
+                <ScalarProperty Name="YemekGiderKodu" ColumnName="YemekGiderKodu" />
+                <ScalarProperty Name="YolGiderKodu" ColumnName="YolGiderKodu" />
+                <ScalarProperty Name="HakedisGiderKodu" ColumnName="HakedisGiderKodu" />
+                <ScalarProperty Name="MazotGiderKodu" ColumnName="MazotGiderKodu" />
+                <ScalarProperty Name="FaturaGiderKodu" ColumnName="FaturaGiderKodu" />
+                <ScalarProperty Name="HizmetAlimFaturaGiderKodu" ColumnName="HizmetAlimFaturaGiderKodu" />
+                <ScalarProperty Name="AliciEkNavlunGiderKodu" ColumnName="AliciEkNavlunGiderKodu" />
+                <ScalarProperty Name="VerilenAvansGiderKodu" ColumnName="VerilenAvansGiderKodu" />
+                <ScalarProperty Name="GonderenEkNavlunGiderKodu" ColumnName="GonderenEkNavlunGiderKodu" />
+                <ScalarProperty Name="NavlunGiderKodu" ColumnName="NavlunGiderKodu" />
+                <ScalarProperty Name="pazar" ColumnName="pazar" />
+                <ScalarProperty Name="Cumartesi" ColumnName="Cumartesi" />
+                <ScalarProperty Name="Cuma" ColumnName="Cuma" />
+                <ScalarProperty Name="Persembe" ColumnName="Persembe" />
+                <ScalarProperty Name="Carsamba" ColumnName="Carsamba" />
+                <ScalarProperty Name="sali" ColumnName="sali" />
+                <ScalarProperty Name="pazartesi" ColumnName="pazartesi" />
+                <ScalarProperty Name="teslimSuresi" ColumnName="teslimSuresi" />
+                <ScalarProperty Name="KKBOran" ColumnName="KKBOran" />
+                <ScalarProperty Name="kendifaturasi" ColumnName="kendifaturasi" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="KdvHesabi" ColumnName="KdvHesabi" />
+                <ScalarProperty Name="KKB" ColumnName="KKB" />
+                <ScalarProperty Name="isaret" ColumnName="isaret" />
+                <ScalarProperty Name="gitorani" ColumnName="gitorani" />
+                <ScalarProperty Name="gelorani" ColumnName="gelorani" />
+                <ScalarProperty Name="subetipi" ColumnName="subetipi" />
+                <ScalarProperty Name="postakodu" ColumnName="postakodu" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="semt" ColumnName="semt" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="il" ColumnName="il" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="irssonno" ColumnName="irssonno" />
+                <ScalarProperty Name="irsilkno" ColumnName="irsilkno" />
+                <ScalarProperty Name="esktessonno" ColumnName="esktessonno" />
+                <ScalarProperty Name="esktesilkno" ColumnName="esktesilkno" />
+                <ScalarProperty Name="akttessonno" ColumnName="akttessonno" />
+                <ScalarProperty Name="akttesilkno" ColumnName="akttesilkno" />
+                <ScalarProperty Name="eskfatsonno" ColumnName="eskfatsonno" />
+                <ScalarProperty Name="eskfatilkno" ColumnName="eskfatilkno" />
+                <ScalarProperty Name="aktfatsonno" ColumnName="aktfatsonno" />
+                <ScalarProperty Name="aktfatilkno" ColumnName="aktfatilkno" />
+                <ScalarProperty Name="bolgekodu" ColumnName="bolgekodu" />
+                <ScalarProperty Name="okod3" ColumnName="okod3" />
+                <ScalarProperty Name="ozelkod3" ColumnName="ozelkod3" />
+                <ScalarProperty Name="okod2" ColumnName="okod2" />
+                <ScalarProperty Name="ozelkod2" ColumnName="ozelkod2" />
+                <ScalarProperty Name="okod1" ColumnName="okod1" />
+                <ScalarProperty Name="ozelkod1" ColumnName="ozelkod1" />
+                <ScalarProperty Name="muhkodu" ColumnName="muhkodu" />
+                <ScalarProperty Name="carikod" ColumnName="carikod" />
+                <ScalarProperty Name="chorani" ColumnName="chorani" />
+                <ScalarProperty Name="uaorani" ColumnName="uaorani" />
+                <ScalarProperty Name="poorani" ColumnName="poorani" />
+                <ScalarProperty Name="mrkuzaklik" ColumnName="mrkuzaklik" />
+                <ScalarProperty Name="bagakt" ColumnName="bagakt" />
+                <ScalarProperty Name="baglisube" ColumnName="baglisube" />
+                <ScalarProperty Name="subeismi" ColumnName="subeismi" />
+                <ScalarProperty Name="sube" ColumnName="sube" />
+                <ScalarProperty Name="hatismi" ColumnName="hatismi" />
+                <ScalarProperty Name="hat" ColumnName="hat" />
+                <ScalarProperty Name="ref" ColumnName="ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="krmuste">
+            <EntityTypeMapping TypeName="EKSPRES2017Model.krmuste">
+              <MappingFragment StoreEntitySet="krmuste">
+                <ScalarProperty Name="NakliyeSekli" ColumnName="NakliyeSekli" />
+                <ScalarProperty Name="EFaturaTipi" ColumnName="EFaturaTipi" />
+                <ScalarProperty Name="EFatura" ColumnName="EFatura" />
+                <ScalarProperty Name="EkDosya" ColumnName="EkDosya" />
+                <ScalarProperty Name="MOdemeTipi" ColumnName="MOdemeTipi" />
+                <ScalarProperty Name="MusirsnoGiris" ColumnName="MusirsnoGiris" />
+                <ScalarProperty Name="Spot" ColumnName="Spot" />
+                <ScalarProperty Name="UstCariAdi" ColumnName="UstCariAdi" />
+                <ScalarProperty Name="UstCariKodu" ColumnName="UstCariKodu" />
+                <ScalarProperty Name="UstCari" ColumnName="UstCari" />
+                <ScalarProperty Name="CariSifre" ColumnName="CariSifre" />
+                <ScalarProperty Name="POranPayda" ColumnName="POranPayda" />
+                <ScalarProperty Name="POranPay" ColumnName="POranPay" />
+                <ScalarProperty Name="PTutar" ColumnName="PTutar" />
+                <ScalarProperty Name="PTipi" ColumnName="PTipi" />
+                <ScalarProperty Name="PTahKodu" ColumnName="PTahKodu" />
+                <ScalarProperty Name="GuzergahKodu" ColumnName="GuzergahKodu" />
+                <ScalarProperty Name="DegisimTarih" ColumnName="DegisimTarih" />
+                <ScalarProperty Name="BarkodBas" ColumnName="BarkodBas" />
+                <ScalarProperty Name="sec" ColumnName="sec" />
+                <ScalarProperty Name="HizmetAlimGiris" ColumnName="HizmetAlimGiris" />
+                <ScalarProperty Name="TahsilatGunu" ColumnName="TahsilatGunu" />
+                <ScalarProperty Name="KendiDeposu" ColumnName="KendiDeposu" />
+                <ScalarProperty Name="DepoKodu" ColumnName="DepoKodu" />
+                <ScalarProperty Name="FirmaKodu" ColumnName="FirmaKodu" />
+                <ScalarProperty Name="SanalSubeKodu" ColumnName="SanalSubeKodu" />
+                <ScalarProperty Name="IskoluId" ColumnName="IskoluId" />
+                <ScalarProperty Name="VadeGun" ColumnName="VadeGun" />
+                <ScalarProperty Name="BakiyeG" ColumnName="BakiyeG" />
+                <ScalarProperty Name="AlacakG" ColumnName="AlacakG" />
+                <ScalarProperty Name="BorcG" ColumnName="BorcG" />
+                <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+                <ScalarProperty Name="Alacak" ColumnName="Alacak" />
+                <ScalarProperty Name="Borc" ColumnName="Borc" />
+                <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
+                <ScalarProperty Name="KaraListeAciklama" ColumnName="KaraListeAciklama" />
+                <ScalarProperty Name="GoturenOran" ColumnName="GoturenOran" />
+                <ScalarProperty Name="GoturenTutar" ColumnName="GoturenTutar" />
+                <ScalarProperty Name="GoturenTipi" ColumnName="GoturenTipi" />
+                <ScalarProperty Name="GoturenAdi" ColumnName="GoturenAdi" />
+                <ScalarProperty Name="GoturenKodu" ColumnName="GoturenKodu" />
+                <ScalarProperty Name="CariHareketGiris" ColumnName="CariHareketGiris" />
+                <ScalarProperty Name="TahakkukKacGunde" ColumnName="TahakkukKacGunde" />
+                <ScalarProperty Name="Tahakkukikramiye" ColumnName="Tahakkukikramiye" />
+                <ScalarProperty Name="TahakkukBirimUcret" ColumnName="TahakkukBirimUcret" />
+                <ScalarProperty Name="TahakkukGrp" ColumnName="TahakkukGrp" />
+                <ScalarProperty Name="TahakkukAck" ColumnName="TahakkukAck" />
+                <ScalarProperty Name="TahakkukGun" ColumnName="TahakkukGun" />
+                <ScalarProperty Name="Tahakkuktutar" ColumnName="Tahakkuktutar" />
+                <ScalarProperty Name="GetirenOran" ColumnName="GetirenOran" />
+                <ScalarProperty Name="GetirenTutar" ColumnName="GetirenTutar" />
+                <ScalarProperty Name="GetirenTipi" ColumnName="GetirenTipi" />
+                <ScalarProperty Name="GetirenAdi" ColumnName="GetirenAdi" />
+                <ScalarProperty Name="GetirenKodu" ColumnName="GetirenKodu" />
+                <ScalarProperty Name="DosMusteriKodu" ColumnName="DosMusteriKodu" />
+                <ScalarProperty Name="uretici" ColumnName="uretici" />
+                <ScalarProperty Name="DizaynDosya" ColumnName="DizaynDosya" />
+                <ScalarProperty Name="topluFatura" ColumnName="topluFatura" />
+                <ScalarProperty Name="sigorta" ColumnName="sigorta" />
+                <ScalarProperty Name="makbuz" ColumnName="makbuz" />
+                <ScalarProperty Name="kdvda" ColumnName="kdvda" />
+                <ScalarProperty Name="aktarim" ColumnName="aktarim" />
+                <ScalarProperty Name="kodu1" ColumnName="kodu1" />
+                <ScalarProperty Name="krliste" ColumnName="krliste" />
+                <ScalarProperty Name="isaret" ColumnName="isaret" />
+                <ScalarProperty Name="tahkodu" ColumnName="tahkodu" />
+                <ScalarProperty Name="tadi" ColumnName="tadi" />
+                <ScalarProperty Name="tkodu" ColumnName="tkodu" />
+                <ScalarProperty Name="mtipi" ColumnName="mtipi" />
+                <ScalarProperty Name="ehliyetno" ColumnName="ehliyetno" />
+                <ScalarProperty Name="pasportno" ColumnName="pasportno" />
+                <ScalarProperty Name="kimlikno" ColumnName="kimlikno" />
+                <ScalarProperty Name="serino" ColumnName="serino" />
+                <ScalarProperty Name="belgetipi" ColumnName="belgetipi" />
+                <ScalarProperty Name="skodu" ColumnName="skodu" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="eskikod" ColumnName="eskikod" />
+                <ScalarProperty Name="caritipi" ColumnName="caritipi" />
+                <ScalarProperty Name="muhkodu" ColumnName="muhkodu" />
+                <ScalarProperty Name="carikod" ColumnName="carikod" />
+                <ScalarProperty Name="ozelkod3" ColumnName="ozelkod3" />
+                <ScalarProperty Name="ozelkod2" ColumnName="ozelkod2" />
+                <ScalarProperty Name="ozelkod1" ColumnName="ozelkod1" />
+                <ScalarProperty Name="iskolu" ColumnName="iskolu" />
+                <ScalarProperty Name="vno" ColumnName="vno" />
+                <ScalarProperty Name="vdairesi" ColumnName="vdairesi" />
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="poskod" ColumnName="poskod" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel6" ColumnName="tel6" />
+                <ScalarProperty Name="tel5" ColumnName="tel5" />
+                <ScalarProperty Name="tel4" ColumnName="tel4" />
+                <ScalarProperty Name="tel3" ColumnName="tel3" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="adres4" ColumnName="adres4" />
+                <ScalarProperty Name="adres3" ColumnName="adres3" />
+                <ScalarProperty Name="adres2" ColumnName="adres2" />
+                <ScalarProperty Name="adres1" ColumnName="adres1" />
+                <ScalarProperty Name="diger" ColumnName="diger" />
+                <ScalarProperty Name="sokak" ColumnName="sokak" />
+                <ScalarProperty Name="mahalle" ColumnName="mahalle" />
+                <ScalarProperty Name="cadde" ColumnName="cadde" />
+                <ScalarProperty Name="semt" ColumnName="semt" />
+                <ScalarProperty Name="il" ColumnName="il" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="subeismi" ColumnName="subeismi" />
+                <ScalarProperty Name="sube" ColumnName="sube" />
+                <ScalarProperty Name="kdv" ColumnName="kdv" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="kim" ColumnName="kim" />
+                <ScalarProperty Name="kodu" ColumnName="kodu" />
+                <ScalarProperty Name="muskod" ColumnName="muskod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1808,358 +2159,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="irsaliye">
-            <EntityTypeMapping TypeName="EKSPRES2017Model.irsaliye">
-              <MappingFragment StoreEntitySet="irsaliye">
-                <ScalarProperty Name="AracirsListeRef" ColumnName="AracirsListeRef" />
-                <ScalarProperty Name="CiktiSayi" ColumnName="CiktiSayi" />
-                <ScalarProperty Name="PlakaHesapId" ColumnName="PlakaHesapId" />
-                <ScalarProperty Name="ToplamDesi" ColumnName="ToplamDesi" />
-                <ScalarProperty Name="SeferRef" ColumnName="SeferRef" />
-                <ScalarProperty Name="BitKM" ColumnName="BitKM" />
-                <ScalarProperty Name="BasKM" ColumnName="BasKM" />
-                <ScalarProperty Name="DegisimTarih" ColumnName="DegisimTarih" />
-                <ScalarProperty Name="GidisGelis" ColumnName="GidisGelis" />
-                <ScalarProperty Name="YukleyenPKod" ColumnName="YukleyenPKod" />
-                <ScalarProperty Name="SeferNo1" ColumnName="SeferNo1" />
-                <ScalarProperty Name="TesSigortaTutar" ColumnName="TesSigortaTutar" />
-                <ScalarProperty Name="Sisaret" ColumnName="Sisaret" />
-                <ScalarProperty Name="PoliceNo" ColumnName="PoliceNo" />
-                <ScalarProperty Name="Sigortaci" ColumnName="Sigortaci" />
-                <ScalarProperty Name="saat1" ColumnName="saat1" />
-                <ScalarProperty Name="saat" ColumnName="saat" />
-                <ScalarProperty Name="tarih1" ColumnName="tarih1" />
-                <ScalarProperty Name="YetkiBelgeNo" ColumnName="YetkiBelgeNo" />
-                <ScalarProperty Name="SigortaPrimOran" ColumnName="SigortaPrimOran" />
-                <ScalarProperty Name="SigortaPrimTutar" ColumnName="SigortaPrimTutar" />
-                <ScalarProperty Name="EkNavlunAciklamaAlici" ColumnName="EkNavlunAciklamaAlici" />
-                <ScalarProperty Name="EkNavlunAlici" ColumnName="EkNavlunAlici" />
-                <ScalarProperty Name="EkNavlunAciklama" ColumnName="EkNavlunAciklama" />
-                <ScalarProperty Name="EkNavlun" ColumnName="EkNavlun" />
-                <ScalarProperty Name="PuantorKod" ColumnName="PuantorKod" />
-                <ScalarProperty Name="RomorkPlaka" ColumnName="RomorkPlaka" />
-                <ScalarProperty Name="alisaret" ColumnName="alisaret" />
-                <ScalarProperty Name="gonisaret" ColumnName="gonisaret" />
-                <ScalarProperty Name="durum" ColumnName="durum" />
-                <ScalarProperty Name="kimbosalt" ColumnName="kimbosalt" />
-                <ScalarProperty Name="alinanacik" ColumnName="alinanacik" />
-                <ScalarProperty Name="odenenacik" ColumnName="odenenacik" />
-                <ScalarProperty Name="subesigorta" ColumnName="subesigorta" />
-                <ScalarProperty Name="merkezsigorta" ColumnName="merkezsigorta" />
-                <ScalarProperty Name="sigortatutar" ColumnName="sigortatutar" />
-                <ScalarProperty Name="hatismi" ColumnName="hatismi" />
-                <ScalarProperty Name="hat" ColumnName="hat" />
-                <ScalarProperty Name="navlunacik" ColumnName="navlunacik" />
-                <ScalarProperty Name="takipnoson" ColumnName="takipnoson" />
-                <ScalarProperty Name="aktarim" ColumnName="aktarim" />
-                <ScalarProperty Name="irsaliye1" ColumnName="irsaliye" />
-                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
-                <ScalarProperty Name="mpotoplam" ColumnName="mpotoplam" />
-                <ScalarProperty Name="muatoplam" ColumnName="muatoplam" />
-                <ScalarProperty Name="mgtoplam" ColumnName="mgtoplam" />
-                <ScalarProperty Name="gtoplam" ColumnName="gtoplam" />
-                <ScalarProperty Name="msayfasay" ColumnName="msayfasay" />
-                <ScalarProperty Name="sayfasay" ColumnName="sayfasay" />
-                <ScalarProperty Name="takipseri" ColumnName="takipseri" />
-                <ScalarProperty Name="takipno" ColumnName="takipno" />
-                <ScalarProperty Name="isaret" ColumnName="isaret" />
-                <ScalarProperty Name="toplamkg" ColumnName="toplamkg" />
-                <ScalarProperty Name="uatoplam" ColumnName="uatoplam" />
-                <ScalarProperty Name="potoplam" ColumnName="potoplam" />
-                <ScalarProperty Name="veravans" ColumnName="veravans" />
-                <ScalarProperty Name="alavans" ColumnName="alavans" />
-                <ScalarProperty Name="Navluntoplam" ColumnName="Navluntoplam" />
-                <ScalarProperty Name="Navlunkdv" ColumnName="Navlunkdv" />
-                <ScalarProperty Name="Navlun" ColumnName="Navlun" />
-                <ScalarProperty Name="Field3" ColumnName="Field3" />
-                <ScalarProperty Name="Field2" ColumnName="Field2" />
-                <ScalarProperty Name="Field1" ColumnName="Field1" />
-                <ScalarProperty Name="muhurno" ColumnName="muhurno" />
-                <ScalarProperty Name="kim" ColumnName="kim" />
-                <ScalarProperty Name="basildimi" ColumnName="basildimi" />
-                <ScalarProperty Name="iptaltarihi" ColumnName="iptaltarihi" />
-                <ScalarProperty Name="iptal" ColumnName="iptal" />
-                <ScalarProperty Name="kdv" ColumnName="kdv" />
-                <ScalarProperty Name="yekun" ColumnName="yekun" />
-                <ScalarProperty Name="toplam" ColumnName="toplam" />
-                <ScalarProperty Name="telihbar" ColumnName="telihbar" />
-                <ScalarProperty Name="adresalim" ColumnName="adresalim" />
-                <ScalarProperty Name="adresteslim" ColumnName="adresteslim" />
-                <ScalarProperty Name="sigorta" ColumnName="sigorta" />
-                <ScalarProperty Name="sofsoyadi" ColumnName="sofsoyadi" />
-                <ScalarProperty Name="sofadi" ColumnName="sofadi" />
-                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
-                <ScalarProperty Name="adi" ColumnName="adi" />
-                <ScalarProperty Name="plaka" ColumnName="plaka" />
-                <ScalarProperty Name="alsubadi" ColumnName="alsubadi" />
-                <ScalarProperty Name="alsub" ColumnName="alsub" />
-                <ScalarProperty Name="alhatadi" ColumnName="alhatadi" />
-                <ScalarProperty Name="alhat" ColumnName="alhat" />
-                <ScalarProperty Name="gonsubadi" ColumnName="gonsubadi" />
-                <ScalarProperty Name="gonsub" ColumnName="gonsub" />
-                <ScalarProperty Name="tarih" ColumnName="tarih" />
-                <ScalarProperty Name="seferno" ColumnName="seferno" />
-                <ScalarProperty Name="seri" ColumnName="seri" />
-                <ScalarProperty Name="irsno" ColumnName="irsno" />
-                <ScalarProperty Name="tasirno" ColumnName="tasirno" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="krmuste">
-            <EntityTypeMapping TypeName="EKSPRES2017Model.krmuste">
-              <MappingFragment StoreEntitySet="krmuste">
-                <ScalarProperty Name="NakliyeSekli" ColumnName="NakliyeSekli" />
-                <ScalarProperty Name="EFaturaTipi" ColumnName="EFaturaTipi" />
-                <ScalarProperty Name="EFatura" ColumnName="EFatura" />
-                <ScalarProperty Name="EkDosya" ColumnName="EkDosya" />
-                <ScalarProperty Name="MOdemeTipi" ColumnName="MOdemeTipi" />
-                <ScalarProperty Name="MusirsnoGiris" ColumnName="MusirsnoGiris" />
-                <ScalarProperty Name="Spot" ColumnName="Spot" />
-                <ScalarProperty Name="UstCariAdi" ColumnName="UstCariAdi" />
-                <ScalarProperty Name="UstCariKodu" ColumnName="UstCariKodu" />
-                <ScalarProperty Name="UstCari" ColumnName="UstCari" />
-                <ScalarProperty Name="CariSifre" ColumnName="CariSifre" />
-                <ScalarProperty Name="POranPayda" ColumnName="POranPayda" />
-                <ScalarProperty Name="POranPay" ColumnName="POranPay" />
-                <ScalarProperty Name="PTutar" ColumnName="PTutar" />
-                <ScalarProperty Name="PTipi" ColumnName="PTipi" />
-                <ScalarProperty Name="PTahKodu" ColumnName="PTahKodu" />
-                <ScalarProperty Name="GuzergahKodu" ColumnName="GuzergahKodu" />
-                <ScalarProperty Name="DegisimTarih" ColumnName="DegisimTarih" />
-                <ScalarProperty Name="BarkodBas" ColumnName="BarkodBas" />
-                <ScalarProperty Name="sec" ColumnName="sec" />
-                <ScalarProperty Name="HizmetAlimGiris" ColumnName="HizmetAlimGiris" />
-                <ScalarProperty Name="TahsilatGunu" ColumnName="TahsilatGunu" />
-                <ScalarProperty Name="KendiDeposu" ColumnName="KendiDeposu" />
-                <ScalarProperty Name="DepoKodu" ColumnName="DepoKodu" />
-                <ScalarProperty Name="FirmaKodu" ColumnName="FirmaKodu" />
-                <ScalarProperty Name="SanalSubeKodu" ColumnName="SanalSubeKodu" />
-                <ScalarProperty Name="IskoluId" ColumnName="IskoluId" />
-                <ScalarProperty Name="VadeGun" ColumnName="VadeGun" />
-                <ScalarProperty Name="BakiyeG" ColumnName="BakiyeG" />
-                <ScalarProperty Name="AlacakG" ColumnName="AlacakG" />
-                <ScalarProperty Name="BorcG" ColumnName="BorcG" />
-                <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
-                <ScalarProperty Name="Alacak" ColumnName="Alacak" />
-                <ScalarProperty Name="Borc" ColumnName="Borc" />
-                <ScalarProperty Name="Ekleyen" ColumnName="Ekleyen" />
-                <ScalarProperty Name="KaraListeAciklama" ColumnName="KaraListeAciklama" />
-                <ScalarProperty Name="GoturenOran" ColumnName="GoturenOran" />
-                <ScalarProperty Name="GoturenTutar" ColumnName="GoturenTutar" />
-                <ScalarProperty Name="GoturenTipi" ColumnName="GoturenTipi" />
-                <ScalarProperty Name="GoturenAdi" ColumnName="GoturenAdi" />
-                <ScalarProperty Name="GoturenKodu" ColumnName="GoturenKodu" />
-                <ScalarProperty Name="CariHareketGiris" ColumnName="CariHareketGiris" />
-                <ScalarProperty Name="TahakkukKacGunde" ColumnName="TahakkukKacGunde" />
-                <ScalarProperty Name="Tahakkukikramiye" ColumnName="Tahakkukikramiye" />
-                <ScalarProperty Name="TahakkukBirimUcret" ColumnName="TahakkukBirimUcret" />
-                <ScalarProperty Name="TahakkukGrp" ColumnName="TahakkukGrp" />
-                <ScalarProperty Name="TahakkukAck" ColumnName="TahakkukAck" />
-                <ScalarProperty Name="TahakkukGun" ColumnName="TahakkukGun" />
-                <ScalarProperty Name="Tahakkuktutar" ColumnName="Tahakkuktutar" />
-                <ScalarProperty Name="GetirenOran" ColumnName="GetirenOran" />
-                <ScalarProperty Name="GetirenTutar" ColumnName="GetirenTutar" />
-                <ScalarProperty Name="GetirenTipi" ColumnName="GetirenTipi" />
-                <ScalarProperty Name="GetirenAdi" ColumnName="GetirenAdi" />
-                <ScalarProperty Name="GetirenKodu" ColumnName="GetirenKodu" />
-                <ScalarProperty Name="DosMusteriKodu" ColumnName="DosMusteriKodu" />
-                <ScalarProperty Name="uretici" ColumnName="uretici" />
-                <ScalarProperty Name="DizaynDosya" ColumnName="DizaynDosya" />
-                <ScalarProperty Name="topluFatura" ColumnName="topluFatura" />
-                <ScalarProperty Name="sigorta" ColumnName="sigorta" />
-                <ScalarProperty Name="makbuz" ColumnName="makbuz" />
-                <ScalarProperty Name="kdvda" ColumnName="kdvda" />
-                <ScalarProperty Name="aktarim" ColumnName="aktarim" />
-                <ScalarProperty Name="kodu1" ColumnName="kodu1" />
-                <ScalarProperty Name="krliste" ColumnName="krliste" />
-                <ScalarProperty Name="isaret" ColumnName="isaret" />
-                <ScalarProperty Name="tahkodu" ColumnName="tahkodu" />
-                <ScalarProperty Name="tadi" ColumnName="tadi" />
-                <ScalarProperty Name="tkodu" ColumnName="tkodu" />
-                <ScalarProperty Name="mtipi" ColumnName="mtipi" />
-                <ScalarProperty Name="ehliyetno" ColumnName="ehliyetno" />
-                <ScalarProperty Name="pasportno" ColumnName="pasportno" />
-                <ScalarProperty Name="kimlikno" ColumnName="kimlikno" />
-                <ScalarProperty Name="serino" ColumnName="serino" />
-                <ScalarProperty Name="belgetipi" ColumnName="belgetipi" />
-                <ScalarProperty Name="skodu" ColumnName="skodu" />
-                <ScalarProperty Name="sifre" ColumnName="sifre" />
-                <ScalarProperty Name="eskikod" ColumnName="eskikod" />
-                <ScalarProperty Name="caritipi" ColumnName="caritipi" />
-                <ScalarProperty Name="muhkodu" ColumnName="muhkodu" />
-                <ScalarProperty Name="carikod" ColumnName="carikod" />
-                <ScalarProperty Name="ozelkod3" ColumnName="ozelkod3" />
-                <ScalarProperty Name="ozelkod2" ColumnName="ozelkod2" />
-                <ScalarProperty Name="ozelkod1" ColumnName="ozelkod1" />
-                <ScalarProperty Name="iskolu" ColumnName="iskolu" />
-                <ScalarProperty Name="vno" ColumnName="vno" />
-                <ScalarProperty Name="vdairesi" ColumnName="vdairesi" />
-                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
-                <ScalarProperty Name="poskod" ColumnName="poskod" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="tel6" ColumnName="tel6" />
-                <ScalarProperty Name="tel5" ColumnName="tel5" />
-                <ScalarProperty Name="tel4" ColumnName="tel4" />
-                <ScalarProperty Name="tel3" ColumnName="tel3" />
-                <ScalarProperty Name="tel2" ColumnName="tel2" />
-                <ScalarProperty Name="tel1" ColumnName="tel1" />
-                <ScalarProperty Name="adres4" ColumnName="adres4" />
-                <ScalarProperty Name="adres3" ColumnName="adres3" />
-                <ScalarProperty Name="adres2" ColumnName="adres2" />
-                <ScalarProperty Name="adres1" ColumnName="adres1" />
-                <ScalarProperty Name="diger" ColumnName="diger" />
-                <ScalarProperty Name="sokak" ColumnName="sokak" />
-                <ScalarProperty Name="mahalle" ColumnName="mahalle" />
-                <ScalarProperty Name="cadde" ColumnName="cadde" />
-                <ScalarProperty Name="semt" ColumnName="semt" />
-                <ScalarProperty Name="il" ColumnName="il" />
-                <ScalarProperty Name="ilce" ColumnName="ilce" />
-                <ScalarProperty Name="subeismi" ColumnName="subeismi" />
-                <ScalarProperty Name="sube" ColumnName="sube" />
-                <ScalarProperty Name="kdv" ColumnName="kdv" />
-                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
-                <ScalarProperty Name="adi" ColumnName="adi" />
-                <ScalarProperty Name="kim" ColumnName="kim" />
-                <ScalarProperty Name="kodu" ColumnName="kodu" />
-                <ScalarProperty Name="muskod" ColumnName="muskod" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="krhatsub">
-            <EntityTypeMapping TypeName="EKSPRES2017Model.krhatsub">
-              <MappingFragment StoreEntitySet="krhatsub">
-                <ScalarProperty Name="AliciCariKodu" ColumnName="AliciCariKodu" />
-                <ScalarProperty Name="MusOzelKodRef" ColumnName="MusOzelKodRef" />
-                <ScalarProperty Name="LogoSEmanet" ColumnName="LogoSEmanet" />
-                <ScalarProperty Name="HizmetKartiFatura" ColumnName="HizmetKartiFatura" />
-                <ScalarProperty Name="Dagitim" ColumnName="Dagitim" />
-                <ScalarProperty Name="Ambar" ColumnName="Ambar" />
-                <ScalarProperty Name="PaletBarkod" ColumnName="PaletBarkod" />
-                <ScalarProperty Name="OKT" ColumnName="OKT" />
-                <ScalarProperty Name="imageAktar" ColumnName="imageAktar" />
-                <ScalarProperty Name="FaturaDuzeltSon" ColumnName="FaturaDuzeltSon" />
-                <ScalarProperty Name="SubeCariKodu" ColumnName="SubeCariKodu" />
-                <ScalarProperty Name="FirmaCarikodu" ColumnName="FirmaCarikodu" />
-                <ScalarProperty Name="LogoDefMuhasebe" ColumnName="LogoDefMuhasebe" />
-                <ScalarProperty Name="LogoKamukurumu" ColumnName="LogoKamukurumu" />
-                <ScalarProperty Name="LogoOzel2" ColumnName="LogoOzel2" />
-                <ScalarProperty Name="LogoOzel1" ColumnName="LogoOzel1" />
-                <ScalarProperty Name="LogoAcente" ColumnName="LogoAcente" />
-                <ScalarProperty Name="LogoKomyonetci" ColumnName="LogoKomyonetci" />
-                <ScalarProperty Name="LogoKamyoncu" ColumnName="LogoKamyoncu" />
-                <ScalarProperty Name="LogoOrtaklar" ColumnName="LogoOrtaklar" />
-                <ScalarProperty Name="LogoPersonel" ColumnName="LogoPersonel" />
-                <ScalarProperty Name="LogoSatici" ColumnName="LogoSatici" />
-                <ScalarProperty Name="LogoNakliyeci" ColumnName="LogoNakliyeci" />
-                <ScalarProperty Name="LogoBireysel" ColumnName="LogoBireysel" />
-                <ScalarProperty Name="LogoKurumsal" ColumnName="LogoKurumsal" />
-                <ScalarProperty Name="AlisFatAktarTumu" ColumnName="AlisFatAktarTumu" />
-                <ScalarProperty Name="AlisFatAktar" ColumnName="AlisFatAktar" />
-                <ScalarProperty Name="EMail" ColumnName="EMail" />
-                <ScalarProperty Name="AktarimTarih" ColumnName="AktarimTarih" />
-                <ScalarProperty Name="CekAktarTumu" ColumnName="CekAktarTumu" />
-                <ScalarProperty Name="CekAktar" ColumnName="CekAktar" />
-                <ScalarProperty Name="BankaAktarTumu" ColumnName="BankaAktarTumu" />
-                <ScalarProperty Name="BankaAktar" ColumnName="BankaAktar" />
-                <ScalarProperty Name="TBAktarTumu" ColumnName="TBAktarTumu" />
-                <ScalarProperty Name="TBAktar" ColumnName="TBAktar" />
-                <ScalarProperty Name="KasaAktarTumu" ColumnName="KasaAktarTumu" />
-                <ScalarProperty Name="KasaAktar" ColumnName="KasaAktar" />
-                <ScalarProperty Name="FatAktarTumu" ColumnName="FatAktarTumu" />
-                <ScalarProperty Name="FatAktar" ColumnName="FatAktar" />
-                <ScalarProperty Name="IrsAktarTumu" ColumnName="IrsAktarTumu" />
-                <ScalarProperty Name="IrsAktar" ColumnName="IrsAktar" />
-                <ScalarProperty Name="TesAktarTumu" ColumnName="TesAktarTumu" />
-                <ScalarProperty Name="TesAktar" ColumnName="TesAktar" />
-                <ScalarProperty Name="AnlAktar" ColumnName="AnlAktar" />
-                <ScalarProperty Name="MKAktarTumu" ColumnName="MKAktarTumu" />
-                <ScalarProperty Name="MKAktar" ColumnName="MKAktar" />
-                <ScalarProperty Name="AktarimYap" ColumnName="AktarimYap" />
-                <ScalarProperty Name="BAliciSubeismi" ColumnName="BAliciSubeismi" />
-                <ScalarProperty Name="BAliciSubeKodu" ColumnName="BAliciSubeKodu" />
-                <ScalarProperty Name="BSubeismi" ColumnName="BSubeismi" />
-                <ScalarProperty Name="BSubeKodu" ColumnName="BSubeKodu" />
-                <ScalarProperty Name="BSeri" ColumnName="BSeri" />
-                <ScalarProperty Name="SQLPassword" ColumnName="SQLPassword" />
-                <ScalarProperty Name="SQLUserName" ColumnName="SQLUserName" />
-                <ScalarProperty Name="SQLDatabase" ColumnName="SQLDatabase" />
-                <ScalarProperty Name="SQLServer" ColumnName="SQLServer" />
-                <ScalarProperty Name="OnayLimit" ColumnName="OnayLimit" />
-                <ScalarProperty Name="ModemTipi" ColumnName="ModemTipi" />
-                <ScalarProperty Name="gelirMuhasebeKodu" ColumnName="gelirMuhasebeKodu" />
-                <ScalarProperty Name="AlısFaturaBaglantiKodu" ColumnName="AlısFaturaBaglantiKodu" />
-                <ScalarProperty Name="FaturaBaglantiKodu" ColumnName="FaturaBaglantiKodu" />
-                <ScalarProperty Name="iskontoGiderKodu" ColumnName="iskontoGiderKodu" />
-                <ScalarProperty Name="YemekGiderKodu" ColumnName="YemekGiderKodu" />
-                <ScalarProperty Name="YolGiderKodu" ColumnName="YolGiderKodu" />
-                <ScalarProperty Name="HakedisGiderKodu" ColumnName="HakedisGiderKodu" />
-                <ScalarProperty Name="MazotGiderKodu" ColumnName="MazotGiderKodu" />
-                <ScalarProperty Name="FaturaGiderKodu" ColumnName="FaturaGiderKodu" />
-                <ScalarProperty Name="HizmetAlimFaturaGiderKodu" ColumnName="HizmetAlimFaturaGiderKodu" />
-                <ScalarProperty Name="AliciEkNavlunGiderKodu" ColumnName="AliciEkNavlunGiderKodu" />
-                <ScalarProperty Name="VerilenAvansGiderKodu" ColumnName="VerilenAvansGiderKodu" />
-                <ScalarProperty Name="GonderenEkNavlunGiderKodu" ColumnName="GonderenEkNavlunGiderKodu" />
-                <ScalarProperty Name="NavlunGiderKodu" ColumnName="NavlunGiderKodu" />
-                <ScalarProperty Name="pazar" ColumnName="pazar" />
-                <ScalarProperty Name="Cumartesi" ColumnName="Cumartesi" />
-                <ScalarProperty Name="Cuma" ColumnName="Cuma" />
-                <ScalarProperty Name="Persembe" ColumnName="Persembe" />
-                <ScalarProperty Name="Carsamba" ColumnName="Carsamba" />
-                <ScalarProperty Name="sali" ColumnName="sali" />
-                <ScalarProperty Name="pazartesi" ColumnName="pazartesi" />
-                <ScalarProperty Name="teslimSuresi" ColumnName="teslimSuresi" />
-                <ScalarProperty Name="KKBOran" ColumnName="KKBOran" />
-                <ScalarProperty Name="kendifaturasi" ColumnName="kendifaturasi" />
-                <ScalarProperty Name="durum" ColumnName="durum" />
-                <ScalarProperty Name="KdvHesabi" ColumnName="KdvHesabi" />
-                <ScalarProperty Name="KKB" ColumnName="KKB" />
-                <ScalarProperty Name="isaret" ColumnName="isaret" />
-                <ScalarProperty Name="gitorani" ColumnName="gitorani" />
-                <ScalarProperty Name="gelorani" ColumnName="gelorani" />
-                <ScalarProperty Name="subetipi" ColumnName="subetipi" />
-                <ScalarProperty Name="postakodu" ColumnName="postakodu" />
-                <ScalarProperty Name="sifre" ColumnName="sifre" />
-                <ScalarProperty Name="fax" ColumnName="fax" />
-                <ScalarProperty Name="tel2" ColumnName="tel2" />
-                <ScalarProperty Name="tel1" ColumnName="tel1" />
-                <ScalarProperty Name="semt" ColumnName="semt" />
-                <ScalarProperty Name="ilce" ColumnName="ilce" />
-                <ScalarProperty Name="il" ColumnName="il" />
-                <ScalarProperty Name="adres" ColumnName="adres" />
-                <ScalarProperty Name="irssonno" ColumnName="irssonno" />
-                <ScalarProperty Name="irsilkno" ColumnName="irsilkno" />
-                <ScalarProperty Name="esktessonno" ColumnName="esktessonno" />
-                <ScalarProperty Name="esktesilkno" ColumnName="esktesilkno" />
-                <ScalarProperty Name="akttessonno" ColumnName="akttessonno" />
-                <ScalarProperty Name="akttesilkno" ColumnName="akttesilkno" />
-                <ScalarProperty Name="eskfatsonno" ColumnName="eskfatsonno" />
-                <ScalarProperty Name="eskfatilkno" ColumnName="eskfatilkno" />
-                <ScalarProperty Name="aktfatsonno" ColumnName="aktfatsonno" />
-                <ScalarProperty Name="aktfatilkno" ColumnName="aktfatilkno" />
-                <ScalarProperty Name="bolgekodu" ColumnName="bolgekodu" />
-                <ScalarProperty Name="okod3" ColumnName="okod3" />
-                <ScalarProperty Name="ozelkod3" ColumnName="ozelkod3" />
-                <ScalarProperty Name="okod2" ColumnName="okod2" />
-                <ScalarProperty Name="ozelkod2" ColumnName="ozelkod2" />
-                <ScalarProperty Name="okod1" ColumnName="okod1" />
-                <ScalarProperty Name="ozelkod1" ColumnName="ozelkod1" />
-                <ScalarProperty Name="muhkodu" ColumnName="muhkodu" />
-                <ScalarProperty Name="carikod" ColumnName="carikod" />
-                <ScalarProperty Name="chorani" ColumnName="chorani" />
-                <ScalarProperty Name="uaorani" ColumnName="uaorani" />
-                <ScalarProperty Name="poorani" ColumnName="poorani" />
-                <ScalarProperty Name="mrkuzaklik" ColumnName="mrkuzaklik" />
-                <ScalarProperty Name="bagakt" ColumnName="bagakt" />
-                <ScalarProperty Name="baglisube" ColumnName="baglisube" />
-                <ScalarProperty Name="subeismi" ColumnName="subeismi" />
-                <ScalarProperty Name="sube" ColumnName="sube" />
-                <ScalarProperty Name="hatismi" ColumnName="hatismi" />
-                <ScalarProperty Name="hat" ColumnName="hat" />
-                <ScalarProperty Name="ref" ColumnName="ref" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          </EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
