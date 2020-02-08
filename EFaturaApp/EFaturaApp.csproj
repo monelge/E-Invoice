@@ -148,6 +148,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MusteriListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MusteriListesi.Designer.cs">
+      <DependentUpon>MusteriListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="OnIzleme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MusteriListesi.resx">
+      <DependentUpon>MusteriListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OnIzleme.resx">
       <DependentUpon>OnIzleme.cs</DependentUpon>

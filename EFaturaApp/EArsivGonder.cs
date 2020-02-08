@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EFaturaApp.Func;
+using EfatWebservis;
 using EntFMSystem;
 using FastReport;
 using hm.common;
@@ -283,6 +285,20 @@ namespace EFaturaApp
                     dataGridView1.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Red;
                 }
             }
+        }
+
+        private void önİzlemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sTakipSeri = dataGridView1.CurrentRow.Cells["takipseri"].Value.ToString();
+            int iTakipNO = Convert.ToInt32(dataGridView1.CurrentRow.Cells["TakipNo"].Value.ToString());
+            var FtrDty = ekspres2017Entities.fatura.FirstOrDefault(f => f.takipseri == sTakipSeri && f.TakipNo == iTakipNO);
+            var FtrFryList = ekspres2017Entities.faturahar
+                .Where(h => h.takipseri == FtrDty.takipseri && h.fatno == FtrDty.TakipNo).ToList();
+            string xml = FaturaIslem.FaturaXmlString(FtrDty, FtrFryList, 1);
+            string template = File.ReadAllText(@"GeneralFormArsiv.xslt");
+            string html = FuncClass.ConvertToHtml(template, xml);
+            OnIzleme onIzleme = new OnIzleme(html);
+            onIzleme.ShowDialog();
         }
     }
 }

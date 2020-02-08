@@ -25,10 +25,12 @@ namespace EFaturaApp
         private Logger logger;
         private int listedurum;
         private int iIsaretDurum;
+        private int formDurum;
 
-        public TopluArsiv()
+        public TopluArsiv(int _formDurum)
         {
             InitializeComponent();
+            this.formDurum = _formDurum;
             logger = LogManager.LoadConfiguration("NLog.config").GetCurrentClassLogger();
         }
 
@@ -62,6 +64,20 @@ namespace EFaturaApp
 
             radGridView1.GridViewElement.Text = "";
             radGridView2.GridViewElement.Text = "";
+            radDropDownList4.SelectedIndex = 3;
+            if (formDurum == 0)
+            {
+                radGroupBox2.Visible = true;
+                radGroupBox5.Visible = false;
+
+
+            }
+
+            if (formDurum == 1)
+            {
+                radGroupBox2.Visible = false;
+                radGroupBox5.Location = new Point(219, 3);
+            }
 
 
         }
@@ -69,7 +85,6 @@ namespace EFaturaApp
         {
             try
             {
-
                 string sorgu = "";
                 sorgu = "select cast(ISNULL(t.fatisaret,0) as bit) as isaret," +
                         "tasirsno1  =cast(substring(tasirsno,13,10) as int) ,t.tarih,t.takipno," +
@@ -105,66 +120,104 @@ namespace EFaturaApp
                 }
 
                 sorgu += "left JOIN irsaliye ir ON ir.irsno = t.tasirsno where ";
-                //--peşin havle şubeye göre
-                if (radDropDownList1.SelectedIndex != -1)
-                {
-                    if (radDropDownList1.SelectedIndex == 1)
-                    {
-                        if (radDropDownList2.SelectedIndex != -1)
-                        {
-                            sorgu +=
-                                "t.basildimi=1 and ((t.fatno is null) or  (t.fatno='')) and (t.turu<>'M') and (t.tti='E') and ((t.iptal<>1)or (t.iptal is null) ) and (t.odemetipi<>'5') and ( (Kr.TopluFatura='0') or  (Kr.TopluFatura='') or (kr.toplufatura is null)) " +
-                                "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
-                                " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
 
-                            sorgu += " and (t.gonderensube='" + radDropDownList2.SelectedValue.ToString() + "') ";
-                            if (tesellum != 0)
-                            {
-                                sorgu += " and (t.takipno='" + tesellum.ToString() + "') ";
-                            }
-                            sorgu += " and (t.odemetipi='1') " +
-                                     " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
-                                     "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
-                                     " AND tasirsno IS NOT NULL order by T.tadi,T.takipno";
-                        }
-                        else
+
+                #region peşin havle şubeye göre
+
+                if (formDurum == 0)
+                {
+                    if (radDropDownList1.SelectedIndex != -1)
+                    {
+                        if (radDropDownList1.SelectedIndex == 1)
                         {
-                            RadMessageBox.Show("Lütfen Gönderen Şubeyi Seçiniz.", "Dikkat !!", MessageBoxButtons.OK,
-                                RadMessageIcon.Error);
+                            if (radDropDownList2.SelectedIndex != -1)
+                            {
+                                sorgu +=
+                                    "t.basildimi=1 and ((t.fatno is null) or  (t.fatno='')) and (t.turu<>'M') and (t.tti='E') and ((t.iptal<>1)or (t.iptal is null) ) and (t.odemetipi<>'5') and ( (Kr.TopluFatura='0') or  (Kr.TopluFatura='') or (kr.toplufatura is null)) " +
+                                    "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
+                                    " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
+
+
+
+                                sorgu += " and (t.gonderensube='" + radDropDownList2.SelectedValue.ToString() + "') ";
+                                if (tesellum != 0)
+                                {
+                                    sorgu += " and (t.takipno='" + tesellum.ToString() + "') ";
+                                }
+                                sorgu += " and (t.odemetipi='1') " +
+                                         " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
+                                         "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
+                                         "order by T.tadi,T.takipno";
+                            }
+                            else
+                            {
+                                RadMessageBox.Show("Lütfen Gönderen Şubeyi Seçiniz.", "Dikkat !!", MessageBoxButtons.OK,
+                                    RadMessageIcon.Error);
+                            }
+                        }
+
+                        if (radDropDownList1.SelectedIndex == 2)
+                        {
+                            if (radDropDownList2.SelectedIndex != -1)
+                            {
+                                sorgu +=
+                                    "t.basildimi=1 and ((t.fatno is null) or  (t.fatno='')) and (t.turu<>'M') and (t.tti='E') and ((t.iptal<>1)or (t.iptal is null) ) and (t.odemetipi<>'5') and ( (Kr.TopluFatura='0') or  (Kr.TopluFatura='') or (kr.toplufatura is null)) " +
+                                    "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
+                                    " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
+                                sorgu += " and (t.alicisube='" + radDropDownList3.SelectedValue.ToString() + "') ";
+                                if (tesellum != 0)
+                                {
+                                    sorgu += " and (t.takipno='" + tesellum.ToString() + "') ";
+                                }
+                                sorgu += " and (t.odemetipi='2') " +
+                                         " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
+                                         "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
+                                         "order by T.tadi,T.takipno";
+                            }
+                            else
+                            {
+                                RadMessageBox.Show("Lütfen Alıcı Şubeyi Seçiniz.", "Dikkat !!", MessageBoxButtons.OK,
+                                    RadMessageIcon.Error);
+                            }
                         }
                     }
-
-                    if (radDropDownList1.SelectedIndex == 2)
+                    else
                     {
-                        if (radDropDownList2.SelectedIndex != -1)
-                        {
-                            sorgu +=
-                                "t.basildimi=1 and ((t.fatno is null) or  (t.fatno='')) and (t.turu<>'M') and (t.tti='E') and ((t.iptal<>1)or (t.iptal is null) ) and (t.odemetipi<>'5') and ( (Kr.TopluFatura='0') or  (Kr.TopluFatura='') or (kr.toplufatura is null)) " +
-                                "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
-                                " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
-                            sorgu += " and (t.alicisube='" + radDropDownList3.SelectedValue.ToString() + "') ";
-                            if (tesellum != 0)
-                            {
-                                sorgu += " and (t.takipno='" + tesellum.ToString() + "') ";
-                            }
-                            sorgu += " and (t.odemetipi='2') " +
-                                     " and (t.tarih between convert(datetime,'" + radDateTimePicker1.Text.ToString() +
-                                     "',103) and convert(datetime,'" + radDateTimePicker2.Text.ToString() + "',103))" +
-                                     " AND tasirsno IS NOT NULL order by T.tadi,T.takipno";
-                        }
-                        else
-                        {
-                            RadMessageBox.Show("Lütfen Alıcı Şubeyi Seçiniz.", "Dikkat !!", MessageBoxButtons.OK,
-                                RadMessageIcon.Error);
-                        }
+                        RadMessageBox.Show("Lütfen Ödeme Tipini Seçiniz.", "Dikkat !!", MessageBoxButtons.OK,
+                            RadMessageIcon.Error);
                     }
                 }
-                else
+
+
+                #endregion
+
+                #region Müşetiye Göre Arama
+
+                if (formDurum == 1)
                 {
-                    RadMessageBox.Show("Lütfen Ödeme Tipini Seçiniz.", "Dikkat !!", MessageBoxButtons.OK,
-                        RadMessageIcon.Error);
+
+                    sorgu +=
+                        "t.basildimi=1 and ((t.fatno is null) or  (t.fatno='')) and (t.turu<>'M') and (t.tti='E') and ((t.iptal<>1)or (t.iptal is null) ) and (t.odemetipi<>'5') and ( (Kr.TopluFatura='0') or  (Kr.TopluFatura='') or (kr.toplufatura is null)) " +
+                        "and (kr.belgetipi<>'2') and (KR.belgetipi<>'4')  " +
+                        " and ((t.etf='H') or (isnull(t.etf,'')=''))  ";
+
+                    switch (radDropDownList4.SelectedIndex)
+                    {
+                        case 1:
+                            sorgu += " and t.carikod='" + textBox1.Text + "'";
+                            break;
+                        case 2:
+                            sorgu += " and t.carikod1='" + textBox1.Text + "'";
+                            break;
+                        case 3:
+                            sorgu += " and t.tkodu='" + textBox1.Text + "'";
+                            break;
+
+                    }
+                    sorgu += " order by T.tadi,T.takipno";
                 }
 
+                #endregion
 
                 radGridView1.DataSource = DataBaseSorgu.VeriIsle.data_table(sorgu.ToString());
                 radLabel6.Text = "Listelenen Tesellüm Adedi : " + radGridView1.Rows.Count.ToString();
@@ -185,6 +238,9 @@ namespace EFaturaApp
                 logger.Error(exception.Message);
             }
         }
+
+
+
         void Satirgetir(int satirno)
         {
             try
@@ -730,6 +786,16 @@ namespace EFaturaApp
         private void commandBarButton5_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MusteriListesi musteriListesi =
+                    new MusteriListesi(this, textBox2.Text, "textBox1", "textBox2");
+                musteriListesi.ShowDialog();
+            }
         }
     }
 }

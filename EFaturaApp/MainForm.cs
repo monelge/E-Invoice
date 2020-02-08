@@ -27,7 +27,7 @@ namespace EFaturaApp
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-            TopluFatura frmTopluFatura = new TopluFatura();
+            TopluFatura frmTopluFatura = new TopluFatura(0);
             frmTopluFatura.MdiParent = this;
             frmTopluFatura.Show();
         }
@@ -48,7 +48,7 @@ namespace EFaturaApp
 
         private void radButton10_Click(object sender, EventArgs e)
         {
-            TopluArsiv frmTopluFatura = new TopluArsiv();
+            TopluArsiv frmTopluFatura = new TopluArsiv(0);
             frmTopluFatura.MdiParent = this;
             frmTopluFatura.Show();
         }
@@ -65,6 +65,20 @@ namespace EFaturaApp
             FaturaDurum faturaDurum = new FaturaDurum(1);
             faturaDurum.MdiParent = this;
             faturaDurum.Show();
+        }
+
+        private void radButton2_Click(object sender, EventArgs e)
+        {
+            TopluFatura frmTopluFatura = new TopluFatura(1);
+            frmTopluFatura.MdiParent = this;
+            frmTopluFatura.Show();
+        }
+
+        private void radButton9_Click(object sender, EventArgs e)
+        {
+            TopluArsiv frmTopluFatura = new TopluArsiv(1);
+            frmTopluFatura.MdiParent = this;
+            frmTopluFatura.Show();
         }
     }
 }
