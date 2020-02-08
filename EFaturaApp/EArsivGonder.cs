@@ -121,8 +121,11 @@ namespace EFaturaApp
 
         bool listele()
         {
-            int sube = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.takipseri == FuncClass.FArsivNO && x.gonderensube == sube && x.iptal != "1").Select(x => new FaturaClass
+            int sube = Convert.ToInt32(FuncClass.SubeKoduNo);//&& x.gonderensube == sube && x.takipseri == FuncClass.FArsivNO
+            DateTime basDateTime = Convert.ToDateTime("01.01.2020");
+            DateTime bitDateTime = Convert.ToDateTime("31.12.2020");
+            //x.tarih >= basDateTime && x.tarih <= bitDateTime
+            var getir = ekspres2017Entities.fatura.Where(x => x.EFaturaNo == null && x.gonderensube == sube && x.takipseri == FuncClass.FArsivNO && x.iptal != "1").Select(x => new FaturaClass
             {
                 isaret = (bool)(x.isaret == null || x.isaret == "0" ? false : true),
                 takipseri = x.takipseri,
