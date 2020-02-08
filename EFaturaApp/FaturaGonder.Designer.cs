@@ -49,6 +49,7 @@
             this.temelFaturaGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticariFataruGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
+            this.önİzlemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -70,7 +71,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1207, 73);
+            this.radCommandBar1.Size = new System.Drawing.Size(1207, 48);
             this.radCommandBar1.TabIndex = 1;
             // 
             // commandBarRowElement1
@@ -136,11 +137,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.radGroupBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 73);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 48);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1207, 597);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1207, 622);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -153,7 +154,7 @@
             this.radGroupBox1.HeaderText = "Fatura Listesi";
             this.radGroupBox1.Location = new System.Drawing.Point(3, 3);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1201, 591);
+            this.radGroupBox1.Size = new System.Drawing.Size(1201, 616);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "Fatura Listesi";
             // 
@@ -207,7 +208,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(2, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1197, 571);
+            this.dataGridView1.Size = new System.Drawing.Size(1197, 596);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
@@ -224,9 +225,10 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.temelFaturaGönderToolStripMenuItem,
-            this.ticariFataruGönderToolStripMenuItem});
+            this.ticariFataruGönderToolStripMenuItem,
+            this.önİzlemeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 92);
             // 
             // temelFaturaGönderToolStripMenuItem
             // 
@@ -246,6 +248,13 @@
             // 
             this.roundRectShape1.IsRightToLeft = false;
             this.roundRectShape1.Radius = 30;
+            // 
+            // önİzlemeToolStripMenuItem
+            // 
+            this.önİzlemeToolStripMenuItem.Name = "önİzlemeToolStripMenuItem";
+            this.önİzlemeToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.önİzlemeToolStripMenuItem.Text = "Ön İzleme";
+            this.önİzlemeToolStripMenuItem.Click += new System.EventHandler(this.önİzlemeToolStripMenuItem_Click);
             // 
             // FaturaGonder
             // 
@@ -301,5 +310,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isaret;
         private Telerik.WinControls.UI.RadLabel radLabel2;
+        private System.Windows.Forms.ToolStripMenuItem önİzlemeToolStripMenuItem;
     }
 }

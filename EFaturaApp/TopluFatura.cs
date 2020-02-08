@@ -573,75 +573,75 @@ namespace EFaturaApp
         private void commandBarButton3_Click(object sender, EventArgs e)
         {
             int iTotal = radGridView1.Rows.Count;
-            if (iIsaretDurum == 0)
+            switch (iIsaretDurum)
             {
-                for (int i = 0; i < iTotal; i++)
-                {
-                    try
+                case 0:
+                    for (int i = 0; i < iTotal; i++)
                     {
-                        System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
-                        double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
-
-                        bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
-                        int veri = Convert.ToInt16(tt);
-
-                        string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
-                        if (ve != "" && Convert.ToDouble(ve) != tutar)
+                        try
                         {
-                            DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='1' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
-                        }
-                        else
-                        {
-                            radGridView1.Rows[i].Cells["isaret"].Value = false;
-                        }
+                            System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
+                            double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
 
+                            bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
+                            int veri = Convert.ToInt16(tt);
+
+                            string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
+                            if (ve != "" && Convert.ToDouble(ve) != tutar)
+                            {
+                                DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='1' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
+                            }
+                            else
+                            {
+                                radGridView1.Rows[i].Cells["isaret"].Value = false;
+                            }
+
+                        }
+                        catch (Exception exception)
+                        {
+                            logger.Error(exception.Message);
+                        }
                     }
-                    catch (Exception exception)
+                    Listeleme(listedurum, 0);
+                    radGridView1.Refresh();
+                    commandBarButton3.Text = "Tümünü Kaldır";
+                    iIsaretDurum = 1;
+                    break;
+                case 1:
+                    for (int i = 0; i < iTotal; i++)
                     {
-                        logger.Error(exception.Message);
+                        try
+                        {
+                            System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
+                            double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
+
+                            bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
+                            int veri = Convert.ToInt16(tt);
+
+                            string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
+                            if (ve != "" && Convert.ToDouble(ve) != tutar)
+                            {
+                                DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='0' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
+                            }
+                            else
+                            {
+                                radGridView1.Rows[i].Cells["isaret"].Value = false;
+                            }
+
+                        }
+                        catch (Exception exception)
+                        {
+                            logger.Error(exception.Message);
+                        }
                     }
-                }
-                Listeleme(listedurum, 0);
-                radGridView1.Refresh();
-                Application.DoEvents();
-                iIsaretDurum = 1;
-                commandBarButton3.Text = "Tümünü Kaldır";
+                    Listeleme(listedurum, 0);
+                    radGridView1.Refresh();
+                    commandBarButton3.Text = "Tümünü Işaretle";
+                    iIsaretDurum = 0;
+                    break;
+                    
             }
 
-            if (iIsaretDurum == 1)
-            {
-                for (int i = 0; i < iTotal; i++)
-                {
-                    try
-                    {
-                        System.Configuration.AppSettingsReader settingsReader = new AppSettingsReader();
-                        double tutar = (double)settingsReader.GetValue("tutar", typeof(double));
-
-                        bool tt = (bool)radGridView1.Rows[i].Cells[0].Value;
-                        int veri = Convert.ToInt16(tt);
-
-                        string ve = radGridView1.Rows[i].Cells["Yekun1"].Value.ToString();
-                        if (ve != "" && Convert.ToDouble(ve) != tutar)
-                        {
-                            DataBaseSorgu.VeriIsle.ekle_duz_sil("UPDATE tesellum SET fatisaret='0' WHERE takipno='" + radGridView1.Rows[i].Cells["takipno"].Value.ToString() + "' AND takipseri='" + radGridView1.Rows[i].Cells["takipseri"].Value.ToString() + "'");
-                        }
-                        else
-                        {
-                            radGridView1.Rows[i].Cells["isaret"].Value = false;
-                        }
-                      
-                    }
-                    catch (Exception exception)
-                    {
-                        logger.Error(exception.Message);
-                    }
-                }
-                Listeleme(listedurum, 0);
-                radGridView1.Refresh();
-                Application.DoEvents();
-                iIsaretDurum = 1;
-                commandBarButton3.Text = "Tümünü Işaretle";
-            }
         }
         private void commandBarButton4_Click(object sender, EventArgs e)
         {

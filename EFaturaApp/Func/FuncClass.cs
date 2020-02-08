@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Xsl;
 using Telerik.WinControls.UI;
 
 namespace EFaturaApp.Func
@@ -84,11 +86,40 @@ namespace EFaturaApp.Func
             }
             return table;
         }
+
+        public static string ConvertToHtml(string transformXSL, string inputXML)
+        {
+            XslCompiledTransform proc = new XslCompiledTransform();
+            XsltSettings settings = new XsltSettings();
+            settings.EnableScript = true;
+            using (StringReader sr = new StringReader(transformXSL))
+            {
+                using (XmlReader xr = XmlReader.Create(sr))
+                {
+                    proc.Load(xr, settings, null);
+                }
+            }
+            string resultXML;
+            using (StringReader sr = new StringReader(inputXML))
+            {
+                using (XmlReader xr = XmlReader.Create(sr))
+                {
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        proc.Transform(xr, null, sw);
+                        resultXML = sw.ToString();
+                    }
+                }
+            }
+            return resultXML;
+        }
+
         public static void hataKaydet(Exception mesaj, Form form)
         {
 
             File.AppendAllText("error.txt", "Hata Mesajı : " + mesaj.Message + " - " + mesaj.ToString() + "Form Adı : " + form.Name + "  Zaman : " + DateTime.Now.ToString() + Environment.NewLine);
         }
+
         public static DataTable GridViewToTable(RadGridView gridView)
         {
             DataTable dt = new DataTable();
