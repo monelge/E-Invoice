@@ -32,5 +32,6 @@ namespace EntFMSystem
         public virtual DbSet<krmuste> krmuste { get; set; }
         public virtual DbSet<tesellum> tesellum { get; set; }
         public virtual DbSet<tesellumhar> tesellumhar { get; set; }
+        public virtual DbSet<personel> personel { get; set; }
     }
 }

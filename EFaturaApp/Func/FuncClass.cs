@@ -18,7 +18,17 @@ namespace EFaturaApp.Func
     {
         static AppSettingsReader settingsReader = new AppSettingsReader();
 
-      
+
+        private static int[] TahKodu;
+        public static int[] TahKoduLst
+        {
+            get
+            {
+                int[] tahkodValue = Array.ConvertAll(((string)settingsReader.GetValue("tahkod", typeof(String))).Split(','), int.Parse);
+                return tahkodValue;
+            }
+
+        }
         public static string ibanNo
         {
             get

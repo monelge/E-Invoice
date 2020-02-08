@@ -97,7 +97,6 @@ namespace EFaturaApp
                     {
                        RadMessageBox.Show(sonuc, "Hata Oluştu", MessageBoxButtons.OK, RadMessageIcon.Error); 
                     }
-                    
 
                     if (Yazdirma == true)
                     {
@@ -257,7 +256,7 @@ namespace EFaturaApp
         private void commandBarButton2_Click(object sender, EventArgs e)
         {
             DialogResult dlgResult = RadMessageBox.Show("E-Arşiv Faturaları yazdırmak istiyormusunuz?", "EfaturaApp", MessageBoxButtons.YesNo, RadMessageIcon.Question);
-            if (dlgResult == DialogResult.OK)
+            if (dlgResult == DialogResult.Yes)
             {
                 Yazdirma = true;
             }

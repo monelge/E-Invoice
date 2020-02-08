@@ -82,6 +82,9 @@
       <DependentUpon>DevaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrtakClass.cs" />
+    <Compile Include="personel.cs">
+      <DependentUpon>DevaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tesellum.cs">
       <DependentUpon>DevaModel.tt</DependentUpon>

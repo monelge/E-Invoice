@@ -35,6 +35,15 @@ namespace EFaturaApp
             int d = Convert.ToInt32(FuncClass.SubeKoduNo);
             var subeGon = dbEntities.krhatsub.OrderBy(x => x.subeismi).ToList();
             var subeAlici = dbEntities.krhatsub.OrderBy(x => x.subeismi).ToList();
+            int subekodd = Convert.ToInt32(FuncClass.SubeKoduNo);
+
+            var tahKoduaList = dbEntities.personel.Where(x => x.subekodu == subekodd && FuncClass.TahKoduLst.Contains(x.pkod)).ToList();
+
+            
+            radDropDownList5.DataSource = tahKoduaList;
+            radDropDownList5.ValueMember = "tahkodu";
+            radDropDownList5.DisplayMember = "tahkodu";
+            radDropDownList5.SelectedIndex = -1;
 
             radDropDownList2.DataSource = subeGon;
             radDropDownList2.ValueMember = "sube";

@@ -524,6 +524,110 @@
           <Property Name="EFaturaTipi" Type="smallint" />
           <Property Name="NakliyeSekli" Type="int" />
         </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personelkodu" />
+          </Key>
+          <Property Name="pkod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personelkodu" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="kod" Type="int" />
+          <Property Name="kod1" Type="int" />
+          <Property Name="subekodu" Type="int" />
+          <Property Name="departman" Type="varchar" MaxLength="20" />
+          <Property Name="gorevi" Type="varchar" MaxLength="20" />
+          <Property Name="adi" Type="varchar" MaxLength="30" />
+          <Property Name="soyadi" Type="varchar" MaxLength="15" />
+          <Property Name="il" Type="varchar" MaxLength="20" />
+          <Property Name="ilce" Type="varchar" MaxLength="20" />
+          <Property Name="adresi" Type="char" MaxLength="100" />
+          <Property Name="aktif" Type="char" MaxLength="1" />
+          <Property Name="kullaniciadi" Type="varchar" MaxLength="20" />
+          <Property Name="sifre" Type="char" MaxLength="10" />
+          <Property Name="ozel" Type="varchar" MaxLength="25" />
+          <Property Name="seri" Type="varchar" MaxLength="10" />
+          <Property Name="kimlikno" Type="int" />
+          <Property Name="babaadi" Type="varchar" MaxLength="30" />
+          <Property Name="anaadi" Type="varchar" MaxLength="30" />
+          <Property Name="dogyeri" Type="varchar" MaxLength="20" />
+          <Property Name="dogtar" Type="datetime" />
+          <Property Name="medhali" Type="varchar" MaxLength="1" />
+          <Property Name="ilk" Type="varchar" MaxLength="20" />
+          <Property Name="ilcek" Type="varchar" MaxLength="20" />
+          <Property Name="mahkoy" Type="varchar" MaxLength="20" />
+          <Property Name="ciltno" Type="smallint" />
+          <Property Name="ailesirano" Type="smallint" />
+          <Property Name="sirano" Type="smallint" />
+          <Property Name="veryer" Type="varchar" MaxLength="20" />
+          <Property Name="vertarih" Type="datetime" />
+          <Property Name="kayitno" Type="varchar" MaxLength="15" />
+          <Property Name="everil" Type="varchar" MaxLength="20" />
+          <Property Name="everilce" Type="varchar" MaxLength="20" />
+          <Property Name="ebelgeno" Type="int" />
+          <Property Name="etarih" Type="datetime" />
+          <Property Name="egrup" Type="char" MaxLength="1" />
+          <Property Name="kangrup" Type="char" MaxLength="10" />
+          <Property Name="tahkodu" Type="varchar" MaxLength="10" />
+          <Property Name="aktfatilkno" Type="int" />
+          <Property Name="aktfatsonno" Type="int" />
+          <Property Name="eskfatilkno" Type="int" />
+          <Property Name="eskfatsonno" Type="int" />
+          <Property Name="akttesilkno" Type="int" />
+          <Property Name="akttessonno" Type="int" />
+          <Property Name="esktesilkno" Type="int" />
+          <Property Name="esktessonno" Type="int" />
+          <Property Name="tasirsilkno" Type="int" />
+          <Property Name="tasirssonno" Type="int" />
+          <Property Name="ensontesno" Type="int" />
+          <Property Name="ensonfatno" Type="int" />
+          <Property Name="ensontasno" Type="int" />
+          <Property Name="resmiseri" Type="varchar" MaxLength="20" />
+          <Property Name="acikseri" Type="varchar" MaxLength="20" />
+          <Property Name="resmiserifat" Type="varchar" MaxLength="20" />
+          <Property Name="makbuzseri" Type="varchar" MaxLength="20" />
+          <Property Name="tasseri" Type="varchar" MaxLength="20" />
+          <Property Name="isaret" Type="char" MaxLength="1" />
+          <Property Name="kasa" Type="varchar" MaxLength="1" />
+          <Property Name="FatMakSeri" Type="varchar" MaxLength="20" />
+          <Property Name="FatMakSonNo" Type="int" />
+          <Property Name="alisFatno" Type="int" />
+          <Property Name="alisFatSeri" Type="varchar" MaxLength="20" />
+          <Property Name="FirmaKodu" Type="varchar" MaxLength="30" />
+          <Property Name="FirmaAdi" Type="varchar" MaxLength="50" />
+          <Property Name="YeniTahsilatMakbuzilkno" Type="int" />
+          <Property Name="YeniTahsilatMakbuzsonno" Type="int" />
+          <Property Name="EskiTahsilatMakbuzilkno" Type="int" />
+          <Property Name="EskiTahsilatMakbuzsonno" Type="int" />
+          <Property Name="sskNo" Type="varchar" MaxLength="20" />
+          <Property Name="girisTarihi" Type="datetime" />
+          <Property Name="MacAdres" Type="varchar" MaxLength="30" />
+          <Property Name="IpAdres" Type="varchar" MaxLength="30" />
+          <Property Name="BilgisayarIsmi" Type="varchar" MaxLength="30" />
+          <Property Name="tarih2" Type="datetime" />
+          <Property Name="DagitimFisSeri" Type="varchar" MaxLength="20" />
+          <Property Name="DagitimFisNo" Type="int" />
+          <Property Name="GidisGrupFatura" Type="varchar" MaxLength="20" />
+          <Property Name="GelisGrupFatura" Type="varchar" MaxLength="20" />
+          <Property Name="GidisGrupMakbuz" Type="varchar" MaxLength="20" />
+          <Property Name="GelisGrupMakbuz" Type="varchar" MaxLength="20" />
+          <Property Name="fgrup" Type="varchar" MaxLength="20" />
+          <Property Name="fiskonto" Type="varchar" MaxLength="20" />
+          <Property Name="Yol" Type="varchar" MaxLength="20" />
+          <Property Name="Yemek" Type="varchar" MaxLength="20" />
+          <Property Name="Navlun" Type="varchar" MaxLength="20" />
+          <Property Name="AlinanAvans" Type="varchar" MaxLength="20" />
+          <Property Name="VerilenAvans" Type="varchar" MaxLength="20" />
+          <Property Name="VerilenHizmetGrupFatura" Type="varchar" MaxLength="20" />
+          <Property Name="SigortaGrup" Type="varchar" MaxLength="20" />
+          <Property Name="KasaKodu" Type="varchar" MaxLength="20" />
+          <Property Name="KasaAdi" Type="varchar" MaxLength="40" />
+          <Property Name="KAktif" Type="char" MaxLength="1" />
+          <Property Name="Durum" Type="char" MaxLength="1" />
+          <Property Name="Resim" Type="image" />
+          <Property Name="EFatSeri" Type="varchar" MaxLength="20" />
+          <Property Name="EFatilkNo" Type="int" />
+          <Property Name="EFatSonNo" Type="int" />
+          <Property Name="EFatAktifNo" Type="int" />
+        </EntityType>
         <EntityType Name="tesellum">
           <Key>
             <PropertyRef Name="TakipNo" />
@@ -718,6 +822,7 @@
           <EntitySet Name="irsaliye" EntityType="Self.irsaliye" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="krhatsub" EntityType="Self.krhatsub" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="krmuste" EntityType="Self.krmuste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tesellum" EntityType="Self.tesellum" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tesellumhar" EntityType="Self.tesellumhar" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -733,6 +838,7 @@
           <EntitySet Name="krmuste" EntityType="EKSPRES2017Model.krmuste" />
           <EntitySet Name="tesellum" EntityType="EKSPRES2017Model.tesellum" />
           <EntitySet Name="tesellumhar" EntityType="EKSPRES2017Model.tesellumhar" />
+          <EntitySet Name="personel" EntityType="EKSPRES2017Model.personel" />
         </EntityContainer>
         <EntityType Name="fatura">
           <Key>
@@ -1440,6 +1546,110 @@
           <Property Name="DereceTutar" Type="Decimal" Precision="19" Scale="3" />
           <Property Name="LineNr" Type="Int32" />
           <Property Name="AracirsListeSira" Type="Int32" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personelkodu" />
+          </Key>
+          <Property Name="pkod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personelkodu" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="kod" Type="Int32" />
+          <Property Name="kod1" Type="Int32" />
+          <Property Name="subekodu" Type="Int32" />
+          <Property Name="departman" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="gorevi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="adi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="soyadi" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="il" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ilce" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="adresi" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="aktif" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="kullaniciadi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ozel" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="seri" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="kimlikno" Type="Int32" />
+          <Property Name="babaadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="anaadi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="dogyeri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dogtar" Type="DateTime" Precision="3" />
+          <Property Name="medhali" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ilk" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ilcek" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="mahkoy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ciltno" Type="Int16" />
+          <Property Name="ailesirano" Type="Int16" />
+          <Property Name="sirano" Type="Int16" />
+          <Property Name="veryer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="vertarih" Type="DateTime" Precision="3" />
+          <Property Name="kayitno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="everil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="everilce" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ebelgeno" Type="Int32" />
+          <Property Name="etarih" Type="DateTime" Precision="3" />
+          <Property Name="egrup" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="kangrup" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="tahkodu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="aktfatilkno" Type="Int32" />
+          <Property Name="aktfatsonno" Type="Int32" />
+          <Property Name="eskfatilkno" Type="Int32" />
+          <Property Name="eskfatsonno" Type="Int32" />
+          <Property Name="akttesilkno" Type="Int32" />
+          <Property Name="akttessonno" Type="Int32" />
+          <Property Name="esktesilkno" Type="Int32" />
+          <Property Name="esktessonno" Type="Int32" />
+          <Property Name="tasirsilkno" Type="Int32" />
+          <Property Name="tasirssonno" Type="Int32" />
+          <Property Name="ensontesno" Type="Int32" />
+          <Property Name="ensonfatno" Type="Int32" />
+          <Property Name="ensontasno" Type="Int32" />
+          <Property Name="resmiseri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="acikseri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="resmiserifat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="makbuzseri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tasseri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="isaret" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="kasa" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FatMakSeri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FatMakSonNo" Type="Int32" />
+          <Property Name="alisFatno" Type="Int32" />
+          <Property Name="alisFatSeri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FirmaKodu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FirmaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YeniTahsilatMakbuzilkno" Type="Int32" />
+          <Property Name="YeniTahsilatMakbuzsonno" Type="Int32" />
+          <Property Name="EskiTahsilatMakbuzilkno" Type="Int32" />
+          <Property Name="EskiTahsilatMakbuzsonno" Type="Int32" />
+          <Property Name="sskNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="girisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="MacAdres" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IpAdres" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BilgisayarIsmi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="tarih2" Type="DateTime" Precision="3" />
+          <Property Name="DagitimFisSeri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DagitimFisNo" Type="Int32" />
+          <Property Name="GidisGrupFatura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GelisGrupFatura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GidisGrupMakbuz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GelisGrupMakbuz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fgrup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fiskonto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Yol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Yemek" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Navlun" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AlinanAvans" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VerilenAvans" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VerilenHizmetGrupFatura" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SigortaGrup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KasaKodu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KasaAdi" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="KAktif" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Durum" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Resim" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="EFatSeri" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EFatilkNo" Type="Int32" />
+          <Property Name="EFatSonNo" Type="Int32" />
+          <Property Name="EFatAktifNo" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2156,6 +2366,111 @@
                 <ScalarProperty Name="cinsi" ColumnName="cinsi" />
                 <ScalarProperty Name="fatno" ColumnName="fatno" />
                 <ScalarProperty Name="ref" ColumnName="ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personel">
+            <EntityTypeMapping TypeName="EKSPRES2017Model.personel">
+              <MappingFragment StoreEntitySet="personel">
+                <ScalarProperty Name="EFatAktifNo" ColumnName="EFatAktifNo" />
+                <ScalarProperty Name="EFatSonNo" ColumnName="EFatSonNo" />
+                <ScalarProperty Name="EFatilkNo" ColumnName="EFatilkNo" />
+                <ScalarProperty Name="EFatSeri" ColumnName="EFatSeri" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="KAktif" ColumnName="KAktif" />
+                <ScalarProperty Name="KasaAdi" ColumnName="KasaAdi" />
+                <ScalarProperty Name="KasaKodu" ColumnName="KasaKodu" />
+                <ScalarProperty Name="SigortaGrup" ColumnName="SigortaGrup" />
+                <ScalarProperty Name="VerilenHizmetGrupFatura" ColumnName="VerilenHizmetGrupFatura" />
+                <ScalarProperty Name="VerilenAvans" ColumnName="VerilenAvans" />
+                <ScalarProperty Name="AlinanAvans" ColumnName="AlinanAvans" />
+                <ScalarProperty Name="Navlun" ColumnName="Navlun" />
+                <ScalarProperty Name="Yemek" ColumnName="Yemek" />
+                <ScalarProperty Name="Yol" ColumnName="Yol" />
+                <ScalarProperty Name="fiskonto" ColumnName="fiskonto" />
+                <ScalarProperty Name="fgrup" ColumnName="fgrup" />
+                <ScalarProperty Name="GelisGrupMakbuz" ColumnName="GelisGrupMakbuz" />
+                <ScalarProperty Name="GidisGrupMakbuz" ColumnName="GidisGrupMakbuz" />
+                <ScalarProperty Name="GelisGrupFatura" ColumnName="GelisGrupFatura" />
+                <ScalarProperty Name="GidisGrupFatura" ColumnName="GidisGrupFatura" />
+                <ScalarProperty Name="DagitimFisNo" ColumnName="DagitimFisNo" />
+                <ScalarProperty Name="DagitimFisSeri" ColumnName="DagitimFisSeri" />
+                <ScalarProperty Name="tarih2" ColumnName="tarih2" />
+                <ScalarProperty Name="BilgisayarIsmi" ColumnName="BilgisayarIsmi" />
+                <ScalarProperty Name="IpAdres" ColumnName="IpAdres" />
+                <ScalarProperty Name="MacAdres" ColumnName="MacAdres" />
+                <ScalarProperty Name="girisTarihi" ColumnName="girisTarihi" />
+                <ScalarProperty Name="sskNo" ColumnName="sskNo" />
+                <ScalarProperty Name="EskiTahsilatMakbuzsonno" ColumnName="EskiTahsilatMakbuzsonno" />
+                <ScalarProperty Name="EskiTahsilatMakbuzilkno" ColumnName="EskiTahsilatMakbuzilkno" />
+                <ScalarProperty Name="YeniTahsilatMakbuzsonno" ColumnName="YeniTahsilatMakbuzsonno" />
+                <ScalarProperty Name="YeniTahsilatMakbuzilkno" ColumnName="YeniTahsilatMakbuzilkno" />
+                <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+                <ScalarProperty Name="FirmaKodu" ColumnName="FirmaKodu" />
+                <ScalarProperty Name="alisFatSeri" ColumnName="alisFatSeri" />
+                <ScalarProperty Name="alisFatno" ColumnName="alisFatno" />
+                <ScalarProperty Name="FatMakSonNo" ColumnName="FatMakSonNo" />
+                <ScalarProperty Name="FatMakSeri" ColumnName="FatMakSeri" />
+                <ScalarProperty Name="kasa" ColumnName="kasa" />
+                <ScalarProperty Name="isaret" ColumnName="isaret" />
+                <ScalarProperty Name="tasseri" ColumnName="tasseri" />
+                <ScalarProperty Name="makbuzseri" ColumnName="makbuzseri" />
+                <ScalarProperty Name="resmiserifat" ColumnName="resmiserifat" />
+                <ScalarProperty Name="acikseri" ColumnName="acikseri" />
+                <ScalarProperty Name="resmiseri" ColumnName="resmiseri" />
+                <ScalarProperty Name="ensontasno" ColumnName="ensontasno" />
+                <ScalarProperty Name="ensonfatno" ColumnName="ensonfatno" />
+                <ScalarProperty Name="ensontesno" ColumnName="ensontesno" />
+                <ScalarProperty Name="tasirssonno" ColumnName="tasirssonno" />
+                <ScalarProperty Name="tasirsilkno" ColumnName="tasirsilkno" />
+                <ScalarProperty Name="esktessonno" ColumnName="esktessonno" />
+                <ScalarProperty Name="esktesilkno" ColumnName="esktesilkno" />
+                <ScalarProperty Name="akttessonno" ColumnName="akttessonno" />
+                <ScalarProperty Name="akttesilkno" ColumnName="akttesilkno" />
+                <ScalarProperty Name="eskfatsonno" ColumnName="eskfatsonno" />
+                <ScalarProperty Name="eskfatilkno" ColumnName="eskfatilkno" />
+                <ScalarProperty Name="aktfatsonno" ColumnName="aktfatsonno" />
+                <ScalarProperty Name="aktfatilkno" ColumnName="aktfatilkno" />
+                <ScalarProperty Name="tahkodu" ColumnName="tahkodu" />
+                <ScalarProperty Name="kangrup" ColumnName="kangrup" />
+                <ScalarProperty Name="egrup" ColumnName="egrup" />
+                <ScalarProperty Name="etarih" ColumnName="etarih" />
+                <ScalarProperty Name="ebelgeno" ColumnName="ebelgeno" />
+                <ScalarProperty Name="everilce" ColumnName="everilce" />
+                <ScalarProperty Name="everil" ColumnName="everil" />
+                <ScalarProperty Name="kayitno" ColumnName="kayitno" />
+                <ScalarProperty Name="vertarih" ColumnName="vertarih" />
+                <ScalarProperty Name="veryer" ColumnName="veryer" />
+                <ScalarProperty Name="sirano" ColumnName="sirano" />
+                <ScalarProperty Name="ailesirano" ColumnName="ailesirano" />
+                <ScalarProperty Name="ciltno" ColumnName="ciltno" />
+                <ScalarProperty Name="mahkoy" ColumnName="mahkoy" />
+                <ScalarProperty Name="ilcek" ColumnName="ilcek" />
+                <ScalarProperty Name="ilk" ColumnName="ilk" />
+                <ScalarProperty Name="medhali" ColumnName="medhali" />
+                <ScalarProperty Name="dogtar" ColumnName="dogtar" />
+                <ScalarProperty Name="dogyeri" ColumnName="dogyeri" />
+                <ScalarProperty Name="anaadi" ColumnName="anaadi" />
+                <ScalarProperty Name="babaadi" ColumnName="babaadi" />
+                <ScalarProperty Name="kimlikno" ColumnName="kimlikno" />
+                <ScalarProperty Name="seri" ColumnName="seri" />
+                <ScalarProperty Name="ozel" ColumnName="ozel" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+                <ScalarProperty Name="aktif" ColumnName="aktif" />
+                <ScalarProperty Name="adresi" ColumnName="adresi" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="il" ColumnName="il" />
+                <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="gorevi" ColumnName="gorevi" />
+                <ScalarProperty Name="departman" ColumnName="departman" />
+                <ScalarProperty Name="subekodu" ColumnName="subekodu" />
+                <ScalarProperty Name="kod1" ColumnName="kod1" />
+                <ScalarProperty Name="kod" ColumnName="kod" />
+                <ScalarProperty Name="personelkodu" ColumnName="personelkodu" />
+                <ScalarProperty Name="pkod" ColumnName="pkod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
