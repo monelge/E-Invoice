@@ -40,6 +40,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(928, 768);
             this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.webBrowser1_PreviewKeyDown);
             // 
             // OnIzleme
             // 
@@ -47,6 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 768);
             this.Controls.Add(this.webBrowser1);
+            this.KeyPreview = true;
             this.Name = "OnIzleme";
             // 
             // 
@@ -55,6 +57,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OnIzleme";
             this.Load += new System.EventHandler(this.OnIzleme_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnIzleme_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

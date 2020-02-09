@@ -23,5 +23,27 @@ namespace EFaturaApp
         {
             webBrowser1.DocumentText = _htmltxt;
         }
+
+        private void OnIzleme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
+
+        private void webBrowser1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+
+            if (e.KeyCode == Keys.F10)
+            {
+                ((WebBrowser)sender).Print();
+
+            }
+        }
     }
 }
