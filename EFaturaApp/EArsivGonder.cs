@@ -66,7 +66,7 @@ namespace EFaturaApp
 
             return dt;
         }
-    
+
         bool Gonder(int FtTur)
         {
             try
@@ -115,7 +115,7 @@ namespace EFaturaApp
             }
             catch (Exception e)
             {
-                FuncClass.hataKaydet(e, this);
+                LoggerClass.logger.Error(e.Message);
                 return false;
             }
         }
@@ -171,7 +171,7 @@ namespace EFaturaApp
             }
             catch (Exception exception)
             {
-
+                LoggerClass.logger.Error(exception.Message);
             }
         }
 
@@ -248,6 +248,7 @@ namespace EFaturaApp
             }
             catch (Exception e)
             {
+                LoggerClass.logger.Error(e.Message);
                 return false;
             }
 

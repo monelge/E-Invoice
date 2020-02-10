@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EFaturaApp.Func;
+using NLog;
 using Telerik.WinControls;
 
 namespace EFaturaApp
@@ -18,8 +20,10 @@ namespace EFaturaApp
         {
             if (File.Exists(@"SystemCnTr.dll"))
             {
+                Logger log = LogManager.GetCurrentClassLogger();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                LoggerClass.logger.Warn("Program Acilisi");
                 Application.Run(new MainForm());
             }
             else

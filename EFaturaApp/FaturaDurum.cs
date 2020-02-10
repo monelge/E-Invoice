@@ -21,8 +21,6 @@ namespace EFaturaApp
 
         EKSPRES2017Entities dbEntities = new EKSPRES2017Entities();
         private EdmServisClass currentEdm;
-        private Logger logger;
-
         private Panel panel = new Panel();
         private ProgressBar progressBar = new ProgressBar();
         private Label _label = new Label();
@@ -196,7 +194,7 @@ namespace EFaturaApp
             }
             catch (Exception e)
             {
-                LoggerClass.ERROR = e.Message;
+                LoggerClass.logger.Error(e.Message);
                 return false;
             }
         }

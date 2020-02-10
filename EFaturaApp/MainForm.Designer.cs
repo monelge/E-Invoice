@@ -51,6 +51,7 @@
             this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
             this.toolTabStrip1 = new Telerik.WinControls.UI.Docking.ToolTabStrip();
             this.documentContainer1 = new Telerik.WinControls.UI.Docking.DocumentContainer();
+            this.radButton14 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radDock1)).BeginInit();
             this.radDock1.SuspendLayout();
             this.toolWindow1.SuspendLayout();
@@ -72,9 +73,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
+            this.radPageViewPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).BeginInit();
             this.toolTabStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +122,7 @@
             this.radPageView1.ItemSizeMode = ((Telerik.WinControls.UI.PageViewItemSizeMode)((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth | Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight)));
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage2;
+            this.radPageView1.SelectedPage = this.radPageViewPage4;
             this.radPageView1.Size = new System.Drawing.Size(264, 790);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.Outlook;
@@ -164,11 +167,14 @@
             // 
             this.radButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton2.Image = ((System.Drawing.Image)(resources.GetObject("radButton2.Image")));
+            this.radButton2.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton2.Location = new System.Drawing.Point(3, 71);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(248, 62);
             this.radButton2.TabIndex = 4;
             this.radButton2.Text = "Müşteriye Göre";
+            this.radButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
             // radButton1
@@ -223,11 +229,14 @@
             // 
             this.radButton9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.radButton9.Image = ((System.Drawing.Image)(resources.GetObject("radButton9.Image")));
+            this.radButton9.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.radButton9.Location = new System.Drawing.Point(1, 71);
             this.radButton9.Name = "radButton9";
             this.radButton9.Size = new System.Drawing.Size(248, 62);
             this.radButton9.TabIndex = 8;
             this.radButton9.Text = "Müşteriye Göre";
+            this.radButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButton9.Click += new System.EventHandler(this.radButton9_Click);
             // 
             // radButton10
@@ -328,10 +337,11 @@
             // 
             // radPageViewPage4
             // 
+            this.radPageViewPage4.Controls.Add(this.radButton14);
             this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(266F, 32F);
             this.radPageViewPage4.Location = new System.Drawing.Point(5, 31);
             this.radPageViewPage4.Name = "radPageViewPage4";
-            this.radPageViewPage4.Size = new System.Drawing.Size(286, 424);
+            this.radPageViewPage4.Size = new System.Drawing.Size(254, 586);
             this.radPageViewPage4.Text = "Servis";
             // 
             // toolTabStrip1
@@ -363,6 +373,15 @@
             this.documentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill;
             this.documentContainer1.SizeInfo.SplitterCorrection = new System.Drawing.Size(-143, 0);
             this.documentContainer1.TabIndex = 2;
+            // 
+            // radButton14
+            // 
+            this.radButton14.Location = new System.Drawing.Point(3, 12);
+            this.radButton14.Name = "radButton14";
+            this.radButton14.Size = new System.Drawing.Size(248, 73);
+            this.radButton14.TabIndex = 0;
+            this.radButton14.Text = "radButton14";
+            this.radButton14.Click += new System.EventHandler(this.radButton14_Click);
             // 
             // MainForm
             // 
@@ -402,9 +421,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
+            this.radPageViewPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toolTabStrip1)).EndInit();
             this.toolTabStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.documentContainer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -434,5 +455,6 @@
         private Telerik.WinControls.UI.RadButton radButton11;
         private Telerik.WinControls.UI.RadButton radButton12;
         private Telerik.WinControls.UI.RadButton radButton13;
+        private Telerik.WinControls.UI.RadButton radButton14;
     }
 }

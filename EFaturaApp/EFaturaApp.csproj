@@ -140,8 +140,15 @@
     </Compile>
     <Compile Include="Func\FaturaClass.cs" />
     <Compile Include="Func\FuncClass.cs" />
+    <Compile Include="Func\LogerModel.cs" />
     <Compile Include="Func\LoggerClass.cs" />
     <Compile Include="Func\TesellumClass.cs" />
+    <Compile Include="LogKayitlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogKayitlari.Designer.cs">
+      <DependentUpon>LogKayitlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +199,9 @@
     <EmbeddedResource Include="FaturaGonder.resx">
       <DependentUpon>FaturaGonder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LogKayitlari.resx">
+      <DependentUpon>LogKayitlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,9 +231,10 @@
     <EmbeddedResource Include="TopluFatura.resx">
       <DependentUpon>TopluFatura.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Logger.s3db">
+    <None Include="Logger.s3db" />
+    <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

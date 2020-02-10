@@ -18,7 +18,6 @@ namespace EFaturaApp
     {
         EKSPRES2017Entities dbEntities = new EKSPRES2017Entities();
         private Configuration configuration;
-        private Logger logger;
         private int listedurum;
         private int iIsaretDurum;
         private int formDurum;
@@ -27,7 +26,7 @@ namespace EFaturaApp
         {
             InitializeComponent();
             this.formDurum = _formDurum;
-            logger = LogManager.LoadConfiguration("NLog.config").GetCurrentClassLogger();
+         
         }
 
         void sayfaYukle()
@@ -235,7 +234,7 @@ namespace EFaturaApp
             }
             catch (Exception exception)
             {
-                logger.Error(exception.Message);
+                LoggerClass.logger.Error(exception.Message);
             }
         }
 
@@ -253,8 +252,9 @@ namespace EFaturaApp
                 // toolStripStatusLabel5.Text = radGridView1.CurrentRow.Cells["adi1"].Value.ToString();
                 // toolStripStatusLabel6.Text = radGridView1.CurrentRow.Cells["il"].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception exception)
             {
+                LoggerClass.logger.Error(exception.Message);
             }
         }
         void fatolustur()
@@ -326,7 +326,7 @@ namespace EFaturaApp
             }
             catch (Exception ex)
             {
-                logger.Error(ex.Message);
+                LoggerClass.logger.Error(ex.Message);
                 RadMessageBox.Show("Sistemsel bir hata oluştu. Lütfen Tekrar deneyiniz. \r\n" + ex.Message, "Hata Oluştu", MessageBoxButtons.OK, RadMessageIcon.Error);
                 Listeleme(listedurum, 0);
             }
@@ -539,7 +539,7 @@ namespace EFaturaApp
             }
             catch (Exception exception)
             {
-                logger.Error(exception.Message);
+                LoggerClass.logger.Error(exception.Message);
             }
 
         }
@@ -593,7 +593,7 @@ namespace EFaturaApp
             }
             catch (Exception exception)
             {
-                logger.Error(exception.Message);
+                LoggerClass.logger.Error(exception.Message);
             }
         }
         private void radGridView1_RowFormatting(object sender, RowFormattingEventArgs e)
@@ -620,9 +620,9 @@ namespace EFaturaApp
                 int veri = radGridView1.CurrentRow.Index;
                 Satirgetir(veri);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-
+                LoggerClass.logger.Error(exception.Message);
             }
         }
 
@@ -655,7 +655,7 @@ namespace EFaturaApp
                         }
                         catch (Exception exception)
                         {
-                            logger.Error(exception.Message);
+                            LoggerClass.logger.Error(exception.Message);
                         }
                     }
                     Listeleme(listedurum, 0);
@@ -687,7 +687,7 @@ namespace EFaturaApp
                         }
                         catch (Exception exception)
                         {
-                            logger.Error(exception.Message);
+                            LoggerClass.logger.Error(exception.Message);
                         }
                     }
                     Listeleme(listedurum, 0);
@@ -725,9 +725,9 @@ namespace EFaturaApp
                 veri = radGridView2.Rows[e.RowIndex].Cells[5].Value.ToString().Replace(",", ".");
                 carpan = Convert.ToInt16(radGridView2.Rows[e.RowIndex].Cells[3].Value);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-
+                LoggerClass.logger.Error(exception.Message);
             }
 
             if (veri != "")
@@ -776,8 +776,9 @@ namespace EFaturaApp
                                                     "takipno='" + radGridView2.CurrentRow.Cells["takipno"].Value.ToString() + "'");
 
             }
-            catch (Exception)
+            catch (Exception exception)
             {
+                LoggerClass.logger.Error(exception.Message);
                 DataBaseSorgu.VeriIsle.local.Close();
             }
         }

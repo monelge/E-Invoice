@@ -9,7 +9,8 @@ namespace EFaturaApp.Func
 {
     public static class LoggerClass
     {
-        private static Logger logger;
+        public static Logger  logger = LogManager.LoadConfiguration("NLog.config").GetCurrentClassLogger();
+
         private static string error;
 
         public static string ERROR
@@ -20,5 +21,6 @@ namespace EFaturaApp.Func
                 logger.Error(value);
             }
         }
+
     }
 }

@@ -80,5 +80,12 @@ namespace EFaturaApp
             frmTopluFatura.MdiParent = this;
             frmTopluFatura.Show();
         }
+
+        private void radButton14_Click(object sender, EventArgs e)
+        {
+            LogKayitlari frmTopluFatura = new LogKayitlari();
+            frmTopluFatura.MdiParent = this;
+            frmTopluFatura.Show();
+        }
     }
 }

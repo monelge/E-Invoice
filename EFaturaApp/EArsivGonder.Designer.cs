@@ -68,7 +68,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1272, 45);
+            this.radCommandBar1.Size = new System.Drawing.Size(1272, 70);
             this.radCommandBar1.TabIndex = 3;
             // 
             // commandBarRowElement1
@@ -149,11 +149,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.radGroupBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 45);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 70);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1272, 782);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1272, 757);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // radGroupBox1
@@ -165,7 +165,7 @@
             this.radGroupBox1.HeaderText = "Arşiv Fatura Listesi";
             this.radGroupBox1.Location = new System.Drawing.Point(3, 3);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1266, 776);
+            this.radGroupBox1.Size = new System.Drawing.Size(1266, 751);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "Arşiv Fatura Listesi";
             // 
@@ -219,7 +219,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(2, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1262, 756);
+            this.dataGridView1.Size = new System.Drawing.Size(1262, 731);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
@@ -236,12 +236,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.onizlemebtn});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 26);
             // 
             // onizlemebtn
             // 
             this.onizlemebtn.Name = "onizlemebtn";
-            this.onizlemebtn.Size = new System.Drawing.Size(180, 22);
+            this.onizlemebtn.Size = new System.Drawing.Size(127, 22);
             this.onizlemebtn.Text = "Ön İzleme";
             this.onizlemebtn.Click += new System.EventHandler(this.onizlemebtn_Click);
             // 

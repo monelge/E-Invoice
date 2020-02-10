@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EFaturaApp.Func;
 using Telerik.WinControls.UI;
 
 namespace EFaturaApp
@@ -41,14 +42,17 @@ namespace EFaturaApp
             try
             {
 
-                TextBox aran = (TextBox)_form.Controls.Find(_textbox1.ToString(), true)[0];
-                TextBox aran2 = (TextBox)_form.Controls.Find(_textbox2.ToString(), true)[0];
+                TextBox aran = (TextBox) _form.Controls.Find(_textbox1.ToString(), true)[0];
+                TextBox aran2 = (TextBox) _form.Controls.Find(_textbox2.ToString(), true)[0];
 
                 aran.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
                 aran2.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
 
             }
-            catch { }
+            catch(Exception exception)
+            {
+                LoggerClass.logger.Error(exception.Message);
+            }
             Close();
         }
 
@@ -59,14 +63,17 @@ namespace EFaturaApp
                 try
                 {
 
-                    TextBox aran = (TextBox)_form.Controls.Find(_textbox1.ToString(), true)[0];
-                    TextBox aran2 = (TextBox)_form.Controls.Find(_textbox2.ToString(), true)[0];
+                    TextBox aran = (TextBox) _form.Controls.Find(_textbox1.ToString(), true)[0];
+                    TextBox aran2 = (TextBox) _form.Controls.Find(_textbox2.ToString(), true)[0];
 
                     aran.Text = radGridView1.CurrentRow.Cells[2].Value.ToString();
                     aran2.Text = radGridView1.CurrentRow.Cells[3].Value.ToString();
 
                 }
-                catch { }
+                catch(Exception exception)
+                {
+                    LoggerClass.logger.Error(exception.Message);
+                }
                 Close();
             }
         }
