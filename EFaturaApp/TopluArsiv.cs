@@ -363,7 +363,7 @@ namespace EFaturaApp
             cmd.Parameters.AddWithValue("@P10", fatDt.Rows[0]["toplam"].ToString()).SqlDbType = SqlDbType.Float;
             cmd.Parameters.AddWithValue("@P11", fatDt.Rows[0]["toplamkdv"].ToString()).SqlDbType = SqlDbType.Float;
             cmd.Parameters.AddWithValue("@P12", "0").SqlDbType = SqlDbType.VarChar;
-            cmd.Parameters.AddWithValue("@P13", KrMuste.tahkodu).SqlDbType = SqlDbType.VarChar;
+            cmd.Parameters.AddWithValue("@P13", KrMuste.tahkodu??"").SqlDbType = SqlDbType.VarChar;
 
             if (odemetipi == 1)
             {

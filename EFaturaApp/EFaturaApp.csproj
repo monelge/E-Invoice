@@ -221,9 +221,6 @@
     <EmbeddedResource Include="TopluFatura.resx">
       <DependentUpon>TopluFatura.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Logger.s3db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
