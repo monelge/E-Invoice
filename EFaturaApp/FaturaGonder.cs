@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBaseSorgu;
 using EFaturaApp.Func;
 using EfatWebservis;
 using EntFMSystem;
@@ -42,7 +43,44 @@ namespace EFaturaApp
         {
             Gonder(1);
         }
-
+        List<ConvFaturaHar> _faturaHars(string fTakipSeri, int fTakipno)
+        {
+            DataTable table = VeriIsle.data_table("select * from faturahar where takipseri ='" + fTakipSeri + "' and fatno='" + fTakipno + "'");
+            string c = table.Rows[0]["miktar"].ToString();
+            List<ConvFaturaHar> FatLst = table.AsEnumerable().Select(m => new ConvFaturaHar()
+            {
+                @ref = m.Field<int>("ref"),
+                fatno = m.Field<int>("fatno"),
+                takipseri = m.Field<string>("takipseri"),
+                cinsi = m.Field<string>("cinsi"),
+                miktar = Convert.ToInt32(m.Field<double>("miktar")),
+                birimi = m.Field<string>("birimi"),
+                olcu = m.Field<string>("olcu"),
+                agirlik = m.Field<double>("agirlik"),
+                //en =  m.Field<int>("en"),
+                //boy = m.Field<int>("boy"),
+                //yukseklik = m.Field<int>("yukseklik"),
+                //desi_kg = m.Field<double>("desi_kg"),
+                tutari = m.Field<decimal>("tutari"),
+                fiyati = m.Field<decimal>("fiyati"),
+                aciklama = m.Field<string>("aciklama"),
+                tesno1 = m.Field<int>("tesno1"),
+                tesno2 = m.Field<string>("tesno2"),
+                //isaret = m.Field<string>("isaret"),
+                tesseri = m.Field<string>("tesseri"),
+                //fatisaret = m.Field<int>("fatisaret"),
+                carpan = m.Field<int>("carpan"),
+                //CarpanDesi = m.Field<string>("CarpanDesi"),
+                //FiyatFlag = m.Field<int>("FiyatFlag"),
+                //Tutari1 = m.Field<decimal>("Tutari1"),
+                //Fiyati1 = m.Field<decimal>("Fiyati1"),
+                //AktarimRef = m.Field<string>("AktarimRef"),
+                tesmusirsno = m.Field<string>("tesmusirsno"),
+                testasirsno = m.Field<string>("testasirsno"),
+                //HarTipi = m.Field<short>("HarTipi")
+            }).ToList();
+            return FatLst;
+        }
         bool Gonder(int FtTur)
         {
             try
@@ -96,7 +134,7 @@ namespace EFaturaApp
         bool listele()
         {
             int sube = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var getir = ekspres2017Entities.fatura.Where(x => x.adi1 == null && (x.takipseri == FuncClass.FSeriNO|| x.takipseri == FuncClass.FSerbestSeriNO)  && x.iptal != "1").Select(x => new FaturaClass //&& x.alicisube == sube
+            var getir = ekspres2017Entities.fatura.Where(x => x.adi1 == null && (x.takipseri == FuncClass.FSeriNO|| x.takipseri == FuncClass.FSerbestSeriNO)  && x.iptal != "1" && x.alicisube == sube).Select(x => new FaturaClass 
             {
                 isaret = (bool)(x.isaret == null || x.isaret == "0" ? false : true),
                 takipseri = x.takipseri,
