@@ -30,13 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FaturaGonder));
-            this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
-            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
-            this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.temelFaturaGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ticariFataruGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.önİzlemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
@@ -45,12 +43,14 @@
             this.radProgressBar1 = new Telerik.WinControls.UI.RadProgressBar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.isaret = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.temelFaturaGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ticariFataruGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.önİzlemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
+            this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
+            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.commandBarStripElement1 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarButton1 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton2 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton3 = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
+            this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -60,9 +60,134 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.temelFaturaGönderToolStripMenuItem,
+            this.ticariFataruGönderToolStripMenuItem,
+            this.önİzlemeToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 70);
+            // 
+            // temelFaturaGönderToolStripMenuItem
+            // 
+            this.temelFaturaGönderToolStripMenuItem.Name = "temelFaturaGönderToolStripMenuItem";
+            this.temelFaturaGönderToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.temelFaturaGönderToolStripMenuItem.Text = "Temel Fatura Gönder";
+            this.temelFaturaGönderToolStripMenuItem.Click += new System.EventHandler(this.temelFaturaGönderToolStripMenuItem_Click);
+            // 
+            // ticariFataruGönderToolStripMenuItem
+            // 
+            this.ticariFataruGönderToolStripMenuItem.Name = "ticariFataruGönderToolStripMenuItem";
+            this.ticariFataruGönderToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.ticariFataruGönderToolStripMenuItem.Text = "Ticari Fataru Gönder";
+            this.ticariFataruGönderToolStripMenuItem.Click += new System.EventHandler(this.ticariFataruGönderToolStripMenuItem_Click);
+            // 
+            // önİzlemeToolStripMenuItem
+            // 
+            this.önİzlemeToolStripMenuItem.Name = "önİzlemeToolStripMenuItem";
+            this.önİzlemeToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.önİzlemeToolStripMenuItem.Text = "Ön İzleme";
+            this.önİzlemeToolStripMenuItem.Click += new System.EventHandler(this.önİzlemeToolStripMenuItem_Click);
+            // 
+            // roundRectShape1
+            // 
+            this.roundRectShape1.IsRightToLeft = false;
+            this.roundRectShape1.Radius = 30;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.radGroupBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 67);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1207, 603);
+            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // radGroupBox1
+            // 
+            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Controls.Add(this.radPanel1);
+            this.radGroupBox1.Controls.Add(this.dataGridView1);
+            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGroupBox1.HeaderText = "Fatura Listesi";
+            this.radGroupBox1.Location = new System.Drawing.Point(3, 3);
+            this.radGroupBox1.Name = "radGroupBox1";
+            this.radGroupBox1.Size = new System.Drawing.Size(1201, 597);
+            this.radGroupBox1.TabIndex = 0;
+            this.radGroupBox1.Text = "Fatura Listesi";
+            // 
+            // radPanel1
+            // 
+            this.radPanel1.Controls.Add(this.radLabel2);
+            this.radPanel1.Controls.Add(this.radLabel1);
+            this.radPanel1.Controls.Add(this.radProgressBar1);
+            this.radPanel1.Location = new System.Drawing.Point(442, 244);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(336, 144);
+            this.radPanel1.TabIndex = 2;
+            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).Text = "";
+            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).EnableHighlight = false;
+            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).Shape = null;
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radLabel2.Location = new System.Drawing.Point(87, 15);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(147, 25);
+            this.radLabel2.TabIndex = 2;
+            this.radLabel2.Text = "Lütfen Bekleyiniz...";
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Location = new System.Drawing.Point(3, 101);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(55, 18);
+            this.radLabel1.TabIndex = 1;
+            this.radLabel1.Text = "radLabel1";
+            // 
+            // radProgressBar1
+            // 
+            this.radProgressBar1.Location = new System.Drawing.Point(3, 46);
+            this.radProgressBar1.Name = "radProgressBar1";
+            this.radProgressBar1.Size = new System.Drawing.Size(330, 49);
+            this.radProgressBar1.TabIndex = 0;
+            this.radProgressBar1.Text = "radProgressBar1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.isaret});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(2, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1197, 577);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
+            // 
+            // isaret
+            // 
+            this.isaret.DataPropertyName = "isaret";
+            this.isaret.HeaderText = "isaret";
+            this.isaret.Name = "isaret";
+            this.isaret.Width = 50;
             // 
             // radCommandBar1
             // 
@@ -71,7 +196,7 @@
             this.radCommandBar1.Name = "radCommandBar1";
             this.radCommandBar1.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.commandBarRowElement1});
-            this.radCommandBar1.Size = new System.Drawing.Size(1207, 73);
+            this.radCommandBar1.Size = new System.Drawing.Size(1207, 67);
             this.radCommandBar1.TabIndex = 1;
             // 
             // commandBarRowElement1
@@ -131,131 +256,6 @@
             this.commandBarButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton4.Click += new System.EventHandler(this.commandBarButton4_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.radGroupBox1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 73);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1207, 597);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // radGroupBox1
-            // 
-            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.radPanel1);
-            this.radGroupBox1.Controls.Add(this.dataGridView1);
-            this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGroupBox1.HeaderText = "Fatura Listesi";
-            this.radGroupBox1.Location = new System.Drawing.Point(3, 3);
-            this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1201, 591);
-            this.radGroupBox1.TabIndex = 0;
-            this.radGroupBox1.Text = "Fatura Listesi";
-            // 
-            // radPanel1
-            // 
-            this.radPanel1.Controls.Add(this.radLabel2);
-            this.radPanel1.Controls.Add(this.radLabel1);
-            this.radPanel1.Controls.Add(this.radProgressBar1);
-            this.radPanel1.Location = new System.Drawing.Point(442, 244);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(336, 144);
-            this.radPanel1.TabIndex = 2;
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).Text = "";
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).EnableHighlight = false;
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).Shape = null;
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radLabel2.Location = new System.Drawing.Point(87, 15);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(147, 25);
-            this.radLabel2.TabIndex = 2;
-            this.radLabel2.Text = "Lütfen Bekleyiniz...";
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.Location = new System.Drawing.Point(3, 101);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(55, 18);
-            this.radLabel1.TabIndex = 1;
-            this.radLabel1.Text = "radLabel1";
-            // 
-            // radProgressBar1
-            // 
-            this.radProgressBar1.Location = new System.Drawing.Point(3, 46);
-            this.radProgressBar1.Name = "radProgressBar1";
-            this.radProgressBar1.Size = new System.Drawing.Size(330, 49);
-            this.radProgressBar1.TabIndex = 0;
-            this.radProgressBar1.Text = "radProgressBar1";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.isaret});
-            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1197, 571);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
-            // 
-            // isaret
-            // 
-            this.isaret.DataPropertyName = "isaret";
-            this.isaret.HeaderText = "isaret";
-            this.isaret.Name = "isaret";
-            this.isaret.Width = 50;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.temelFaturaGönderToolStripMenuItem,
-            this.ticariFataruGönderToolStripMenuItem,
-            this.önİzlemeToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 70);
-            // 
-            // temelFaturaGönderToolStripMenuItem
-            // 
-            this.temelFaturaGönderToolStripMenuItem.Name = "temelFaturaGönderToolStripMenuItem";
-            this.temelFaturaGönderToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.temelFaturaGönderToolStripMenuItem.Text = "Temel Fatura Gönder";
-            this.temelFaturaGönderToolStripMenuItem.Click += new System.EventHandler(this.temelFaturaGönderToolStripMenuItem_Click);
-            // 
-            // ticariFataruGönderToolStripMenuItem
-            // 
-            this.ticariFataruGönderToolStripMenuItem.Name = "ticariFataruGönderToolStripMenuItem";
-            this.ticariFataruGönderToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.ticariFataruGönderToolStripMenuItem.Text = "Ticari Fataru Gönder";
-            this.ticariFataruGönderToolStripMenuItem.Click += new System.EventHandler(this.ticariFataruGönderToolStripMenuItem_Click);
-            // 
-            // önİzlemeToolStripMenuItem
-            // 
-            this.önİzlemeToolStripMenuItem.Name = "önİzlemeToolStripMenuItem";
-            this.önİzlemeToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.önİzlemeToolStripMenuItem.Text = "Ön İzleme";
-            this.önİzlemeToolStripMenuItem.Click += new System.EventHandler(this.önİzlemeToolStripMenuItem_Click);
-            // 
-            // roundRectShape1
-            // 
-            this.roundRectShape1.IsRightToLeft = false;
-            this.roundRectShape1.Radius = 30;
-            // 
             // FaturaGonder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +271,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FaturaGonder";
             this.Load += new System.EventHandler(this.FaturaGonder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
@@ -282,7 +282,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

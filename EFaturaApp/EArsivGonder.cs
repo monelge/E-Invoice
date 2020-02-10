@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBaseSorgu;
 using EFaturaApp.Func;
+using EfatWebservis;
 using EntFMSystem;
 using FastReport;
 using hm.common;
@@ -21,7 +23,6 @@ namespace EFaturaApp
         EKSPRES2017Entities ekspres2017Entities = new EKSPRES2017Entities();
         BackgroundWorker worker = new BackgroundWorker();
         private bool Yazdirma;
-
         public EArsivGonder()
         {
             InitializeComponent();
@@ -65,45 +66,7 @@ namespace EFaturaApp
 
             return dt;
         }
-        List<ConvFaturaHar> _faturaHars(string fTakipSeri, int fTakipno)
-        {
-            DataTable table = VeriIsle.data_table("select * from faturahar where takipseri ='" + fTakipSeri + "' and fatno='" + fTakipno + "'");
-            string c = (table.Rows[1]["agirlik"] == null ? table.Rows[1]["agirlik"]:0).ToString();
-            List<ConvFaturaHar> FatLst = table.AsEnumerable().Select(m => new ConvFaturaHar()
-            {
-                @ref = m.Field<int>("ref"),
-                fatno = m.Field<int>("fatno"),
-                takipseri = m.Field<string>("takipseri"),
-                cinsi = m.Field<string>("cinsi"),
-                miktar = Convert.ToInt32(m.Field<double>("miktar")),
-                birimi = m.Field<string>("birimi"),
-                olcu = m.Field<string>("olcu") ?? "",
-                agirlik = (m.Field<double>("agirlik") ?? DBNull.Value),//(m.Field<double>("agirlik") == DBNull.Value. ? m.Field<double>("agirlik") : 0),
-                //en =  m.Field<int>("en"),
-                //boy = m.Field<int>("boy"),
-                //yukseklik = m.Field<int>("yukseklik"),
-                //desi_kg = m.Field<double>("desi_kg"),
-                tutari = m.Field<decimal>("tutari"),
-                fiyati = m.Field<decimal>("fiyati"),
-                aciklama = m.Field<string>("aciklama"),
-                tesno1 = m.Field<int>("tesno1"),
-                tesno2 = m.Field<string>("tesno2"),
-                //isaret = m.Field<string>("isaret"),
-                tesseri = m.Field<string>("tesseri"),
-                //fatisaret = m.Field<int>("fatisaret"),
-                carpan = m.Field<int>("carpan"),
-                //CarpanDesi = m.Field<string>("CarpanDesi"),
-                //FiyatFlag = m.Field<int>("FiyatFlag"),
-                //Tutari1 = m.Field<decimal>("Tutari1"),
-                //Fiyati1 = m.Field<decimal>("Fiyati1"),
-                //AktarimRef = m.Field<string>("AktarimRef"),
-                tesmusirsno = m.Field<string>("tesmusirsno"),
-                testasirsno = m.Field<string>("testasirsno"),
-                //HarTipi = m.Field<short>("HarTipi")
-            }).ToList();
-            return FatLst;
-        }
-
+    
         bool Gonder(int FtTur)
         {
             try
@@ -117,7 +80,9 @@ namespace EFaturaApp
 
                     int _ref = Convert.ToInt32(dataTable.Rows[i]["ref"].ToString());
                     var Fatura = ekspres2017Entities.fatura.FirstOrDefault(f => f.@ref == _ref);
-                    List<ConvFaturaHar> FatLst = _faturaHars(Fatura.takipseri, Fatura.TakipNo);
+                    var FatLst =
+                        ekspres2017Entities.faturahar.Where(h =>
+                            h.takipseri == Fatura.takipseri && h.fatno == Fatura.TakipNo).ToList();
 
                     string FaturaNO = Fatura.takipseri + Fatura.TakipNo.ToString().PadLeft(9, '0');
                     this.Invoke(new Action(() =>
@@ -215,7 +180,7 @@ namespace EFaturaApp
             listele();
         }
 
-        bool EarasivYazdir(fatura Fatura, List<ConvFaturaHar> FatHark)
+        bool EarasivYazdir(fatura Fatura, List<faturahar> FatHark)
         {
             try
             {
@@ -320,6 +285,20 @@ namespace EFaturaApp
                     dataGridView1.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Red;
                 }
             }
+        }
+
+        private void onizlemebtn_Click(object sender, EventArgs e)
+        {
+            string sTakipSeri = dataGridView1.CurrentRow.Cells["takipseri"].Value.ToString();
+            int iTakipNO = Convert.ToInt32(dataGridView1.CurrentRow.Cells["TakipNo"].Value.ToString());
+            var FtrDty = ekspres2017Entities.fatura.FirstOrDefault(f => f.takipseri == sTakipSeri && f.TakipNo == iTakipNO);
+            var FtrFryList = ekspres2017Entities.faturahar
+                .Where(h => h.takipseri == FtrDty.takipseri && h.fatno == FtrDty.TakipNo).ToList();
+            string xml = FaturaIslem.FaturaXmlString(FtrDty, FtrFryList, 1);
+            string template = File.ReadAllText(@"GeneralFormFatura.xslt");
+            string html = FuncClass.ConvertToHtml(template, xml);
+            OnIzleme onIzleme = new OnIzleme(html);
+            onIzleme.ShowDialog();
         }
     }
 }
