@@ -132,6 +132,7 @@
             this.commandBarButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.commandBarButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.commandBarButton3.UseCompatibleTextRendering = false;
+            this.commandBarButton3.Click += new System.EventHandler(this.commandBarButton3_Click);
             // 
             // commandBarButton4
             // 

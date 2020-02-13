@@ -301,5 +301,10 @@ namespace EFaturaApp
             OnIzleme onIzleme = new OnIzleme(html);
             onIzleme.ShowDialog();
         }
+
+        private void commandBarButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
