@@ -90,7 +90,7 @@ namespace EFaturaApp
             {
                 var ftrList = dbEntities.fatura.Where(x =>
                     (x.soyadi1 != "ACCEPT" && x.soyadi1 != "SEND - SUCCEED") &&
-                    (x.takipseri == FuncClass.FSeriNO || x.takipseri == FuncClass.FSerbestSeriNO) && x.iptal != "1" //&& x.alicisube == iSbKd
+                    (x.takipseri == FuncClass.FSeriNO || x.takipseri == FuncClass.FSerbestSeriNO) && x.iptal != "1" && FuncClass.SubeKoduNoLst.Contains(x.alicisube ?? 0)
                     ).Select(
                     x => new
                     {

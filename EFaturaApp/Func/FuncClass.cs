@@ -80,6 +80,15 @@ namespace EFaturaApp.Func
             }
 
         }
+        public static int[] SubeKoduNoLst
+        {
+            get
+            {
+                int[] skodukull = Array.ConvertAll(((string)settingsReader.GetValue("bglsube", typeof(String))).Split(';'), int.Parse); 
+                return skodukull;
+            }
+
+        }
         public static DataTable ToDataTable<T>(this IList<T> data)
         {
             PropertyDescriptorCollection properties =
