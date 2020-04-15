@@ -37,6 +37,10 @@
             Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem11 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem12 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -77,8 +81,10 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radDateTimePicker2 = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.radDropDownList6 = new Telerik.WinControls.UI.RadDropDownList();
             this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
@@ -121,8 +127,10 @@
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
@@ -412,8 +420,10 @@
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.radDateTimePicker2);
             this.radGroupBox1.Controls.Add(this.radDateTimePicker1);
+            this.radGroupBox1.Controls.Add(this.radLabel13);
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.radLabel1);
+            this.radGroupBox1.Controls.Add(this.radDropDownList6);
             this.radGroupBox1.HeaderText = "Tarih İşlemleri";
             this.radGroupBox1.Location = new System.Drawing.Point(9, 3);
             this.radGroupBox1.Name = "radGroupBox1";
@@ -443,6 +453,14 @@
             this.radDateTimePicker1.Text = "20.01.2020";
             this.radDateTimePicker1.Value = new System.DateTime(2020, 1, 20, 23, 23, 3, 25);
             // 
+            // radLabel13
+            // 
+            this.radLabel13.Location = new System.Drawing.Point(10, 103);
+            this.radLabel13.Name = "radLabel13";
+            this.radLabel13.Size = new System.Drawing.Size(55, 18);
+            this.radLabel13.TabIndex = 0;
+            this.radLabel13.Text = "Kdv Oranı";
+            // 
             // radLabel2
             // 
             this.radLabel2.Location = new System.Drawing.Point(10, 65);
@@ -458,6 +476,23 @@
             this.radLabel1.Size = new System.Drawing.Size(83, 18);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "Başlangıç Tarihi";
+            // 
+            // radDropDownList6
+            // 
+            this.radDropDownList6.DropDownAnimationEnabled = false;
+            this.radDropDownList6.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem9.Text = "%18";
+            radListDataItem10.Text = "%8";
+            radListDataItem11.Text = "%1";
+            radListDataItem12.Text = "%0";
+            this.radDropDownList6.Items.Add(radListDataItem9);
+            this.radDropDownList6.Items.Add(radListDataItem10);
+            this.radDropDownList6.Items.Add(radListDataItem11);
+            this.radDropDownList6.Items.Add(radListDataItem12);
+            this.radDropDownList6.Location = new System.Drawing.Point(99, 103);
+            this.radDropDownList6.Name = "radDropDownList6";
+            this.radDropDownList6.Size = new System.Drawing.Size(90, 20);
+            this.radDropDownList6.TabIndex = 1;
             // 
             // radGridView2
             // 
@@ -676,8 +711,10 @@
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).EndInit();
@@ -727,5 +764,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadDropDownList radDropDownList5;
+        private Telerik.WinControls.UI.RadLabel radLabel13;
+        private Telerik.WinControls.UI.RadDropDownList radDropDownList6;
     }
 }

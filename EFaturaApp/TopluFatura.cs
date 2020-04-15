@@ -26,58 +26,67 @@ namespace EFaturaApp
         {
             InitializeComponent();
             this.formDurum = _formDurum;
-         
+
         }
 
         void sayfaYukle()
         {
-            int d = Convert.ToInt32(FuncClass.SubeKoduNo);
-            var subeGon = dbEntities.krhatsub.OrderBy(x => x.subeismi).ToList();
-            var subeAlici = dbEntities.krhatsub.OrderBy(x => x.subeismi).ToList();
-            int subekodd = Convert.ToInt32(FuncClass.SubeKoduNo);
-
-            var tahKoduaList = dbEntities.personel.Where(x => x.subekodu == subekodd && FuncClass.TahKoduLst.Contains(x.pkod)).ToList();
-
-            
-            radDropDownList5.DataSource = tahKoduaList;
-            radDropDownList5.ValueMember = "tahkodu";
-            radDropDownList5.DisplayMember = "tahkodu";
-            radDropDownList5.SelectedIndex = -1;
-
-            radDropDownList2.DataSource = subeGon;
-            radDropDownList2.ValueMember = "sube";
-            radDropDownList2.DisplayMember = "subeismi";
-
-            radDropDownList3.DataSource = subeAlici;
-            radDropDownList3.ValueMember = "sube";
-            radDropDownList3.DisplayMember = "subeismi";
-            int index = radDropDownList3.Items.IndexOf((dbEntities.krhatsub.FirstOrDefault(x => x.sube == d).subeismi
-                .ToString())); //comboBox1.Items.IndexOf(a);
-            radDropDownList3.SelectedIndex = index;
-
-            radDateTimePicker1.Value = DateTime.Today.AddDays(-10);
-            radDateTimePicker2.Value = DateTime.Today;
-            radLabel6.Text = "";
-            radLabel7.Text = "";
-            radLabel8.Text = "";
-
-            radGridView1.GridViewElement.Text = "";
-            radGridView2.GridViewElement.Text = "";
-            radDropDownList4.SelectedIndex = 3;
-            if (formDurum == 0)
+            try
             {
-                radGroupBox2.Visible = true;
-                radGroupBox5.Visible = false;
 
+                int d = Convert.ToInt32(FuncClass.SubeKoduNo);
+                var subeGon = dbEntities.krhatsub.OrderBy(x => x.subeismi).ToList();
+                var subeAlici = dbEntities.krhatsub.OrderBy(x => x.subeismi).ToList();
+                int subekodd = Convert.ToInt32(FuncClass.SubeKoduNo);
+
+                var tahKoduaList = dbEntities.personel.Where(x => x.subekodu == subekodd && FuncClass.TahKoduLst.Contains(x.pkod)).ToList();
+               
+                radDropDownList6.SelectedIndex = 0;
+
+                radDropDownList5.DataSource = tahKoduaList;
+                radDropDownList5.ValueMember = "tahkodu";
+                radDropDownList5.DisplayMember = "tahkodu";
+                radDropDownList5.SelectedIndex = -1;
+
+                radDropDownList2.DataSource = subeGon;
+                radDropDownList2.ValueMember = "sube";
+                radDropDownList2.DisplayMember = "subeismi";
+
+                radDropDownList3.DataSource = subeAlici;
+                radDropDownList3.ValueMember = "sube";
+                radDropDownList3.DisplayMember = "subeismi";
+                int index = radDropDownList3.Items.IndexOf((dbEntities.krhatsub.FirstOrDefault(x => x.sube == d).subeismi
+                    .ToString())); //comboBox1.Items.IndexOf(a);
+                radDropDownList3.SelectedIndex = index;
+
+                radDateTimePicker1.Value = DateTime.Today.AddDays(-10);
+                radDateTimePicker2.Value = DateTime.Today;
+                radLabel6.Text = "";
+                radLabel7.Text = "";
+                radLabel8.Text = "";
+
+                radGridView1.GridViewElement.Text = "";
+                radGridView2.GridViewElement.Text = "";
+                radDropDownList4.SelectedIndex = 3;
+                if (formDurum == 0)
+                {
+                    radGroupBox2.Visible = true;
+                    radGroupBox5.Visible = false;
+                }
+
+                if (formDurum == 1)
+                {
+                    radGroupBox2.Visible = false;
+                    radGroupBox5.Location = new Point(219, 3);
+                }
 
             }
-
-            if (formDurum == 1)
+            catch (Exception e)
             {
-                radGroupBox2.Visible = false;
-                radGroupBox5.Location = new Point(219, 3);
+                RadMessageBox.Show("Sistemsel bir hata oluştu. Lütfen Tekrar deneyiniz. \r\n" + e.Message, "Hata Oluştu", MessageBoxButtons.OK, RadMessageIcon.Error);
+                LoggerClass.logger.Error(e.Message);
+                this.Close();
             }
-
 
         }
         void Listeleme(int durum, int tesellum)
@@ -192,7 +201,7 @@ namespace EFaturaApp
 
                 #region Müşetiye Göre Arama
 
-                 if (formDurum == 1)
+                if (formDurum == 1)
                 {
 
                     sorgu +=
@@ -213,7 +222,7 @@ namespace EFaturaApp
                             break;
 
                     }
-                    sorgu+= " order by T.tadi,T.takipno";
+                    sorgu += " order by T.tadi,T.takipno";
                 }
 
                 #endregion
@@ -294,7 +303,6 @@ namespace EFaturaApp
                                          select grp.First();
 
                 int qryLatestInterviewsay = qryLatestInterview.CopyToDataTable().Rows.Count;
-
                 DataTable grupdt_ = qryLatestInterview.CopyToDataTable();
                 for (int i = 0; i < grupdt_.Rows.Count; i++)
                 {
@@ -311,12 +319,45 @@ namespace EFaturaApp
                         tesellumisaret(faturaref.ToString(), tbl.Rows[k]["takipseri"].ToString(), tbl.Rows[k]["takipno"].ToString());
                         if (saymaca == 30)
                         {
-                            bakiyehesapla(faturaref.ToString());
+                            switch (radDropDownList6.SelectedIndex)
+                            {
+                                case 0:
+                                    bakiyehesapla(faturaref.ToString(), 18);
+                                    break;
+                                case 1:
+                                    bakiyehesapla(faturaref.ToString(), 8);
+                                    break;
+                                case 2:
+                                    bakiyehesapla(faturaref.ToString(), 1);
+                                    break;
+                                case 3:
+                                    bakiyehesapla(faturaref.ToString(), 0);
+                                    break;
+                                default:
+                                    break;
+                            }
+
                             faturaref = faturaekle(tbl);
                             saymaca = 0;
                         }
                     }
-                    bakiyehesapla(faturaref.ToString());
+                    switch (radDropDownList6.SelectedIndex)
+                    {
+                        case 0:
+                            bakiyehesapla(faturaref.ToString(), 18);
+                            break;
+                        case 1:
+                            bakiyehesapla(faturaref.ToString(), 8);
+                            break;
+                        case 2:
+                            bakiyehesapla(faturaref.ToString(), 1);
+                            break;
+                        case 3:
+                            bakiyehesapla(faturaref.ToString(), 0);
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 Application.DoEvents();
                 System.Threading.Thread.Sleep(3000);
@@ -327,6 +368,7 @@ namespace EFaturaApp
             catch (Exception ex)
             {
                 LoggerClass.logger.Error(ex.Message);
+
                 RadMessageBox.Show("Sistemsel bir hata oluştu. Lütfen Tekrar deneyiniz. \r\n" + ex.Message, "Hata Oluştu", MessageBoxButtons.OK, RadMessageIcon.Error);
                 Listeleme(listedurum, 0);
             }
@@ -348,9 +390,9 @@ namespace EFaturaApp
             SqlCommand cmd = new SqlCommand("INSERT INTO fatura(TakipNo, takipseri, kim, tarih, carikod, adi, alicisube, gonderensube, yekun, " +
                                             "toplam,toplamkdv,iskontob,tahkodu,odemetipi,tipi,belgetarihi,kdvdahil,vergidairesi,vergino,ackap," +
                                             "vadegun,vadetar,adres1,adres2,il,ilce,tel1,tel2,tahisaret,zimmettarih,islemtipi,KesilenEkran," +
-                                            "DegisimTarih,Modul,kontrolaciklama,aciklama) VALUES (" +
+                                            "DegisimTarih,Modul,kontrolaciklama,aciklama,kdv) VALUES (" +
                                             "@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9,@P10,@P11,@P12,@P13,@P14,@P15,@P16,@P17,@P18,@P19,@P20," +
-                                            "@P21,@P22,@P23,@P24,@P25,@P26,@P27,@P28,@P29,@P30,@P31,@P32,@P33,@P34,@P35,@P36); SELECT CAST(scope_identity() AS int)", DataBaseSorgu.VeriIsle.local);
+                                            "@P21,@P22,@P23,@P24,@P25,@P26,@P27,@P28,@P29,@P30,@P31,@P32,@P33,@P34,@P35,@P36,@P37); SELECT CAST(scope_identity() AS int)", DataBaseSorgu.VeriIsle.local);
 
             cmd.Parameters.AddWithValue("@P1", Convert.ToInt32(takipno)).SqlDbType = SqlDbType.Int;
             cmd.Parameters.AddWithValue("@P2", takipseri).SqlDbType = SqlDbType.VarChar;
@@ -362,9 +404,9 @@ namespace EFaturaApp
             cmd.Parameters.AddWithValue("@P8", musteriBilg.Rows[0][6].ToString()).SqlDbType = SqlDbType.Int;
             cmd.Parameters.AddWithValue("@P9", fatDt.Rows[0]["yekun"].ToString()).SqlDbType = SqlDbType.Float;
             cmd.Parameters.AddWithValue("@P10", fatDt.Rows[0]["toplam"].ToString()).SqlDbType = SqlDbType.Float;
-            cmd.Parameters.AddWithValue("@P11", fatDt.Rows[0]["toplamkdv"].ToString()).SqlDbType = SqlDbType.Float;
+            cmd.Parameters.AddWithValue("@P11", (fatDt.Rows[0]["toplamkdv"].ToString() == "" ? "0" : fatDt.Rows[0]["toplamkdv"].ToString()).ToString()).SqlDbType = SqlDbType.Float;
             cmd.Parameters.AddWithValue("@P12", "0").SqlDbType = SqlDbType.VarChar;
-            cmd.Parameters.AddWithValue("@P13", KrMuste.tahkodu??"").SqlDbType = SqlDbType.VarChar;
+            cmd.Parameters.AddWithValue("@P13", KrMuste.tahkodu ?? "").SqlDbType = SqlDbType.VarChar;
 
             if (odemetipi == 1)
             {
@@ -398,6 +440,23 @@ namespace EFaturaApp
             cmd.Parameters.AddWithValue("@P34", "T").SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.AddWithValue("@P35", iban.ToString()).SqlDbType = SqlDbType.VarChar;
             cmd.Parameters.AddWithValue("@P36", radTextBox1.Text).SqlDbType = SqlDbType.VarChar;
+            switch (radDropDownList6.SelectedIndex)
+            {
+                case 0:
+                    cmd.Parameters.AddWithValue("@P37", 18).SqlDbType = SqlDbType.Int;
+                    break;
+                case 1:
+                    cmd.Parameters.AddWithValue("@P37", 8).SqlDbType = SqlDbType.Int;
+                    break;
+                case 2:
+                    cmd.Parameters.AddWithValue("@P37", 1).SqlDbType = SqlDbType.Int;
+                    break;
+                case 3:
+                    cmd.Parameters.AddWithValue("@P37", 0).SqlDbType = SqlDbType.Int;
+                    break;
+                default:
+                    break;
+            }
 
             DataBaseSorgu.VeriIsle.local.Open();
             returnid = (int)cmd.ExecuteScalar();
@@ -499,13 +558,47 @@ namespace EFaturaApp
 
             }
         }
-        void bakiyehesapla(string fatref)
+        void bakiyehesapla(string fatref, int kdv)
         {
-            DataTable faturalar = DataBaseSorgu.VeriIsle.data_table("select takipseri,takipno from fatura where ref='" + fatref.ToString() + "'");
-            DataBaseSorgu.VeriIsle.ekle_duz_sil("update fatura set yekun=(select sum(tutari) from faturahar where fatno='" + faturalar.Rows[0][1].ToString() + "' and takipseri='" + faturalar.Rows[0][0].ToString() + "'), " +
-                                                "toplam=(select sum(tutari) from faturahar where fatno='" + faturalar.Rows[0][1].ToString() + "' and takipseri='" + faturalar.Rows[0][0].ToString() + "')*1.18, " +
-                                                "toplamkdv=(select sum(tutari) from faturahar where fatno='" + faturalar.Rows[0][1].ToString() + "' and takipseri='" + faturalar.Rows[0][0].ToString() + "')*0.18 " +
-                                                "where ref='" + fatref.ToString() + "'");
+            // DataTable faturalar = DataBaseSorgu.VeriIsle.data_table("select takipseri,takipno from fatura where ref='" + fatref.ToString() + "'");
+            int ftReg = Convert.ToInt32(fatref);
+            var fatr = dbEntities.fatura.FirstOrDefault(f => f.@ref == ftReg);
+            var tutar = dbEntities.faturahar.Where(x => x.takipseri == fatr.takipseri && x.fatno == fatr.TakipNo).Sum(m => m.tutari);
+
+
+            switch (kdv)
+            {
+                case 0:
+                    fatr.yekun = tutar;
+                    fatr.toplamkdv = 0;
+                    fatr.toplam = tutar;
+                    break;
+                case 1:
+                    fatr.yekun = tutar;
+                    fatr.toplamkdv = Convert.ToDecimal((tutar ?? 0) * Convert.ToDecimal(0.01));
+                    fatr.toplam = Convert.ToDecimal((tutar ?? 0) * Convert.ToDecimal(1.01));
+                    break;
+                case 8:
+                    fatr.yekun = tutar;
+                    fatr.toplamkdv = Convert.ToDecimal((tutar ?? 0) * Convert.ToDecimal(0.08));
+                    fatr.toplam = Convert.ToDecimal((tutar ?? 0) * Convert.ToDecimal(1.08));
+                    break;
+                case 18:
+                    fatr.yekun = tutar;
+                    fatr.toplamkdv = Convert.ToDecimal((tutar ?? 0) * Convert.ToDecimal(0.18));
+                    fatr.toplam = Convert.ToDecimal((tutar ?? 0) * Convert.ToDecimal(1.18));
+                    break;
+
+                default:
+                    break;
+            }
+
+            dbEntities.SaveChanges();
+
+            //DataBaseSorgu.VeriIsle.ekle_duz_sil("update fatura set yekun=(select sum(tutari) from faturahar where fatno='" + faturalar.Rows[0][1].ToString() + "' and takipseri='" + faturalar.Rows[0][0].ToString() + "'), " +
+            //                                    "toplam=(select sum(tutari) from faturahar where fatno='" + faturalar.Rows[0][1].ToString() + "' and takipseri='" + faturalar.Rows[0][0].ToString() + "')*1.18, " +
+            //                                    "toplamkdv=(select sum(tutari) from faturahar where fatno='" + faturalar.Rows[0][1].ToString() + "' and takipseri='" + faturalar.Rows[0][0].ToString() + "')*0.18 " +
+            //                                    "where ref='" + fatref.ToString() + "'");
         }
         void tesellumisaret(string fatref, string tseri, string tesno)
         {

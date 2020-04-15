@@ -242,5 +242,12 @@ namespace EFaturaApp
             OnIzleme onIzleme = new OnIzleme(html);
             onIzleme.ShowDialog();
         }
+
+        private void kamuFaturaGönderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gonder(3);
+            RadMessageBox.Show("Faturalar başarılı şekilde gönderildi", "Tebrikler", MessageBoxButtons.OK,
+                RadMessageIcon.Info);
+        }
     }
 }
